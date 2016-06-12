@@ -1,0 +1,22 @@
+{
+  "name": "joseglego-ladingpage",
+  "version": "0.0.1",
+  "authors": [
+    "Jose Gregorio Lezama Gonzalez <me@joseglego.io>"
+  ],
+  "description": "Personal landing page",
+  "main": "index.html",
+  "keywords": [
+    "joseglego",
+    "html",
+    "css",
+    "javascript",
+    "jquery"
+  ],
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

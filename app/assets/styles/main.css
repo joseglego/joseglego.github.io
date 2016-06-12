@@ -1,0 +1,52 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+/*  Variables */
+/* Mixinx */
+/* General CSS */
+body {
+  position: relative;
+  color: #333333;
+  font-family: "Oxygen", sans-serif;
+  font-size: 15px; }
+
+a {
+  cursor: pointer; }
+
+/* IDs & Classes CSS*/
+#index {
+  border: 0px;
+  padding: 0px;
+  background: rgba(44, 62, 80, 0.3) url("../images/index.jpg") 50% 0px/cover; }
+  #index div {
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); }
+
+#footer {
+  padding: 30px 5px;
+  background: #212121;
+  color: #c0c0c0; }
+  #footer a {
+    color: white; }
+
+.text-font-primary {
+  font-family: "Montserrat", sans-serif; }
+
+.text-font-secondary {
+  font-family: "Oxygen", sans-serif; }
+
+.text-color-primary {
+  color: #e21900; }
+
+.text-lego-primary {
+  font: bold 1.1em "Montserrat", sans-serif;
+  color: #e21900; }
+
+.text-lego-secondary-default {
+  font: 300 1em "Oxygen" "Oxygen", sans-serif;
+  color: #fff; }
+
+.text-lego-secondary-inverse {
+  font: 300 1em "Oxygen" "Oxygen", sans-serif;
+  color: #111; }

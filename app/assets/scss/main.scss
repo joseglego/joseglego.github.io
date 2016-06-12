@@ -1,0 +1,83 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+/*  Variables */
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Oxygen', sans-serif;
+
+$font-primary-color: #333333;
+$font-secondary-color: #c0c0c0;;
+
+$lego-primary-color: #e21900;
+$lego-secondary-color: #111;
+$lego-third-color: #fff;
+
+$bg-color: #212121;
+
+/* Mixinx */
+@mixin lego-secondary {
+  font: 300 1em 'Oxygen' $font-secondary;
+}
+
+/* General CSS */
+body {
+  position: relative;
+  color: $font-primary-color;
+  font-family: $font-secondary;
+  font-size: 15px;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* IDs & Classes CSS*/
+#index {
+  border: 0px;
+  padding: 0px;
+  background: rgba(44, 62, 80, 0.3) url("../images/index.jpg") 50% 0px / cover;
+
+  div {
+    padding: 20px;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+#footer {
+  padding: 30px 5px;
+  background: $bg-color;
+  color: $font-secondary-color;
+  
+  a {
+    color: white;
+  }
+}
+
+.text-font-primary {
+  font-family: $font-primary;
+}
+
+.text-font-secondary {
+  font-family: $font-secondary;
+}
+
+.text-color-primary {
+  color: $lego-primary-color;
+}
+
+.text-lego-primary {
+  font: bold 1.1em $font-primary;
+  color: $lego-primary-color;
+}
+
+.text-lego-secondary-default {
+  @include lego-secondary
+  color: $lego-third-color;
+}
+
+.text-lego-secondary-inverse {
+  @include lego-secondary;
+  color: $lego-secondary-color;
+}
