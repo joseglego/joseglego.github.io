@@ -15,5 +15,15 @@ $(document).ready(function() {
   };
 
   // Section 1: Data & Init;
+  //// Section 1.0; Set Index
   setIndexSize();
+  $('#index').backstretch([
+    './assets/images/backgrounds/index0.jpg',
+    './assets/images/backgrounds/index1.jpg',
+    './assets/images/backgrounds/index2.jpg'    
+  ], {
+    duration: 4000,
+    fade: 750
+  });
+  
 });

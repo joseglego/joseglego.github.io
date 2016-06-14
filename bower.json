@@ -17,6 +17,7 @@
     "jquery": "1.9.1 - 2"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "jquery-backstretch": "^2.0.4"
   }
 }
