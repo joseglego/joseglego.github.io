@@ -13,7 +13,8 @@ $lego-primary-color: #e21900;
 $lego-secondary-color: #111;
 $lego-third-color: #fff;
 
-$bg-color: #212121;
+$bg-primary-color: white; 
+$bg-secondary-color: #212121;
 
 /* Mixinx */
 @mixin lego-secondary {
@@ -45,9 +46,35 @@ a {
   }
 }
 
+.section {
+    border-top: #d1d1d1 1px solid;
+    background: $bg-primary-color;
+    padding: 60px 0px 100px;
+}
+
+.divider {
+    margin: 20px 0px 10px;
+    border-top: 2px solid $lego-primary-color;
+    line-height: 15px;
+    .fa {
+        width: 50px;
+        position: relative;
+        top: -10px;
+    }
+}
+@media screen and (min-width: 768px) {
+  .divider {
+    margin: 20px 30% 20px;
+  }
+}
+
+.section .divider .fa { 
+  background: white;
+}
+
 #footer {
   padding: 30px 5px;
-  background: $bg-color;
+  background: $bg-secondary-color;
   color: $font-secondary-color;
   
   a {

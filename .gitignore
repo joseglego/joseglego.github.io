@@ -4,4 +4,5 @@
 .tmp
 node_modules/
 app/bower_components/
-app/images/
+app/assets/images/
+app/assets/files/
