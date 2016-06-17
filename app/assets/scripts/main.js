@@ -26,4 +26,6 @@ $(document).ready(function() {
     fade: 750
   });
   
+  // Match Heigth
+  $('.ido').matchHeight();
 });

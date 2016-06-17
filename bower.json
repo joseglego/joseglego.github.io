@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "jquery-backstretch": "^2.0.4"
+    "jquery-backstretch": "^2.0.4",
+    "matchHeight": "matchheight#^0.7.0"
   }
 }
