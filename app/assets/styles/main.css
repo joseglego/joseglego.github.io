@@ -23,6 +23,27 @@ a {
     color: white;
     background-color: rgba(0, 0, 0, 0.7); }
 
+.section {
+  border-top: #d1d1d1 1px solid;
+  background: white;
+  padding: 60px 0px 100px; }
+
+.divider {
+  margin: 20px 0px 10px;
+  border-top: 2px solid #e21900;
+  line-height: 15px; }
+  .divider .fa {
+    width: 50px;
+    position: relative;
+    top: -10px; }
+
+@media screen and (min-width: 768px) {
+  .divider {
+    margin: 20px 30% 20px; } }
+
+.section .divider .fa {
+  background: white; }
+
 #footer {
   padding: 30px 5px;
   background: #212121;

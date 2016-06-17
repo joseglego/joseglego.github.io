@@ -94,16 +94,23 @@ gulp.task('copy:fonts', function () {
     .pipe(gulp.dest('dist/assets/fonts'));
 });
 
-//// Section 2.3: Delete previous version
+//// Section 2.3: Move files
+gulp.task('copy:files', function () {
+  return gulp.src('app/assets/files/**/*.pdf')
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/assets/files'));
+});
+
+//// Section 2.4: Delete previous version
 gulp.task('clean:dist', function() {
   return del.sync('dist');
 });
 
-//// Section 2.4: Build Task
+//// Section 2.5: Build Task
 gulp.task('build:dist', function (callback) {
   runSequence(
     ['clean:dist'], 
-    ['useref', 'copy:images', 'copy:fonts'],
+    ['useref', 'copy:images', 'copy:fonts', 'copy:files'],
     callback
   );
 });

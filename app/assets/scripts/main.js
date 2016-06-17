@@ -7,10 +7,10 @@ $(document).ready(function() {
     var textSize = $($('#index div')[0]).outerHeight();
     var footerSize = $('#footer').outerHeight();
     
-    $('#index').height(windowSize-footerSize);
+    $('#index').height(windowSize);
     
     if (textSize <  windowSize) {
-      $('#index').css('padding-top',((windowSize-textSize-footerSize)/2)+'px');
+      $('#index').css('padding-top',((windowSize-textSize)/2)+'px');
     };
   };
 
