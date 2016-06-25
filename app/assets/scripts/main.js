@@ -38,4 +38,39 @@ $(document).ready(function() {
     infinite: true,
     fade: true
   });
+
+  // Modal Projects
+  var openModal = function (project) {
+    $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
+    $('#modal-content').load('views/projects/'+project+'.html');
+    $('#modal').modal();
+  };
+
+  // Events Handle
+  $('.open-modal').on('click', function () {
+    openModal($(this).attr('id'));
+  });
+
+    // Change Carousel Size
+  $('#modal-content').on('click','#carousel-change', function () {
+    var size = parseInt($('#carousel-container').attr('data-size'));
+    var carousel = $('#carousel-container');
+    carousel.removeClass();
+    size = (size + 1) % 4;
+    carousel.attr('data-size',size);
+    switch(size) {
+    case 0:
+      carousel.addClass('col-sm-4 col-sm-offset-4');
+      break;
+    case 1:
+      carousel.addClass('col-sm-6 col-sm-offset-3');
+      break;
+    case 2:
+      carousel.addClass('col-sm-8 col-sm-offset-2');
+      break;
+    case 3:
+      carousel.addClass('col-sm-12');
+      break;
+    }
+  });
 });

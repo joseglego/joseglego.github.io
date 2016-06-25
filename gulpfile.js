@@ -64,6 +64,7 @@ gulp.task('lint', function () {
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('app/assets/scss/**/*.scss', ['sass']); 
   gulp.watch('app/*.html', browserSync.reload); 
+  gulp.watch('app/views/**/*.html', browserSync.reload); 
   gulp.watch('app/assets/scripts/**/*.js', ['lint', browserSync.reload]);
   gulp.watch('app/assets/styles/**/*.css', browserSync.reload); 
 });
@@ -112,18 +113,24 @@ gulp.task('copy:slick-font', function () {
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles/fonts'));
 });
-
 gulp.task('copy:slick-gif', function () {
   return gulp.src('app/bower_components/slick-carousel/**/*.gif')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles'));
 });
 
-//// Section 2.6: Build Task
+//// Section 2.6: Copy Views
+gulp.task('copy:views', function(){
+  return gulp.src('app/views/**/*.html')
+    .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('dist/views'));
+});
+
+//// Section 2.7: Build Task
 gulp.task('build:dist', function (callback) {
   runSequence(
     ['clean:dist'], 
-    ['useref', 'copy:images', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif'],
+    ['useref', 'copy:images', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif', 'copy:views'],
     callback
   );
 });
@@ -134,25 +141,31 @@ gulp.task('clean:index', function() {
   return del.sync('index.html');
 });
 
-// Section 3.1: Move Index
+//// Section 3.1: Move Index
 gulp.task('move:index', function () {
   return gulp.src('dist/index.html')
   .pipe(rename("index.html"))
   .pipe(gulp.dest("."));
 });
 
-// Section 3.2: Clean Assets
+//// Section 3.2: Clean Assets
 gulp.task('clean:assets', function() {
   return del.sync('assets');
 });
 
-// Section 3.3: Move Assets
+//// Section 3.3: Move Assets
 gulp.task('move:dist', function () {
   return gulp.src('dist/assets/**/*')
     .pipe(gulp.dest('./assets'));
 });
 
-//// Section 3.4: Clean GitHub Pages
+//// Section 3.4: Move Views
+gulp.task('move:views', function () {
+  return gulp.src('dist/views/**/*')
+    .pipe(gulp.dest('./views'));
+});
+
+//// Section 3.5: Clean GitHub Pages
 gulp.task('clean:ghp', function (callback) {
   runSequence(
     ['clean:index','clean:assets'],
@@ -160,16 +173,16 @@ gulp.task('clean:ghp', function (callback) {
   );  
 });
 
-//// Section 3.4: Move generated files from dist/ to / (Others Apps - to show in GitHub Pages)
+//// Section 3.6: Move generated files from dist/ to / (Others Apps - to show in GitHub Pages)
 gulp.task('move:ghp', function (callback) {
   runSequence(
-    ['move:index', 'move:dist'],
+    ['move:index', 'move:dist', 'move:views'],
     'clean:dist',
     callback
   );  
 });
 
-//// Section 3.5: BuildTask
+//// Section 3.7: BuildTask
 gulp.task('build:ghp', function (callback) {
   runSequence(
     'clean:ghp',
