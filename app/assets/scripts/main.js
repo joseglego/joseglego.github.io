@@ -28,4 +28,14 @@ $(document).ready(function() {
   
   // Match Heigth
   $('.ido').matchHeight();
+
+  // Slick
+  $('#ac').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    fade: true
+  });
 });

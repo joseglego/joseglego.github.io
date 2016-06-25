@@ -106,11 +106,24 @@ gulp.task('clean:dist', function() {
   return del.sync('dist');
 });
 
-//// Section 2.5: Build Task
+//// Section 2.5: Move slick files
+gulp.task('copy:slick-font', function () {
+  return gulp.src('app/bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/assets/styles/fonts'));
+});
+
+gulp.task('copy:slick-gif', function () {
+  return gulp.src('app/bower_components/slick-carousel/**/*.gif')
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/assets/styles'));
+});
+
+//// Section 2.6: Build Task
 gulp.task('build:dist', function (callback) {
   runSequence(
     ['clean:dist'], 
-    ['useref', 'copy:images', 'copy:fonts', 'copy:files'],
+    ['useref', 'copy:images', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif'],
     callback
   );
 });
