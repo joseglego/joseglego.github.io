@@ -23,6 +23,9 @@ a {
     color: white;
     background-color: rgba(0, 0, 0, 0.7); }
 
+#tools h3 {
+  margin-top: 30px; }
+
 .section {
   border-top: #d1d1d1 1px solid;
   background: white;
