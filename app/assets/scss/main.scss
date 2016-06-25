@@ -8,6 +8,7 @@ $font-secondary: 'Oxygen', sans-serif;
 
 $font-primary-color: #333333;
 $font-secondary-color: #c0c0c0;;
+$font-third-color: #696969;
 
 $lego-primary-color: #e21900;
 $lego-secondary-color: #111;
@@ -137,6 +138,10 @@ a {
   }
 }
 
+h3 {
+  font-family: $font-primary;
+}
+
 .text-font-primary {
   font-family: $font-primary;
 }
@@ -162,4 +167,30 @@ a {
 .text-lego-secondary-inverse {
   @include lego-secondary;
   color: $lego-secondary-color;
+}
+
+
+.text-muted {
+  font-family: 'Oxygen', sans-serif;
+  color: $font-third-color;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.heading-divider {
+  width: 60px;
+  height: 2px;
+  display: block;
+  background-color: $lego-primary-color;
+  padding: 0 !important;
+  margin: 10px auto 20px;
+}
+
+.heading-left {
+  margin-left: 0px;
+}
+
+
+.slick-slide img {
+  width: 100%;
 }
