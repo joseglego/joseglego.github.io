@@ -34,6 +34,9 @@ dd {
 #tools h3 {
   margin-top: 30px; }
 
+#contact .container .col-sm-6 {
+  margin-bottom: 30px; }
+
 .section {
   border-top: #d1d1d1 1px solid;
   background: white;
@@ -61,7 +64,7 @@ dd {
 .card {
   margin-bottom: 20px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); }
-  #ido .card {
+  #ido .card, #contact .card {
     padding: 2em 1em;
     background: white; }
   .card .card-body {

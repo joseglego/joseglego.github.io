@@ -1,7 +1,11 @@
-$(document).ready(function() {
-  // Section 0: Functions
+// Secion X: Name          # Line 0
+//// X. Title              # Line 1
+// Line 0: Inidcate Section { 0. Functions | 1. EventHandlers | 2. Init & Data}
+// Line 1: Indicate Module & Small description (In extends sections this is helpful
 
-  //// SameSize: Screen - Index
+$(document).ready(function() {  
+  // Section 0: Functions
+  //// 0. SameSize: Screen - Index
   var setIndexSize = function() {
     var windowSize = $(window).height();
     var textSize = $($('#index div')[0]).outerHeight();
@@ -14,44 +18,61 @@ $(document).ready(function() {
     };
   };
 
-  // Section 1: Data & Init;
-  //// Section 1.0; Set Index
-  setIndexSize();
-  $('#index').backstretch([
-    './assets/images/backgrounds/index0.jpg',
-    './assets/images/backgrounds/index1.jpg',
-    './assets/images/backgrounds/index2.jpg'    
-  ], {
-    duration: 4000,
-    fade: 750
-  });
-  
-  // Match Heigth
-  $('.ido').matchHeight();
-
-  // Slick
-  $('#ac').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    infinite: true,
-    fade: true
-  });
-
-  // Modal Projects
+  //// 0. Modal Projects
   var openModal = function (project) {
     $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
     $('#modal-content').load('views/projects/'+project+'.html');
     $('#modal').modal();
   };
 
-  // Events Handle
+  //// 0. Waiting Message: Show Message
+  var waitingStart = function () {
+    sending = swal("Wait...", "Sending your email. It will close when finish.");
+  };
+
+  //// 0. Waiting Message: Close Message
+  var waitingStop = function () {
+    sending.close();
+  };
+
+  //// 0. Send Email
+  var sendEmail = function () {
+    $.ajax({
+      url: "https://formspree.io/me@joseglego.io",
+      method: "POST",
+      data: {
+        name: $('#name').val(),
+        message: $('#message').val(),
+        email: $('#email').val(),
+        _subject: $('#subject').val()
+      },
+      dataType: "json",
+      beforeSend: waitingStart
+    }).done(function (data) {
+      $('#name').val('');
+      $('#email').val('');
+      $('#name').val('');
+      $('#subject').val('');
+      $('#message').val('');
+      swal.close();
+      setTimeout(function(){
+        swal("Great", "Your email was sent. I will contact you, "+name+", soon. Thank you", "success");
+      }, 500);
+    }).fail(function (response) {
+      swal.close();
+      setTimeout(function(){
+        swal("Oops...", "An error ocurred. Please, try again send the email!", "error");
+      },500);
+    });
+  };
+
+  // Section 1: Events Handler
+  //// 1. When click on Project
   $('.open-modal').on('click', function () {
     openModal($(this).attr('id'));
   });
 
-    // Change Carousel Size
+  //// 1. Change Carousel Size
   $('#modal-content').on('click','#carousel-change', function () {
     var size = parseInt($('#carousel-container').attr('data-size'));
     var carousel = $('#carousel-container');
@@ -73,4 +94,72 @@ $(document).ready(function() {
       break;
     }
   });
+
+  //// 1. FormValidation
+  $contactFormValidator = $('#contact-form').validate({
+    highlight: function (element) {
+      $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+    },
+    success: function (element) {
+      $(element).closest('.form-group').removeClass('has-error');
+      $(element).remove();
+    },
+    errorPlacement: function (error, element) {
+      element.parent().append(error);
+    },
+    rules: {
+      name: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      message: {
+        required: true
+      }
+    },
+    submitHandler: function () {      
+      sendEmail();
+    }
+  });
+
+  //// 1. Click on Email@ContactInfo
+  $('#go-to-email').click(function () {
+    $('#name').focus();
+    sweetAlert({
+      title: "Write Me",
+      text: "You can write me though the Contact form. You will be writing your name when this message closes (it will close automatically).",
+      timer: 7000,
+      showConfirmButton: true
+    });
+  });
+  
+  // Section 2: Data & Init;
+  //// 2; Set Index
+  setIndexSize();
+  $('#index').backstretch([
+    './assets/images/backgrounds/index0.jpg',
+    './assets/images/backgrounds/index1.jpg',
+    './assets/images/backgrounds/index2.jpg'    
+  ], {
+    duration: 4000,
+    fade: 750
+  });
+  
+  //// 2. Match Heigth
+  $('.ido').matchHeight();
+  $('.experience').matchHeight(); 
+  $('.contact').matchHeight();
+ 
+  //// 2. Slick
+  $('#ac').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    fade: true
+  });
+
 });

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
     <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
     <!-- endbuild -->
     <!--build:css assets/styles/main.min.css -->    
     <link rel="stylesheet" href="assets/styles/main.css">
@@ -256,7 +257,7 @@
       <!-- BeginSection: Education -->
       <div id="education" class="section">
         <div class="container">
-          <h2 class="text-center"><span class="lego-primary">Education</span></h2>
+          <h2 class="text-center"><span class="text-lego-primary">Education</span></h2>
           <div class="divider text-center">
             <i class="fa fa-book fa-lg"></i>
           </div>
@@ -459,6 +460,78 @@
         </div>
       </div>
       <!-- EndSection: Tools -->
+
+      <!-- BeginSection: Contact -->
+      <div id="contact" class="section section-sec">
+        <div class="container">
+          <h2 class="text-center"><span class="text-lego-primary">Contact</span></h2>
+          <div class="divider text-center">
+            <i class="fa fa-commenting fa-lg"></i>
+          </div>
+          <div class="col-sm-6 text-left">
+            <div id="write-me" class="card" data-mh="contact">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h2>Contact Form</h2>
+                  <div class="heading-divider heading-left"></div>
+                  <form id="contact-form">
+                    <div class="form-group">
+                      <input name="name" id="name" type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                      <input name="email" id="email" type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <input name="subject" id="subject" type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                      <textarea name="message" id="message" class="form-control" rows="3" placeholder="Text"></textarea>
+                    </div>
+                    <input type="submit" id="leButton" class="btn btn-danger btn-block" value="Send Email">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div id="media-me" class="card" data-mh="contact">
+              <div class="row text-center">
+                <div class="col-sm-12">
+                  <h2 class="text-left">Contact Info</h2>
+                  <div class="heading-divider heading-left"></div>
+                </div>
+                <a target="_blank" href="https://ve.linkedin.com/in/joseglego" class="col-xs-6 col-sm-6">
+                  <div class="outline outline-mini">
+                    <i class="fa fa-linkedin"></i>
+                  </div>
+                  in/joseglego
+                </a>
+                <a target="_blank" href="https://github.com/joseglego" class="col-xs-6 col-sm-6">
+                  <div class="outline outline-mini">
+                    <i class="fa fa-github"></i>
+                  </div>
+                  joseglego
+                </a>
+                <a id="go-to-email" href="javascript:;" class="col-xs-6 col-sm-6">
+                  <div class="outline outline-mini">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  me@joseglego.io
+                </a>
+                <a target="_blank" href="https://www.google.com/maps/place/Vargas,+Venezuela/@10.5072695,-84.7410292,4z/data=!4m2!3m1!1s0x8c2a599c535f287d:0x9a2d36edf7320638" class="col-xs-6 col-sm-6">
+                  <div class="outline outline-mini">
+                    <i class="fa fa-map-marker"></i>
+                  </div>
+                  Vargas, Venezuela<br/>
+                  Remote - Willing to Relocate
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- EndSection: Tools -->
       
       <!-- BeginSection: Footer -->
       <div id="footer">
@@ -503,6 +576,8 @@
       <script src="bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
       <script src="bower_components/matchHeight/dist/jquery.matchHeight.js"></script>
       <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+      <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+      <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
       <!-- endbuild -->
       
       <!--build:js assets/scripts/main.min.js -->
