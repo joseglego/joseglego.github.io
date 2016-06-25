@@ -8,10 +8,18 @@ body {
   position: relative;
   color: #333333;
   font-family: "Oxygen", sans-serif;
-  font-size: 15px; }
+  font-size: 15px;
+  font-weight: 300; }
 
 a {
   cursor: pointer; }
+
+dt {
+  margin: 0px 0px 0px 2.14285714em;
+  font-family: "Montserrat", sans-serif; }
+
+dd {
+  margin: 0px 0px 15px 4.3em; }
 
 /* IDs & Classes CSS*/
 #index {
@@ -223,3 +231,7 @@ h3 {
 
 .modal-body .project h4 {
   text-align: center; }
+
+@media screen and (min-width: 768px) {
+  .border-right {
+    border-right: 2px solid #e21900; } }
