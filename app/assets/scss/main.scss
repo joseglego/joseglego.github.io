@@ -31,10 +31,20 @@ body {
   color: $font-primary-color;
   font-family: $font-secondary;
   font-size: 15px;
+  font-weight: 300;
 }
 
 a {
   cursor: pointer;
+}
+
+dt {
+    margin: 0px 0px 0px 2.14285714em;
+    font-family: $font-primary;
+}
+
+dd {
+    margin: 0px 0px 15px 4.3em;
 }
 
 /* IDs & Classes CSS*/
@@ -55,6 +65,7 @@ a {
     margin-top: 30px;
   }
 }
+
 .section {
   border-top: #d1d1d1 1px solid;
   background: $bg-primary-color;
@@ -326,5 +337,11 @@ h3 {
   
   .project h4 {
     text-align:center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .border-right {
+    border-right: 2px solid #e21900;
   }
 }
