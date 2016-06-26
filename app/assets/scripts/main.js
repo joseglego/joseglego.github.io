@@ -66,6 +66,25 @@ $(document).ready(function() {
     });
   };
 
+  //// 0. Float Navbar
+  var floatNavbar = function() {
+    var y = $(document).scrollTop();
+    var windowSize = $(window).height();
+    var header = $('#menu');
+    
+    //show the header fixed
+    if (y >= windowSize) {
+      header.addClass('navbar-fixed-top');
+    } else {
+      header.removeClass('navbar-fixed-top');
+    }
+
+    // show the active element
+    if (y > $('#experience').position().top) {
+      $('ul-menu li').removeClass('active');
+    }
+  };
+  
   // Section 1: Events Handler
   //// 1. When click on Project
   $('.open-modal').on('click', function() {
@@ -161,4 +180,25 @@ $(document).ready(function() {
     infinite: true,
     fade: true
   });
+
+  //// 2. Fixed Navbar
+  $(document).scroll(function() {
+    floatNavbar();
+  });
+
+  // Close Menu when select Section
+  $('#navbar-lego').click('li', function() {
+    $('#navbar-lego').collapse('hide');
+  });
+  
+  //// 2. SmootScroll
+  smoothScroll.init({
+    offset: 0 // Integer. How far to offset the scrolling anchor location in pixels
+  });
+
+  //// 2. ScrollSpy
+  $('body').scrollspy({ target: '#navbar-lego', offset: 64});
+
+  //// 2. Tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 });

@@ -165,6 +165,34 @@ a {
   .section-sec .divider .fa {
     background: #f1f1f1; }
 
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .navbar-lego {
+    font-size: 12px; }
+  .new-card h3 {
+    font-size: 20px; }
+  a.navbar-brand {
+    font-size: 22px; }
+  .new-card .card-links {
+    position: static;
+    opacity: 1; } }
+
+.navbar-lego {
+  background: #212121;
+  border-radius: 0px;
+  margin-bottom: 0px; }
+  .navbar-lego .navbar-toggle {
+    border: 2px solid #e21900;
+    color: white; }
+  .navbar-lego a {
+    color: white;
+    border-bottom: 3px solid #212121; }
+  .navbar-lego li > a:focus {
+    background: #212121; }
+  .navbar-lego li > a:hover {
+    background-color: #e21900; }
+  .navbar-lego li.active > a {
+    border-bottom: 3px solid #e21900; }
+
 #contact .container .col-sm-6 {
   margin-bottom: 30px; }
 
@@ -195,7 +223,7 @@ a {
   text-align: center;
   background: transparent; }
   #scroll-down .text-font-secondary {
-    font-size: 14px; }
+    font-size: 12px; }
   #scroll-down:hover {
     text-decoration: none; }
 

@@ -1,0 +1,47 @@
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .navbar-lego {
+    font-size: 12px;
+  }
+
+  .new-card h3 {
+    font-size: 20px;
+  }
+
+  a.navbar-brand {
+    font-size: 22px;
+  }
+  
+  .new-card .card-links{
+    position: static;
+    opacity: 1;
+  }
+}
+
+.navbar-lego {
+  background: $bg-third-color;
+  border-radius: 0px;
+  margin-bottom:0px;
+
+  .navbar-toggle {
+    border: 2px solid $lego-primary-color;
+    color: white;
+  }
+  a  {
+    color: white;
+    border-bottom: 3px solid $bg-third-color;
+  }
+
+  li>a:focus {
+    background: $bg-third-color;
+  }
+  
+  li>a:hover {
+    background-color: $lego-primary-color;
+  }
+
+  li.active >a {
+    border-bottom: 3px solid $lego-primary-color;
+  }
+  
+}
