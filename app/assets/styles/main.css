@@ -41,9 +41,13 @@ dd {
   border-top: #d1d1d1 1px solid;
   background: white;
   padding: 60px 0px 100px; }
+  .section .divider .fa {
+    background: white; }
 
 .section-sec {
   background: #f1f1f1; }
+  .section-sec .divider .fa {
+    background: #f1f1f1; }
 
 .divider {
   margin: 20px 0px 10px;
@@ -57,9 +61,6 @@ dd {
 @media screen and (min-width: 768px) {
   .divider {
     margin: 20px 30% 20px; } }
-
-.section .divider .fa {
-  background: transparent; }
 
 .card {
   margin-bottom: 20px;

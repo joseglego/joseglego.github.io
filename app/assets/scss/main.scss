@@ -77,10 +77,18 @@ dd {
   border-top: #d1d1d1 1px solid;
   background: $bg-primary-color;
   padding: 60px 0px 100px;
+  
+  .divider .fa {
+    background: $bg-primary-color;
+  }
 }
 
 .section-sec {
   background: $bg-secondary-color;
+
+  .divider .fa {
+    background: $bg-secondary-color;
+  }
 }
 
 .divider {
@@ -98,10 +106,6 @@ dd {
   .divider {
     margin: 20px 30% 20px;
   }
-}
-
-.section .divider .fa { 
-  background: transparent;
 }
 
 .card {
