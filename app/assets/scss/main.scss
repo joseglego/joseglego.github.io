@@ -1,0 +1,42 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+@import "modules/base";
+@import "modules/tipography";
+
+@import "elements/cards";
+@import "elements/heading";
+@import "elements/modals";
+@import "elements/outline";
+@import "elements/section";
+@import "elements/navbar";
+
+@import "partials/contact";
+@import "partials/footer";
+@import "partials/index";
+@import "partials/tools";
+
+/* General CSS */
+body {
+  position: relative;
+  color: $font-primary-color;
+  font-family: $font-secondary;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: .1px;
+  line-height: 1.846;
+}
+
+dt {
+    margin: 0px 0px 0px 2.14285714em;
+    font-family: $font-primary;
+}
+
+dd {
+    margin: 0px 0px 15px 4.3em;
+}
+
+.slick-slide img {
+  width: 100%;
+}

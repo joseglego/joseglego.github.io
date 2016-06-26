@@ -1,0 +1,16 @@
+{
+  "globals": {
+    "$":true 
+  },
+  "rules": {
+    "quotes": [2, "single", "avoid-escape"],
+    "eqeqeq": 2,
+    "brace-style": [2, "stroustrup"],
+    "eol-last": 0,
+    "no-nested-ternary": 1,
+    "no-multiple-empty-lines": 2,
+    "padded-blocks": [1, "never"],
+    "space-before-function-paren": [1, "never"],
+    "space-before-blocks": [1, "always"],
+  }
+}

@@ -1,0 +1,42 @@
+#tools {
+  h3 {
+    margin-top: 30px;
+  }
+}
+
+.tools {
+  .row > a, .row > div {
+    padding: 10px;
+    border-right: 2px solid $border-primary-color;
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .row.border-bottom {
+      border-bottom: 2px solid $border-primary-color;
+    }
+  }
+  .row > a:last-child {
+    border-right: none;
+  }
+
+  img {
+    width: 100%;
+    max-width: 160px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity:1;
+    }
+  }
+
+  .modal & img {
+    max-width: 130px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .border-right {
+    border-right: 2px solid #e21900;
+  }
+}
