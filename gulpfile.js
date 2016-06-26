@@ -61,7 +61,7 @@ gulp.task('lint', function () {
 });
  
 //// Section 1.3: Watch HTML, JS & Sass
-gulp.task('watch', ['browserSync', 'sass'], function (){
+gulp.task('serve', ['browserSync', 'sass'], function (){
   gulp.watch('app/assets/scss/**/*.scss', ['sass']); 
   gulp.watch('app/*.html', browserSync.reload); 
   gulp.watch('app/views/**/*.html', browserSync.reload); 
