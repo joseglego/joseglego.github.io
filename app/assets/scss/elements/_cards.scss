@@ -1,0 +1,86 @@
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  
+  #ido &, #contact & {
+    padding: 2em 1em;
+    background: white;
+  }
+  
+  .card-body {
+    padding: 5px 5px 10px;
+    background:white;
+    text-align: right;
+
+    h3 {
+      margin: 0px;
+      padding: 0px;
+      text-align: left;
+    }
+
+    .heading-divider {
+      margin: 5px 0px;
+    }
+  }
+  
+  &:hover {
+    .card-img {
+      opacity: 0.8;
+    }
+    
+    .card-links {
+      opacity: 1;
+    }
+  }
+  
+  img {
+    height: 150px;
+  }
+  
+  .card-img {
+    position: relative;
+    padding: 5px;
+    background: white;;
+    text-align: center;
+  }
+  
+  .card-links-1 {
+    span, a {
+      width: 100%;
+    }
+  }
+  .card-links-2 {
+    span, a {
+      width: 50%;
+    }
+  }
+  
+  .card-links {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    z-index: 4;
+    overflow: hidden;
+    opacity: 0;
+    
+    span, a {
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      display: inline-block;
+      float: left;
+      background: $lego-primary-color;
+      color:white;
+      text-decoration:none;
+      border-right: 1px solid white;
+      &:hover {
+        text-decoration:none;
+        cursor:pointer;
+        color: $lego-primary-color;
+        background: white;
+      }
+    }
+  }
+}

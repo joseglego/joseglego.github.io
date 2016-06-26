@@ -1,0 +1,32 @@
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-body {
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .heading-left {
+    margin: 0px 0px 5px 0px;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  a.left.carousel-control, a.right.carousel-control {
+    background: transparent;
+  }
+  
+  .project h4 {
+    text-align:center;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 90%;
+  }
+}

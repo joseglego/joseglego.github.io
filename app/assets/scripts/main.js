@@ -19,61 +19,80 @@ $(document).ready(function() {
   };
 
   //// 0. Modal Projects
-  var openModal = function (project) {
+  var openModal = function(project) {
     $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
     $('#modal-content').load('views/projects/'+project+'.html');
     $('#modal').modal();
   };
 
   //// 0. Waiting Message: Show Message
-  var waitingStart = function () {
-    sending = swal("Wait...", "Sending your email. It will close when finish.");
+  var waitingStart = function() {
+    sending = swal('Wait...', 'Sending your email. It will close when finish.');
   };
 
   //// 0. Waiting Message: Close Message
-  var waitingStop = function () {
+  var waitingStop = function() {
     sending.close();
   };
 
   //// 0. Send Email
-  var sendEmail = function () {
+  var sendEmail = function() {
     $.ajax({
-      url: "https://formspree.io/me@joseglego.io",
-      method: "POST",
+      url: 'https://formspree.io/me@joseglego.io',
+      method: 'POST',
       data: {
         name: $('#name').val(),
         message: $('#message').val(),
         email: $('#email').val(),
         _subject: $('#subject').val()
       },
-      dataType: "json",
+      dataType: 'json',
       beforeSend: waitingStart
-    }).done(function (data) {
+    }).done(function(data) {
       $('#name').val('');
       $('#email').val('');
       $('#name').val('');
       $('#subject').val('');
       $('#message').val('');
       swal.close();
-      setTimeout(function(){
-        swal("Great", "Your email was sent. I will contact you, "+name+", soon. Thank you", "success");
+      setTimeout(function() {
+        swal('Great', 'Your email was sent. I will contact you, '+name+', soon. Thank you', 'success');
       }, 500);
-    }).fail(function (response) {
+    }).fail(function(response) {
       swal.close();
-      setTimeout(function(){
-        swal("Oops...", "An error ocurred. Please, try again send the email!", "error");
+      setTimeout(function() {
+        swal('Oops...', 'An error ocurred. Please, try again send the email!', 'error');
       },500);
     });
   };
 
+  //// 0. Float Navbar
+  var floatNavbar = function() {
+    var y = $(document).scrollTop();
+    var windowSize = $(window).height();
+    var header = $('#menu');
+    
+    //show the header fixed
+    if (y >= windowSize) {
+      header.addClass('navbar-fixed-top');
+    } else {
+      header.removeClass('navbar-fixed-top');
+    }
+
+    // show the active element
+    if (y > $('#experience').position().top) {
+      $('ul-menu li').removeClass('active');
+    }
+  };
+  
   // Section 1: Events Handler
   //// 1. When click on Project
-  $('.open-modal').on('click', function () {
+  $('.open-modal').on('click', function() {
     openModal($(this).attr('id'));
   });
 
   //// 1. Change Carousel Size
-  $('#modal-content').on('click','#carousel-change', function () {
+  $('#modal-content').on('click','#carousel-change', function() {
     var size = parseInt($('#carousel-container').attr('data-size'));
     var carousel = $('#carousel-container');
     carousel.removeClass();
@@ -97,14 +116,14 @@ $(document).ready(function() {
 
   //// 1. FormValidation
   $contactFormValidator = $('#contact-form').validate({
-    highlight: function (element) {
+    highlight: function(element) {
       $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
     },
-    success: function (element) {
+    success: function(element) {
       $(element).closest('.form-group').removeClass('has-error');
       $(element).remove();
     },
-    errorPlacement: function (error, element) {
+    errorPlacement: function(error, element) {
       element.parent().append(error);
     },
     rules: {
@@ -119,17 +138,17 @@ $(document).ready(function() {
         required: true
       }
     },
-    submitHandler: function () {      
+    submitHandler: function() {
       sendEmail();
     }
   });
 
   //// 1. Click on Email@ContactInfo
-  $('#go-to-email').click(function () {
+  $('#go-to-email').click(function() {
     $('#name').focus();
     sweetAlert({
-      title: "Write Me",
-      text: "You can write me though the Contact form. You will be writing your name when this message closes (it will close automatically).",
+      title: 'Write Me',
+      text: 'You can write me though the Contact form. You will be writing your name when this message closes (it will close automatically).',
       timer: 7000,
       showConfirmButton: true
     });
@@ -162,4 +181,24 @@ $(document).ready(function() {
     fade: true
   });
 
+  //// 2. Fixed Navbar
+  $(document).scroll(function() {
+    floatNavbar();
+  });
+
+  // Close Menu when select Section
+  $('#navbar-lego').click('li', function() {
+    $('#navbar-lego').collapse('hide');
+  });
+  
+  //// 2. SmootScroll
+  smoothScroll.init({
+    offset: 0 // Integer. How far to offset the scrolling anchor location in pixels
+  });
+
+  //// 2. ScrollSpy
+  $('body').scrollspy({ target: '#navbar-lego', offset: 64});
+
+  //// 2. Tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 });

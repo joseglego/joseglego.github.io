@@ -2,28 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
-/*  Variables */
-$font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'Oxygen', sans-serif;
+@import "modules/base";
+@import "modules/tipography";
 
-$font-primary-color: #333333;
-$font-secondary-color: #c0c0c0;;
-$font-third-color: #696969;
+@import "elements/cards";
+@import "elements/heading";
+@import "elements/modals";
+@import "elements/outline";
+@import "elements/section";
+@import "elements/navbar";
 
-$lego-primary-color: #e21900;
-$lego-secondary-color: #111;
-$lego-third-color: #fff;
-
-$bg-primary-color: white; 
-$bg-secondary-color: #f1f1f1;
-$bg-third-color: #212121;
-
-$border-primary-color: #f1f1f1;
-
-/* Mixinx */
-@mixin lego-secondary {
-  font: 300 1em 'Oxygen' $font-secondary;
-}
+@import "partials/contact";
+@import "partials/footer";
+@import "partials/index";
+@import "partials/tools";
 
 /* General CSS */
 body {
@@ -32,10 +24,8 @@ body {
   font-family: $font-secondary;
   font-size: 15px;
   font-weight: 300;
-}
-
-a {
-  cursor: pointer;
+  letter-spacing: .1px;
+  line-height: 1.846;
 }
 
 dt {
@@ -47,308 +37,6 @@ dd {
     margin: 0px 0px 15px 4.3em;
 }
 
-/* IDs & Classes CSS*/
-#index {
-  border: 0px;
-  padding: 0px;
-  background: rgba(44, 62, 80, 0.3)  50% 0px / cover;
-
-  div {
-    padding: 20px;
-    color: white;
-    background-color: rgba(0,0,0,0.7);
-  }
-}
-
-#tools {
-  h3 {
-    margin-top: 30px;
-  }
-}
-
-
-#contact {
-  .container .col-sm-6 {
-    margin-bottom: 30px;
-  }
-}
-
-.section {
-  border-top: #d1d1d1 1px solid;
-  background: $bg-primary-color;
-  padding: 60px 0px 100px;
-}
-
-.section-sec {
-  background: $bg-secondary-color;
-}
-
-.divider {
-  margin: 20px 0px 10px;
-  border-top: 2px solid $lego-primary-color;
-  line-height: 15px;
-  .fa {
-    width: 50px;
-    position: relative;
-    top: -10px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .divider {
-    margin: 20px 30% 20px;
-  }
-}
-
-.section .divider .fa { 
-  background: transparent;
-}
-
-.card {
-  margin-bottom: 20px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  
-  #ido &, #contact & {
-    padding: 2em 1em;
-    background: white;
-  }
-  
-  .card-body {
-    padding: 5px 5px 10px;
-    background:white;
-    text-align: right;
-
-    h3 {
-      margin: 0px;
-      padding: 0px;
-      text-align: left;
-    }
-
-    .heading-divider {
-      margin: 5px 0px;
-    }
-  }
-  
-  &:hover {
-    .card-img {
-      opacity: 0.8;
-    }
-    
-    .card-links {
-      opacity: 1;
-    }
-  }
-  
-  img {
-    height: 150px;
-  }
-  
-  .card-img {
-    position: relative;
-    padding: 5px;
-    background: white;;
-    text-align: center;
-  }
-  
-  .card-links-1 {
-    span, a {
-      width: 100%;
-    }
-  }
-  .card-links-2 {
-    span, a {
-      width: 50%;
-    }
-  }
-  
-  .card-links {
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    z-index: 4;
-    overflow: hidden;
-    opacity: 0;
-    
-    span, a {
-      font-size: 20px;
-      line-height: 40px;
-      text-align: center;
-      display: inline-block;
-      float: left;
-      background: $lego-primary-color;
-      color:white;
-      text-decoration:none;
-      border-right: 1px solid white;
-      &:hover {
-        text-decoration:none;
-        cursor:pointer;
-        color: $lego-primary-color;
-        background: white;
-      }
-    }
-  }
-}
-
-.outline {
-  height: 150px;
-  width: 150px;
-  margin: 0 auto 10px;
-  border: 4px solid rgba(192,57,43,0.4);
-  border-radius: 50%;
-  -o-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-
-  .fa {
-    line-height: 150px;
-    font-size: 75px;
-    color:#C0392B;
-  }
-}
-
-.outline {
-  height: 100px;
-  width: 100px;
-  .fa {
-    line-height: 100px;
-    font-size: 50px;
-  }
-}
-
-#footer {
-  padding: 30px 5px;
-  background: $bg-third-color;
-  color: $font-secondary-color;
-  
-  a {
-    color: white;
-  }
-}
-
-h3 {
-  font-family: $font-primary;
-}
-
-.text-font-primary {
-  font-family: $font-primary;
-}
-
-.text-font-secondary {
-  font-family: $font-secondary;
-}
-
-.text-color-primary {
-  color: $lego-primary-color;
-}
-
-.text-lego-primary {
-  font: bold 1.1em $font-primary;
-  color: $lego-primary-color;
-}
-
-.text-lego-secondary-default {
-  @include lego-secondary
-  color: $lego-third-color;
-}
-
-.text-lego-secondary-inverse {
-  @include lego-secondary;
-  color: $lego-secondary-color;
-}
-
-
-.text-muted {
-  font-family: 'Oxygen', sans-serif;
-  color: $font-third-color;
-  font-weight: 300;
-  font-size: 0.9em;
-}
-
-.heading-divider {
-  width: 60px;
-  height: 2px;
-  display: block;
-  background-color: $lego-primary-color;
-  padding: 0 !important;
-  margin: 10px auto 20px;
-}
-
-.heading-left {
-  margin-left: 0px;
-}
-
-
 .slick-slide img {
   width: 100%;
-}
-
-.tools {
-  .row > a, .row > div {
-    padding: 10px;
-    border-right: 2px solid $border-primary-color;
-    text-align: center;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .row.border-bottom {
-      border-bottom: 2px solid $border-primary-color;
-    }
-  }
-  .row > a:last-child {
-    border-right: none;
-  }
-
-  img {
-    width: 100%;
-    max-width: 160px;
-    opacity: 0.8;
-
-    &:hover {
-      opacity:1;
-    }
-  }
-
-  .modal & img {
-    max-width: 130px;
-  }
-}
-
-@media (min-width: 992px) {
-  .modal-lg {
-    width: 90%;
-  }
-}
-.modal-content {
-  border-radius: 0;
-}
-
-.modal-body {
-  h4 {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 20px;
-    margin-bottom: 5px;
-  }
-  .heading-left {
-    margin: 0px 0px 5px 0px;
-  }
-  
-  img {
-    width: 100%;
-  }
-  
-  a.left.carousel-control, a.right.carousel-control {
-    background: transparent;
-  }
-  
-  .project h4 {
-    text-align:center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .border-right {
-    border-right: 2px solid #e21900;
-  }
 }
