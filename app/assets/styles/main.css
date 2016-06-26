@@ -262,7 +262,9 @@ body {
   color: #333333;
   font-family: "Oxygen", sans-serif;
   font-size: 15px;
-  font-weight: 300; }
+  font-weight: 300;
+  letter-spacing: .1px;
+  line-height: 1.846; }
 
 dt {
   margin: 0px 0px 0px 2.14285714em;
