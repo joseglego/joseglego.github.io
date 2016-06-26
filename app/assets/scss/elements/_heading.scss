@@ -1,0 +1,29 @@
+.divider {
+  margin: 20px 0px 10px;
+  border-top: 2px solid $lego-primary-color;
+  line-height: 15px;
+  .fa {
+    width: 50px;
+    position: relative;
+    top: -10px;
+  }
+}
+
+.heading-divider {
+  width: 60px;
+  height: 2px;
+  display: block;
+  background-color: $lego-primary-color;
+  padding: 0 !important;
+  margin: 10px auto 20px;
+}
+
+.heading-left {
+  margin-left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .divider {
+    margin: 20px 30% 20px;
+  }
+}

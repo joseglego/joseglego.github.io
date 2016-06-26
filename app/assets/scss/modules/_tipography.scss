@@ -1,0 +1,46 @@
+@mixin lego-secondary {
+  font: 300 1em 'Oxygen' $font-secondary;
+}
+
+h3 {
+  font-family: $font-primary;
+}
+
+.text-font-primary {
+  font-family: $font-primary;
+}
+
+.text-font-secondary {
+  font-family: $font-secondary;
+}
+
+.text-color-primary {
+  color: $lego-primary-color;
+}
+
+.text-lego-primary {
+  font: bold 1.1em $font-primary;
+  color: $lego-primary-color;
+}
+
+.text-lego-secondary-default {
+  @include lego-secondary
+  color: $lego-third-color;
+}
+
+.text-lego-secondary-inverse {
+  @include lego-secondary;
+  color: $lego-secondary-color;
+}
+
+.text-muted {
+  font-family: 'Oxygen', sans-serif;
+  color: $font-third-color;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+
+a {
+  cursor: pointer;
+}
