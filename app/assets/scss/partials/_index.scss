@@ -10,7 +10,6 @@
   }
 }
 
-
 #scroll-down {
   padding: 20px;
   color:white;
@@ -22,7 +21,12 @@
   text-align: center;
   background: transparent;
 
-  .text-font-seondary {
+  .text-font-secondary {
     font-size: 14px;
   }
+  
+  &:hover {
+    text-decoration: none;
+  }
+
 }

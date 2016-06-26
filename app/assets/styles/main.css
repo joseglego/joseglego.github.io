@@ -194,8 +194,10 @@ a {
   width: 100%;
   text-align: center;
   background: transparent; }
-  #scroll-down .text-font-seondary {
+  #scroll-down .text-font-secondary {
     font-size: 14px; }
+  #scroll-down:hover {
+    text-decoration: none; }
 
 #tools h3 {
   margin-top: 30px; }
