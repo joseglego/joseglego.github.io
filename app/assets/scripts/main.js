@@ -38,7 +38,7 @@ $(document).ready(function() {
   //// 0. Send Email
   var sendEmail = function() {
     $.ajax({
-      url: 'https://formspree.io/me@joseglego.io',
+      url: 'https://formspree.io/joseglego@gmail.com',
       method: 'POST',
       data: {
         name: $('#name').val(),
