@@ -31,7 +31,7 @@ $ bower install
 Why? I'm doing this because these are many images & the template. So, you wont require my images. So, You can copy if you want. But, the idea is you can use your owns. I prefer to copy them because I don't want to duplicate same images without advantage to other person and include it on the repo.
 
 ``` sh
-$ cp assets/images/ app/assets/images
+$ cp -r assets/images/ app/assets/.
 ```
 
 ## Start server
