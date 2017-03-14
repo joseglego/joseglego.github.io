@@ -15,7 +15,7 @@ It has a lot of requirements, but are imported with NPM & Bower. So, you just ne
 $ git clone git@github.com:joseglego/joseglego.github.io.git
 ```
 
-## You can download it 
+### You can download it 
 1. Go to [josegLEGO-repo]
 2. Click on `Clone or Download`
 3. Finally, click `Download ZIP`
@@ -64,12 +64,15 @@ $ gulp build:ghp                   # You must be on the root folder of the repos
 ### It's ordered by use, just for instructional purpose
 
 - root-folder/                     # In my case is joseglego.github.io folder. You can rename it.
+
   # Documentation file used in github to explain project and all stuff related to it.
   - README.md                      # This document
-  
+
+
   # Where the magic happens <3
   # It's where you can find, edit and build your webpage. Basically, you need to edit the index.html 
   # Add your images in assets/images. Edit styles in scss/main.scss and scripts on scripts
+  
   - app/                           # The source folder
     - assets/                      # The files folder (more order)
       - files/                     # Downloadable files (in my case my Resume)
@@ -86,20 +89,26 @@ $ gulp build:ghp                   # You must be on the root folder of the repos
     - index.html                   # Source page. 
     - views/                       # HTML files to import as views
 
+
   # package.json is required by npm. And it defines developments requirements. (for gulp)
   # bower.json is required by bower. And it defines Web Page requirements.
   # gulpfile.js is the task automator file uses to generated and do boring stuff related to this page.
   # In this files are all the tasks which can help you! 
+  
   - package.json                   # Requirements file
   - bower.json                     # Requirements file
   - gulpfile.js                    # Task Manager file
 
+
   # bower_components are vendor libs used by the web page
-  # node_modules are vendor libs used by gulo to help you with the boring stuff
+  # node_modules are vendor libs used by gulp to help you with the boring stuff
+  
   - bower_components/              # Vendor Libs
   - node_modules/                  # Vendor Libs
 
+
   # The web page. Minified and ready to serve it (@GitHubPages) or just copy and paste theses files on a Apache Server
+  
   - index.html                     # Generated main file (to serve in GitHubPages)
   - views/                         # Generated views files (to serve in GitHubPages)
   - assets/                        # Generated files production (to serve in GitHubPages)
