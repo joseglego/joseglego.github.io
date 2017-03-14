@@ -40,7 +40,10 @@ var runSequence = require('run-sequence');
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
+      routes: {
+        "/bower_components": "bower_components"
+      }
     }
   });
 });
