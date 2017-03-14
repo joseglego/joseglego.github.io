@@ -49,6 +49,7 @@ $(document).ready(function() {
       dataType: 'json',
       beforeSend: waitingStart
     }).done(function(data) {
+      var name = $('#name').val();
       $('#name').val('');
       $('#email').val('');
       $('#name').val('');

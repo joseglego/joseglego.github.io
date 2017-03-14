@@ -3,7 +3,7 @@
 .DS_Store
 .tmp
 node_modules/
-app/bower_components/
+bower_components/
 app/assets/images/
 app/assets/files/
 README.html
