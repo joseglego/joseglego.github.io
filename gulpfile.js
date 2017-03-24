@@ -76,7 +76,7 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 //// Section 2.0: Check HTML & Minify included HTML, CSS & JS
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
-    .pipe(useref())
+    .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
