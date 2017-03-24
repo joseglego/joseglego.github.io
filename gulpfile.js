@@ -17,7 +17,7 @@ var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
-var css = require('gulp-csso');
+var cssnano = require('gulp-cssnano');
 
 //// Images
 var imagemin = require('gulp-imagemin');
@@ -76,9 +76,9 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 //// Section 2.0: Check HTML & Minify included HTML, CSS & JS
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
-    .pipe(useref({searchPath: ['.tmp', 'app', '.'], base: 'app' }))
+    .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', css()))
+    .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
@@ -87,13 +87,13 @@ gulp.task('useref', function(){
 gulp.task('copy:images', function(){
   return gulp.src('app/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
   // Caching images that ran through imagemin
-    .pipe(imagemin())
+    .pipe(imagemin({ progressive: true}))
     .pipe(gulp.dest('dist/assets/images'));
 });
 
 //// Section 2.2: Move fonts
 gulp.task('copy:fonts', function () {
-  return gulp.src('/bower_components/**/*.{eot,svg,ttf,woff,woff2}')
+  return gulp.src('bower_components/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/fonts'));
 });
@@ -112,12 +112,12 @@ gulp.task('clean:dist', function() {
 
 //// Section 2.5: Move slick files
 gulp.task('copy:slick-font', function () {
-  return gulp.src('/bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
+  return gulp.src('bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles/fonts'));
 });
 gulp.task('copy:slick-gif', function () {
-  return gulp.src('/bower_components/slick-carousel/**/*.gif')
+  return gulp.src('bower_components/slick-carousel/**/*.gif')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles'));
 });
