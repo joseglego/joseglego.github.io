@@ -76,7 +76,7 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 //// Section 2.0: Check HTML & Minify included HTML, CSS & JS
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
-    .pipe(useref())
+    .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
@@ -93,7 +93,7 @@ gulp.task('copy:images', function(){
 
 //// Section 2.2: Move fonts
 gulp.task('copy:fonts', function () {
-  return gulp.src('app/bower_components/**/*.{eot,svg,ttf,woff,woff2}')
+  return gulp.src('bower_components/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/fonts'));
 });
@@ -112,12 +112,12 @@ gulp.task('clean:dist', function() {
 
 //// Section 2.5: Move slick files
 gulp.task('copy:slick-font', function () {
-  return gulp.src('app/bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
+  return gulp.src('bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles/fonts'));
 });
 gulp.task('copy:slick-gif', function () {
-  return gulp.src('app/bower_components/slick-carousel/**/*.gif')
+  return gulp.src('bower_components/slick-carousel/**/*.gif')
     .pipe(flatten())
     .pipe(gulp.dest('dist/assets/styles'));
 });
