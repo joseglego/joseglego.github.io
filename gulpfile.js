@@ -17,7 +17,7 @@ var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
-var cssnano = require('gulp-cssnano');
+var css = require('gulp-csso');
 
 //// Images
 var imagemin = require('gulp-imagemin');
@@ -76,9 +76,9 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 //// Section 2.0: Check HTML & Minify included HTML, CSS & JS
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
-    .pipe(useref())
+    .pipe(useref({searchPath: ['.tmp', 'app', '.'], base: 'app' }))
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulpIf('*.css', css()))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
@@ -87,7 +87,7 @@ gulp.task('useref', function(){
 gulp.task('copy:images', function(){
   return gulp.src('app/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
   // Caching images that ran through imagemin
-    .pipe(imagemin({ progressive: true}))
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/assets/images'));
 });
 
