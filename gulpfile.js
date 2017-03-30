@@ -6,6 +6,10 @@ var plugins = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'browser-sync', 'del', 'run-sequence']
 });
 var gulpIf = require('gulp-if');
+var jsFilter = plugins.filter("app/**/*.js", { restore: true });
+var cssFilter = plugins.filter("app/**/*.css", { restore: true });
+var indexHtmlFilter = plugins.filter(['app/**/*.html', '!app/index.html'], { restore: true });
+
 
 // Section 1: Watch Tasks
 //// Section 1.0: Browser Sync - Server
@@ -19,6 +23,14 @@ gulp.task('browserSync', function() {
     }
   });
 });
+
+gulp.task('browserSyncTest', function() {
+  plugins.browserSync.init({
+    server: {baseDir: '/'}
+  });
+});
+
+gulp.task('serve:test', ['browserSync', 'sass'], function (){});
 
 //// Section 1.1: Sass Task
 gulp.task('sass', function(){
@@ -49,9 +61,12 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
     .pipe(plugins.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe(gulpIf('*.js', plugins.uglify()))
-    .pipe(gulpIf('*.css', plugins.csso()))
-    .pipe(gulpIf('*.html', plugins.htmlmin({collapseWhitespace: true})))
+    .pipe(jsFilter).pipe(plugins.uglify()).pipe(jsFilter.restore) // JS
+    .pipe(cssFilter).pipe(plugins.csso()).pipe(cssFilter.restore) // CSS
+    .pipe(indexHtmlFilter).pipe(plugins.rev())                    // HTML 0
+    .pipe(plugins.htmlmin({collapseWhitespace: true}))            // HTML 1
+    .pipe(indexHtmlFilter.restore)                                // HTML 2
+    .pipe(plugins.revReplace())                                   // Substitute in new filenames
     .pipe(gulp.dest('dist'));
 });
 
