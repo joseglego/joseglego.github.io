@@ -8,7 +8,7 @@ var plugins = require('gulp-load-plugins')({
 var gulpIf = require('gulp-if');
 var jsFilter = plugins.filter("app/**/*.js", { restore: true });
 var cssFilter = plugins.filter("app/**/*.css", { restore: true });
-var indexHtmlFilter = plugins.filter(['app/**/*.html', '!app/index.html'], { restore: true });
+var indexHtmlFilter = plugins.filter(['**/*', '!**/index.html'], { restore: true });
 
 
 // Section 1: Watch Tasks
@@ -61,12 +61,11 @@ gulp.task('serve', ['browserSync', 'sass'], function (){
 gulp.task('useref', function(){
   return gulp.src('app/index.html')
     .pipe(plugins.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe(jsFilter).pipe(plugins.uglify()).pipe(jsFilter.restore) // JS
-    .pipe(cssFilter).pipe(plugins.csso()).pipe(cssFilter.restore) // CSS
-    .pipe(indexHtmlFilter).pipe(plugins.rev())                    // HTML 0
-    .pipe(plugins.htmlmin({collapseWhitespace: true}))            // HTML 1
-    .pipe(indexHtmlFilter.restore)                                // HTML 2
-    .pipe(plugins.revReplace())                                   // Substitute in new filenames
+    .pipe(jsFilter).pipe(plugins.uglify()).pipe(jsFilter.restore)            // JS
+    .pipe(cssFilter).pipe(plugins.csso()).pipe(cssFilter.restore)            // CSS
+    .pipe(indexHtmlFilter).pipe(plugins.rev()).pipe(indexHtmlFilter.restore) // HTML 0
+    .pipe(plugins.revReplace())
+    .pipe(gulpIf('*.html', plugins.htmlmin({collapseWhitespace: true})))     // HTML 1
     .pipe(gulp.dest('dist'));
 });
 
