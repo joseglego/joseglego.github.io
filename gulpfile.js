@@ -17,7 +17,7 @@ var useref = require('gulp-useref');
 var gulpIf = require('gulp-if');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
-var cssnano = require('gulp-cssnano');
+var csso = require('gulp-csso');
 
 //// Images
 var imagemin = require('gulp-imagemin');
@@ -78,7 +78,7 @@ gulp.task('useref', function(){
   return gulp.src('app/index.html')
     .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulpIf('*.css', csso()))
     .pipe(gulpIf('*.html', htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
