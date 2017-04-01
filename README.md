@@ -27,13 +27,6 @@ $ npm install
 $ bower install
 ```
 
-### Copy images
-Why? I'm doing this because these are many images & the template. So, you wont require my images. So, You can copy if you want. But, the idea is you can use your owns. I prefer to copy them because I don't want to duplicate same images without advantage to other person and include it on the repo.
-
-``` sh
-$ cp -r assets/images/ app/assets/.
-```
-
 ## Start server
 This app works with a npm server (Browser Sync) and watcher over important files. It re-evaluate the changes on `index.html`, `/app/assets/scss/*`, `/app/styles/*`, `/app/assets/scripts/*`, `/app/views/*`, and generated files (in case of `.scss` to `.css`) and reload the browser.
 
