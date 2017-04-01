@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
     <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
-    <!-- endbuild -->
-    
-    <!--build:css assets/styles/main.min.css -->    
     <link rel="stylesheet" href="assets/styles/main.css">
     <!-- endbuild -->
     
@@ -22,7 +19,7 @@
   <body>
     <!-- BeginSection: Index -->
     <div id="index" class="section">
-      <div class="text-center">
+      <div id="index-text" class="text-center">
         <h1><span class="text-lego-secondary-default">joseg</span><span class="text-lego-primary">LEGO</span></h1>
         <h2 class="text-font-primary">Jos&eacute; Gregorio Lezama Gonz&aacute;lez</h2>
         <h3>
@@ -168,14 +165,14 @@
           </div>
           <div id="cool" class="col-sm-6 text-justify experience">
             <div id="ac" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
-              <div><img src="assets/images/experience/experience-alanna0.jpg"></div>
-              <div><img src="assets/images/experience/experience-alanna1.jpg"></div>
-              <div><img src="assets/images/experience/experience-alanna2.jpg"></div>
-              <div><img src="assets/images/experience/experience-alanna3.jpg"></div>
-              <div><img src="assets/images/experience/experience-latch0.jpg"></div>
-              <div><img src="assets/images/experience/experience-phoebe0.jpg"></div>
-              <div><img src="assets/images/experience/experience-phoebe1.jpg"></div>
-              <div><img src="assets/images/experience/experience-phoebe2.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-alanna0.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-alanna1.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-alanna2.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-alanna3.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-latch0.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-phoebe0.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-phoebe1.jpg"></div>
+              <div><img class="hidden" src="assets/images/experience/experience-phoebe2.jpg"></div>
             </div>
           </div>
           
@@ -605,8 +602,8 @@
       </div>
     </div>
     <!-- EndSection: Project's Modal -->
-    
-    <!--build:js assets/scripts/components.min.js -->                 
+
+    <!--build:js assets/scripts/components.min.js async -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
@@ -615,9 +612,6 @@
     <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.js"></script>
-    <!-- endbuild -->
-    
-    <!--build:js assets/scripts/main.min.js -->
     <script src="assets/scripts/main.js"></script>
     <!-- endbuild -->
   </body>

@@ -161,7 +161,8 @@ $(document).ready(function() {
   $('#index').backstretch([
     './assets/images/backgrounds/index0.jpg',
     './assets/images/backgrounds/index1.jpg',
-    './assets/images/backgrounds/index2.jpg'    
+    './assets/images/backgrounds/index2.jpg',
+    './assets/images/backgrounds/index3.jpg'
   ], {
     duration: 4000,
     fade: 750
@@ -173,6 +174,7 @@ $(document).ready(function() {
   $('.contact').matchHeight();
  
   //// 2. Slick
+  $('.hidden').removeClass('hidden');
   $('#ac').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
