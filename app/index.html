@@ -602,7 +602,11 @@
       </div>
     </div>
     <!-- EndSection: Project's Modal -->
-
+    <script>
+     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+     document.getElementById("index").style.height = h+"px";
+    </script>
+    
     <!--build:js assets/scripts/components.min.js async -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
