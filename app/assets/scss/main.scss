@@ -1,5 +1,5 @@
 /* Imports */
-@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400|Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300|Montserrat:400,700");
 
 @import "modules/base";
 @import "modules/tipography";
@@ -22,20 +22,29 @@ body {
   color: $font-primary-color;
   font-family: $font-secondary;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: ligth;
   letter-spacing: .1px;
   line-height: 1.846;
 }
 
 dt {
-    margin: 0px 0px 0px 2.14285714em;
-    font-family: $font-primary;
+  margin: 0px 0px 0px 2.14285714em;
+  font-family: $font-primary;
 }
 
 dd {
-    margin: 0px 0px 15px 4.3em;
+  margin: 0px 0px 15px 4.3em;
+}
+
+h2, h3, h4, h5 {
+  font-family: $font-primary;
+  font-weight: normal;
 }
 
 .slick-slide img {
   width: 100%;
+}
+
+.hidden {
+  opacity: 0;
 }

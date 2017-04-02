@@ -73,7 +73,12 @@ gulp.task('useref', function(){
 gulp.task('copy:images', function(){
   return gulp.src('app/assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
   // Caching images that ran through imagemin
-    .pipe(plugins.imagemin({ progressive: true}))
+    .pipe(plugins.imagemin([
+      plugins.imagemin.gifsicle({interlaced: true}),
+      plugins.imagemin.jpegtran({progressive: true}),
+      plugins.imagemin.optipng({optimizationLevel: 7}),
+      plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
+    ]))
     .pipe(gulp.dest('dist/assets/images'));
 });
 
