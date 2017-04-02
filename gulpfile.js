@@ -76,7 +76,7 @@ gulp.task('copy:images', function(){
     .pipe(plugins.imagemin([
       plugins.imagemin.gifsicle({interlaced: true}),
       plugins.imagemin.jpegtran({progressive: true}),
-      plugins.imagemin.optipng({optimizationLevel: 5}),
+      plugins.imagemin.optipng({optimizationLevel: 7}),
       plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
     ]))
     .pipe(gulp.dest('dist/assets/images'));
