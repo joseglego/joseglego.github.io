@@ -5,19 +5,6 @@
 
 $(document).ready(function() {  
   // Section 0: Functions
-  //// 0. SameSize: Screen - Index
-  var setIndexSize = function() {
-    var windowSize = $(window).height();
-    var textSize = $($('#index div')[0]).outerHeight();
-    var footerSize = $('#footer').outerHeight();
-    
-    $('#index').height(windowSize);
-    
-    if (textSize <  windowSize) {
-      $('#index').css('padding-top',((windowSize-textSize)/2)+'px');
-    };
-  };
-
   //// 0. Modal Projects
   var openModal = function(project) {
     $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
@@ -157,7 +144,6 @@ $(document).ready(function() {
   
   // Section 2: Data & Init;
   //// 2; Set Index
-  setIndexSize();
   $('#index').backstretch([
     './assets/images/backgrounds/index0.jpg',
     './assets/images/backgrounds/index1.jpg',
