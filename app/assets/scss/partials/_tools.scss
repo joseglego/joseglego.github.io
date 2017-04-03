@@ -24,9 +24,13 @@
     width: 100%;
     max-width: 160px;
     opacity: 0.8;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 
     &:hover {
       opacity:1;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
     }
   }
 
