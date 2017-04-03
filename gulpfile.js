@@ -3,7 +3,7 @@
 // Section 0: Define
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'browser-sync', 'del', 'run-sequence']
+  pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'browser-sync', 'del', 'run-sequence', 'sprity']
 });
 var gulpIf = require('gulp-if');
 var jsFilter = plugins.filter("app/**/*.js", { restore: true });
@@ -33,6 +33,16 @@ gulp.task('browserSyncTest', function() {
 gulp.task('serve:test', ['browserSync', 'sass'], function (){});
 
 //// Section 1.1: Sass Task
+// generate sprite.png and _sprite.scss 
+gulp.task('sprites', function () {
+  return plugins.sprity.src({
+    src: './app/assets/images/tools/*.png',
+    style: './tools.css',
+    prefix: 'icon-tools'
+  })
+  .pipe(gulpIf('*.png', gulp.dest('./app/assets/images/'), gulp.dest('./app/assets/styles/')))
+});
+
 gulp.task('sass', function(){
   return gulp.src('app/assets/scss/main.scss')
     .pipe(plugins.sass()) // Converts Sass to CSS with gulp-sass
