@@ -5,5 +5,12 @@
   
   a {
     color: white;
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.github {
+      font-size: 26px;
+    }
   }
 }
