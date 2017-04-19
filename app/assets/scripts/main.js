@@ -72,7 +72,21 @@ $(document).ready(function() {
       $('ul-menu li').removeClass('active');
     }
   };
-  
+
+  //// 0. Load Async Fonts:
+  var loadFonts = function() {
+    WebFontConfig = {google: { families: [ 'Oxygen:300','Montserrat:700'] }};
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' === document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  };
+
   // Section 1: Events Handler
   //// 1. When click on Project
   $('.open-modal').on('click', function() {
@@ -143,6 +157,9 @@ $(document).ready(function() {
   });
   
   // Section 2: Data & Init;
+  //// 2. Load Fonts
+  loadFonts();
+
   //// 2; Set Index
   $('#index').backstretch([
     './assets/images/backgrounds/index0.jpg',

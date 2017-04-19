@@ -30,7 +30,7 @@ gulp.task('browserSyncTest', function() {
   });
 });
 
-gulp.task('serve:test', ['browserSync', 'sass'], function (){});
+gulp.task('serve:test', ['browserSync', 'sprites', 'sass'], function (){});
 
 //// Section 1.1: Sass Task
 // generate sprite.png and _sprite.scss 
@@ -58,7 +58,7 @@ gulp.task('lint', function () {
 });
  
 //// Section 1.3: Watch HTML, JS & Sass
-gulp.task('serve', ['browserSync', 'sass'], function (){
+gulp.task('serve', ['browserSync', 'sprites', 'sass'], function (){
   gulp.watch('app/assets/scss/**/*.scss', ['sass']); 
   gulp.watch('app/*.html', plugins.browserSync.reload); 
   gulp.watch('app/views/**/*.html', plugins.browserSync.reload); 
