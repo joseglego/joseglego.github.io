@@ -5,7 +5,7 @@
   "rules": {
     "quotes": [2, "single", "avoid-escape"],
     "eqeqeq": 2,
-    "brace-style": [2, "stroustrup"],
+    "brace-style": [2, "1tbs"],
     "eol-last": 0,
     "no-nested-ternary": 1,
     "no-multiple-empty-lines": 2,

@@ -6,5 +6,6 @@ node_modules/
 bower_components/
 app/assets/files/
 app/assets/styles/
+app/assets/images/projects/sprite.png
 README.html
 *~
