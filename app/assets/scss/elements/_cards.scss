@@ -1,6 +1,11 @@
 .card {
   margin-bottom: 20px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+  &.primary {
+    border-top: 2px solid red;
+    padding-top: 15px;
+  }
   
   #ido &, #contact & {
     padding: 2em 1em;
@@ -11,6 +16,11 @@
     padding: 5px 5px 10px;
     background:white;
     text-align: right;
+
+    &.primary {
+      border-top: 2px solid red;
+      padding-top: 15px;
+    }
 
     h3 {
       margin: 0px;
