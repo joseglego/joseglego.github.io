@@ -3,9 +3,12 @@
 .DS_Store
 .tmp
 node_modules/
+dist/
 bower_components/
 app/assets/files/
 app/assets/styles/
 app/assets/images/projects/sprite.png
 README.html
 *~
+.firebaserc
+firebase.json
