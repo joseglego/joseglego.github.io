@@ -45,12 +45,12 @@
   }
   
   .card-links-1 {
-    span, a {
+    > span, > a {
       width: 100%;
     }
   }
   .card-links-2 {
-    span, a {
+    > span, > a {
       width: 50%;
     }
   }
@@ -65,7 +65,7 @@
     overflow: hidden;
     opacity: 0;
     
-    span, a {
+    > span, > a {
       font-size: 20px;
       line-height: 40px;
       text-align: center;
