@@ -160,6 +160,17 @@ $(document).ready(function() {
   //// 2. Load Fonts
   loadFonts();
 
+  //// 2; Set Index
+  $('#index').backstretch([
+    './assets/images/backgrounds/index0.jpg',
+    './assets/images/backgrounds/index1.jpg',
+    './assets/images/backgrounds/index2.jpg',
+    './assets/images/backgrounds/index3.jpg'
+  ], {
+    duration: 4000,
+    fade: 750
+  });
+  
   //// 2. Match Heigth
   $('.ido').matchHeight();
   $('.experience').matchHeight(); 
@@ -171,7 +182,7 @@ $(document).ready(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 7000,
     infinite: true,
     fade: true
   });
