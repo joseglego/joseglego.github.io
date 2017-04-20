@@ -6,14 +6,19 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8" />
     <style>
-     #index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position: relative;}
-     .text-font-primary {font-family: "Montserrat", sans-serif; }
-     .text-lego-primary {font: bold 1.1em "Montserrat", sans-serif; color: #e21900; }
-     .text-lego-secondary-default {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #fff; }
-     .text-lego-secondary-inverse {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #111; }
-     .semi-block {display: inline-block; }
-     .hidden {opacity: 0;}
+     #index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover;}
     </style>
+
+    <!--build:css assets/styles/components.min.css -->    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="assets/styles/tools.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- endbuild -->
     
   </head>
   <body>
@@ -661,34 +666,7 @@
       </div>
     </div>
     <!-- EndSection: Project's Modal -->
-
-    <noscript id="deferred-styles">
-      <!--build:css assets/styles/components.min.css -->
-      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-      <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
-      <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
-      <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
-      <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
-      <link rel="stylesheet" href="assets/styles/tools.css">
-      <link rel="stylesheet" href="assets/styles/main.css">
-      <!-- endbuild -->
-    </noscript>
     <script>
-     // Loading CSS Async way!
-     var loadDeferredStyles = function() {
-       var addStylesNode = document.getElementById("deferred-styles");
-       var replacement = document.createElement("div");
-       replacement.innerHTML = addStylesNode.textContent;
-       document.body.appendChild(replacement)
-       addStylesNode.parentElement.removeChild(addStylesNode);
-     };
-     var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-               webkitRequestAnimationFrame || msRequestAnimationFrame;
-     if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-     else window.addEventListener('load', loadDeferredStyles);
-
-     // Setting Index
      var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
      var text = w < 768 ? 316 : 224; // If smaller than table approx text size (316px) else desktop size (224px)
@@ -699,6 +677,7 @@
     <!--build:js assets/scripts/components.min.js async -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
     <script src="bower_components/matchHeight/dist/jquery.matchHeight.js"></script>
     <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
