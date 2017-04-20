@@ -24,13 +24,11 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('browserSyncTest', function() {
+gulp.task('browserSync:test', function() {
   plugins.browserSync.init({
-    server: {baseDir: '/'}
+    server: {baseDir: './'}
   });
 });
-
-gulp.task('serve:test', ['browserSync', 'sprites', 'sass'], function (){});
 
 //// Section 1.1: Sass Task
 // generate sprite.png and _sprite.scss 
@@ -65,6 +63,9 @@ gulp.task('serve', ['browserSync', 'sprites', 'sass'], function (){
   gulp.watch('app/assets/scripts/**/*.js', ['lint', plugins.browserSync.reload]);
   gulp.watch('app/assets/styles/**/*.css', plugins.browserSync.reload); 
 });
+
+gulp.task('serve:test', ['browserSync:test', 'sprites', 'sass'], function (){});
+
 
 // Section 2: Build Tasks
 //// Section 2.0: Check HTML & Minify included HTML, CSS & JS
@@ -133,7 +134,7 @@ gulp.task('copy:views', function(){
 //// Section 2.7: Build Task
 gulp.task('build:dist', function (callback) {
   plugins.runSequence(
-    ['clean:dist'], 
+    ['clean:dist', 'sprites', 'sass'], 
     ['useref', 'copy:images', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif', 'copy:views'],
     callback
   );
