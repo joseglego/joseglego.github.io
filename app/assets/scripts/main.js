@@ -198,7 +198,7 @@ $(document).ready(function() {
 
   // Appear
   $('[data-animated]').appear();
-  $('#ido .card').on('appear', function(event, $all_appeared_elements) {
+  $('[data-animated]').on('appear', function(event, $all_appeared_elements) {
     var time = !mobile ? parseInt($(this).attr('data-animated-delay')) | 0 : 0;
     var effect = $(this).attr('data-animated');
     var element = this;
