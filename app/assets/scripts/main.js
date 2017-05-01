@@ -195,4 +195,14 @@ $(document).ready(function() {
 
   //// 2. Tooltips
   $('[data-toggle="tooltip"]').tooltip();
+
+  // Appear
+  $('#ido .card').appear();
+  $('#ido .card').on('appear', function(event, $all_appeared_elements) {
+    var time = parseInt($(this).attr('data-animated-delay') | 0);
+    var element = this;
+    $(element).removeClass('invisible');
+    $(element).addClass('animated fadeInRight');
+  });
+  
 });
