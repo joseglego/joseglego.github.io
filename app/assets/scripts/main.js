@@ -197,12 +197,15 @@ $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
 
   // Appear
-  $('#ido .card').appear();
+  $('[data-animated]').appear();
   $('#ido .card').on('appear', function(event, $all_appeared_elements) {
-    var time = parseInt($(this).attr('data-animated-delay') | 0);
+    var time = !mobile ? parseInt($(this).attr('data-animated-delay')) | 0 : 0;
+    var effect = $(this).attr('data-animated');
     var element = this;
-    $(element).removeClass('invisible');
-    $(element).addClass('animated fadeInRight');
+    setTimeout(function() {
+      $(element).removeClass('invisible');
+      $(element).addClass('animated '+effect);
+    }, time * 400);
   });
   
 });
