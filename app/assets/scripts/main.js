@@ -162,7 +162,6 @@ $(document).ready(function() {
 
   //// 2. Match Heigth
   $('.ido').matchHeight();
-  $('.experience').matchHeight(); 
   $('.contact').matchHeight();
  
   //// 2. Slick
