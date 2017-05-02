@@ -87,6 +87,17 @@ $(document).ready(function() {
     })();
   };
 
+  // Let's Make it rain!
+  var makeItRain = function () {
+    $('#tools .icon-tools').each(function (index) {
+      $(this).addClass('invisible');
+      $(this).attr({
+        'data-animated': 'fadeInDown',
+        'data-animated-delay': Math.floor(Math.random() * 5) + 1
+      });
+    });
+  }
+
   // Section 1: Events Handler
   //// 1. When click on Project
   $('.open-modal').on('click', function() {
@@ -197,6 +208,7 @@ $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
 
   // Appear
+  makeItRain();
   $('[data-animated]').appear();
   $('[data-animated]').on('appear', function(event, $all_appeared_elements) {
     var time = !mobile ? parseInt($(this).attr('data-animated-delay')) | 0 : 0;
@@ -205,7 +217,8 @@ $(document).ready(function() {
     setTimeout(function() {
       $(element).removeClass('invisible');
       $(element).addClass('animated '+effect);
-    }, time * 400);
+    }, time * 300);
   });
-  
+
+
 });
