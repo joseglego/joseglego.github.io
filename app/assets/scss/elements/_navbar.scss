@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 768px) and (max-width: 992px){
   .navbar-lego {
     font-size: 12px;
@@ -18,30 +17,84 @@
   }
 }
 
-.navbar-lego {
-  background: $bg-third-color;
-  border-radius: 0px;
-  margin-bottom:0px;
-
-  .navbar-toggle {
-    border: 2px solid $lego-primary-color;
-    color: white;
-  }
-  a  {
-    color: white;
-    border-bottom: 3px solid $bg-third-color;
+nav.navbar {
+  a {
+    font-family: $font-primary;
   }
 
-  li>a:focus {
-    background: $bg-third-color;
-  }
-  
-  li>a:hover {
-    background-color: $lego-primary-color;
+  li.active a {
+    color: lighten(#396cb6, 20);
+    background: transparent;
   }
 
-  li.active >a {
-    border-bottom: 3px solid $lego-primary-color;
+  a:hover, li.active a:hover {
+    color: #396cb6;
+    background: transparent;
   }
-  
+}
+
+@media (max-width: 991px) {
+  nav.navbar {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    max-width: 100vw;
+
+    a {
+      color: #333;
+    }
+
+    .navbar-brand {
+      background: url("../images/joseglego.png") no-repeat center 70%;
+      background-size: cover;
+      width: 150px;
+      height: 40px;
+    }
+  }
+  .navbar-toggleable-md>.container {
+    margin: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  nav.navbar {
+    background: transparent;
+    max-width: 100vw;
+    
+    a {
+      font-family: $font-primary;
+      color: #333;
+      padding-left:10px;
+      padding-right:10px;
+    }
+
+    .navbar-inner {
+      padding-top: 30px;
+    }
+
+    & >.container-fluid .navbar-brand {
+      background: url("../images/joseglego.png") no-repeat center 70%;
+      background-size: cover;
+      width: 225px;
+      height: 55px;
+      margin: 5px 10px;
+    }
+
+    &.affix {
+      height: 50px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+
+      .navbar-brand {
+        background: url("../images/joseglego.png") no-repeat center 70%;
+        background-size: cover;
+        width: 150px;
+        height: 40px;
+        margin: 5px;
+      }
+
+      .navbar-inner {
+        padding-top: 0px;
+      }
+    }
+  }
 }

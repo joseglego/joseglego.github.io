@@ -60,11 +60,10 @@ $(document).ready(function() {
     var windowSize = $(window).height();
     var header = $('#menu');
     
-    //show the header fixed
-    if (y >= windowSize) {
-      header.addClass('navbar-fixed-top');
+    if (y >= 50) {
+      header.addClass('affix');
     } else {
-      header.removeClass('navbar-fixed-top');
+      header.removeClass('affix');
     }
 
     // show the active element

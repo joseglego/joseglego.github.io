@@ -1,16 +1,5 @@
-#index {
-  border: 0px;
-  padding: 0px;
-
-  div {
-    padding: 20px;
-    color: white;
-    background-color: rgba(0,0,0,0.7);
-  }
-}
-
 #scroll-down {
-  padding: 20px;
+  padding: 10px 20px;
   color:white;
   font-size:20px;
   position: absolute;
@@ -19,6 +8,8 @@
   width: 100%;
   text-align: center;
   background: transparent;
+
+  span {display: block;}
 
   .text-font-secondary {
     font-size: 12px;

@@ -5,17 +5,51 @@
     <link rel="icon" href="favicon.ico">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8" />
-    <style>body {margin: 0px;}#index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position:relative;}#index div {padding: 20px;color: white;background-color: rgba(0, 0, 0, 0.7); text-align:center;}.text-font-primary {font-family: "Montserrat", sans-serif; }.text-lego-primary {font: bold 1.1em "Montserrat", sans-serif; color: #e21900; }.text-lego-secondary-default {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #fff; }.text-lego-secondary-inverse {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #111; }.semi-block {display: inline-block; }.hidden {opacity: 0; display:none}.slick-slide img {width: 100%;}.invisible{opacity: 0;}#scroll-down {padding: 20px;color: white;font-size: 20px;position: absolute;bottom: 0;margin: 0 auto;width: 100%;text-align: center;background: transparent;}.experience-images{overflow:hidden}</style>
+    <style>
+     body {margin: 0px;} #index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position: relative;} #index div {color: black !important; padding: 10px; background-color: rgba(255, 255, 255, 0.7); } @media (max-width: 991px) {#index div {width: 100%; text-align:center;}} @media screen and (min-width: 992px) and (max-width: 1024px) {#index div {width: 60%; padding: 10px;text-align:right; border-right: 5px solid #396cb6;}} @media screen and (min-width: 1325px) {#index div {width: 40%; padding: 10px; text-align:right; border-right: 5px solid #396cb6;}} #index div h1 {font-size: 24px; margin: 10px;} #index div h2 {font-size: 20px; margin: 5px;} #index div h3 {font-size: 18px; margin: 5px;} .text-font-primary {font-family: "Montserrat", sans-serif; } .text-lego-primary {font: bold 1.1em "Montserrat", sans-serif; color: #e21900; } .text-lego-secondary-default {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #fff; } .text-lego-secondary-inverse {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #111; } .semi-block {display: inline-block; } .hidden {opacity: 0; display:none} .slick-slide img {width: 100%;} .invisible{opacity: 0;} #scroll-down {padding: 20px;color: white;font-size: 20px;position: absolute;bottom: 0;margin: 0 auto;width: 100%;text-align: center;background: transparent;} .experience-images{overflow:hidden}
+    </style>
   </head>
   <body>
+    <!-- BeginSection: Navbar -->
+    <nav id="menu" class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-lego" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="fa fa-bars"></span>
+          </button>
+          <a class="navbar-brand" href="#index">
+            &nbsp;
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-lego">
+          <ul class="nav navbar-nav navbar-right" role="tablist">
+            <li><a data-scroll href="#me">Me</a></li>
+            <li><a data-scroll href="#ido">What I Do</a></li>
+            <li><a data-scroll href="#experience">Experience</a></li>
+            <li><a data-scroll href="#projects">Projects</a></li>
+            <li><a data-scroll href="#education">Education</a></li>
+            <li><a data-scroll href="#activities">Activities</a></li>
+            <li><a data-scroll href="#tools">Tools</a></li>
+            <li><a data-scroll href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <!-- EndSection: Navbar -->
+
     <!-- BeginSection: Index -->
     <div id="index" class="section">
       <div id="index-text">
-        <h1><span class="text-lego-secondary-default">joseg</span><span class="text-lego-primary">LEGO</span></h1>
+        <h1>
+          <span class="text-font-secondary-inverse">joseg</span>
+          <span class="text-font-primary">LEGO</span>
+        </h1>
         <h2 class="text-font-primary">Jos&eacute; Gregorio Lezama Gonz&aacute;lez</h2>
         <h3>
           <strong>
-            <span class="text-lego-primary">
+            <span class="semi-block" style="color: #396cb6;">
               Front-End & <span style="display: inline-block">UX Dev<span class="hidden-sm">elopment</span></span>
             </span> |
             <span class="semi-block">Back-End</span> |
@@ -24,40 +58,11 @@
         </h3>
       </div>
       <a id="scroll-down" data-scroll data-options='{"offset": 55}' href="#me">
-        <span class="fa fa-chevron-circle-down animated infinite flash"></span><br/>
+        <span class="fa fa-chevron-circle-down animated infinite flash"></span>
         <span class="text-font-secondary">Scoll Down</span>
       </a>
     </div>
     <!-- EndSection: Index -->
-
-    <!-- BeginSection: Menu -->
-    <div id="menu">
-      <nav class="navbar navbar-lego">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-lego" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="fa fa-bars"></span>
-            </button>
-            <a class="navbar-brand" href="#index"><span class="text-lego-secundary-default">joseg</span><span class="text-lego-primary">LEGO</span></a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="navbar-lego">
-            <ul class="nav navbar-nav navbar-right" role="tablist">
-              <li><a data-scroll href="#me">Me</a></li>
-              <li><a data-scroll href="#ido">What I Do</a></li>
-              <li><a data-scroll href="#experience">Experience</a></li>
-              <li><a data-scroll href="#projects">Projects</a></li>
-              <li><a data-scroll href="#education">Education</a></li>
-              <li><a data-scroll href="#activities">Activities</a></li>
-              <li><a data-scroll href="#tools">Tools</a></li>
-              <li><a data-scroll href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </div><!-- /.navbar-collapse -->
-      </nav>
-    </div>
-    <!-- EndSection: Menu -->
     
     <!-- BeginSection: AboutMe -->
     <div id="me" class="section">
@@ -685,7 +690,7 @@
      var text = w < 768 ? 316 : 224; // If smaller than table approx text size (316px) else desktop size (224px)
      var mobile = w < 768 ? true : false;
      document.getElementById("index").style.height = h+"px";
-     document.getElementById("index").style.paddingTop = ((h-text)/2)+"px";
+     document.getElementById("index").style.paddingTop = ((h-text)-20)+"px";
      document.getElementById("experience-images").style.height = document.getElementById("experience-info").style.height+"px";
 
     </script>
@@ -703,11 +708,11 @@
     <!-- endbuild -->
 
     <!-- GoogleAnalytics: If you will use this template, plz remove this or change and use your own code! -->
-    <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- <script> -->
+    <!--  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); -->
 
-     ga('create', 'UA-101844233-1', 'auto');
-     ga('send', 'pageview');
-    </script>
+    <!--  ga('create', 'UA-101844233-1', 'auto'); -->
+    <!--  ga('send', 'pageview'); -->
+    <!-- </script> -->
   </body>
 </html>
