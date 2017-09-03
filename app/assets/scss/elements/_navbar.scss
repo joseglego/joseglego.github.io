@@ -23,12 +23,12 @@ nav.navbar {
   }
 
   li.active a {
-    color: lighten(#396cb6, 20);
+    color: lighten($lego-primary-color, 20);
     background: transparent;
   }
 
   a:hover, li.active a:hover {
-    color: #396cb6;
+    color: $lego-primary-color;
     background: transparent;
   }
 }
