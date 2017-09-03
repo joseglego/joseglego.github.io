@@ -1,0 +1,18 @@
+.split {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 50vw 50px 50vw;
+}
+
+.split-top {
+  border-color: #f5f5f5 transparent transparent #f5f5f5;
+
+  &.bg-color-3 {
+    border-color: white transparent transparent white;
+  }
+}
+
+.split-bottom {
+  border-color: transparent white white transparent;
+}

@@ -37,6 +37,7 @@
         </div>
       </div><!-- /.navbar-collapse -->
     </nav>
+    
     <!-- EndSection: Navbar -->
 
     <!-- BeginSection: Index -->
@@ -48,7 +49,7 @@
         <h2 class="text-font-primary">Jos&eacute; Gregorio Lezama Gonz&aacute;lez</h2>
         <h3>
           <strong>
-            <span class="semi-block" style="color: #396cb6;">
+            <span class="text-color-primary semi-block">
               Front-End & <span style="display: inline-block">UX Dev<span class="hidden-sm">elopment</span></span>
             </span> |
             <span class="semi-block">Back-End</span> |
@@ -64,6 +65,9 @@
     <!-- EndSection: Index -->
     
     <!-- BeginSection: AboutMe -->
+    <div class="split split-top bg-color-3"></div>
+    <div class="bg-color-3 text-center" style="color:white;"><h2 style="margin:0px;">I <span class="fa fa-heart-o"></span> Build, Create, Make!</h2></div>
+    <div class="split split-bottom bg-color-3"></div>
     <div id="me" class="section">
       <div class="container text-center">
         <h2>About <span class="text-lego-primary">Me</span></h2>
@@ -691,11 +695,11 @@
      var mobile = w < 768 ? true : false;
      var dif = 0;
      if (!mobile) {
-       dif = (h * .10);
+       dif = (h * 0.1);
      } else if (mobile & h < 637) {
        dif = - 65;
      }
-     document.getElementById("index").style.height = h+"px";
+     document.getElementById("index").style.height = h-100+"px";
      document.getElementById("index").style.paddingTop = ((h-text) - dif)+"px";
      document.getElementById("experience-images").style.height = document.getElementById("experience-info").style.height+"px";
 
