@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8" />
     <style>
-     body {margin: 0px;} #index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position: relative;} #index div {color: black; padding: 10px; background-color: rgba(255, 255, 255, 0.7); padding: 10px; border-left: 5px solid #396cb6;}  @media (max-width: 991px) {   #index div {width: 100%; text-align:center; border-right:0px;}   #index div h1 {margin-left: calc(50% - 75px)}} @media screen and (min-width: 992px) {   #index div {width: 600px; margin-left: calc(100% - 600px);}}  #index div h1 {color: transparent; background: url("assets/images/joseglego.png") no-repeat center 70%; background-size: cover; width: 150px; height: 40px;} #index div h2 {font-size: 20px; margin: 5px;} #index div h3 {font-size: 18px; margin: 5px;} .text-font-primary {font-family: "Montserrat", sans-serif; } .text-lego-primary {font: bold 1.1em "Montserrat", sans-serif; color: #e21900; } .text-lego-secondary-default {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #fff; } .text-lego-secondary-inverse {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #111; } .semi-block {display: inline-block; } .hidden {opacity: 0; display:none} .slick-slide img {width: 100%;} .invisible{opacity: 0;} #scroll-down {padding: 20px;color: white;font-size: 20px;position: absolute;bottom: 0;margin: 0 auto;width: 100%;text-align: center;background: transparent;} .experience-images{overflow:hidden}
+     body {margin: 0px;}#index div {color: black; padding: 10px; padding: 10px; text-align: center;}@media (max-width: 991px) {  #index {background: url("/assets/images/backgrounds/index1.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position: relative;}  #index div h2 {font-size: 16px; margin: 5px;}  #index div h3 {font-size: 14px; margin: 5px;}  }@media screen and (min-width: 992px) {  #index {background: url("/assets/images/backgrounds/index0.jpg") rgba(44, 62, 80, 0.3)  50% 0px / cover; position: relative;}  #index div h2 {font-size: 18px; margin: 5px;}  #index div h3 {font-size: 16px; margin: 5px;}}#index div h1 {color: transparent; background: url("assets/images/joseglego.png") no-repeat center 70%; background-size: cover; width: 150px; height: 40px; margin-left: calc(50% - 75px);}.text-font-primary {font-family: "Montserrat", sans-serif; }.text-lego-primary {font: bold 1.1em "Montserrat", sans-serif; color: #e21900; }.text-lego-secondary-default {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #fff; }.text-lego-secondary-inverse {font: 300 1em "Oxygen" "Oxygen", sans-serif; color: #111; }.semi-block {display: inline-block; }.hidden {opacity: 0; display:none}.slick-slide img {width: 100%;}.invisible{opacity: 0;}#scroll-down {color: #ccc;font-size: 20px;margin: 0 auto;width: 100%;text-align: center;background: transparent;}.experience-images{overflow:hidden}
     </style>
   </head>
   <body>
@@ -74,6 +74,7 @@
         <p>With experience in back-end and front-end. I am interested in learning new technologies, always following the best practices of each new language and framework. I enjoy front-end development, and work for good details and a good user experience. Also, I enjoy work the back-end too, in fact, I really like work full-stack. I find the new CSS / JavaScript tools like Frameworks, Bootstrap, Bower, Grunt, Sass, Ionic, etc  marvellous. but I'm fan of classic tools like git, emacs, etc.</p>
         
         <p>You can see or download, in a more traditional version, <span class="text-lego-primary">My Resume</span> in <a target="_blank" href="/assets/files/resume-en-joseglego.pdf"> <span class="fa fa-file-pdf-o"></span> English</a> or in <a target="_blank" href="/assets/files/resume-es-joseglego.pdf"> <span class="fa fa-file-pdf-o"></span> Spanish</a>.</p>
+        
       </div>
     </div>
     <!-- EndSection: AboutMe -->
@@ -688,8 +689,14 @@
      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
      var text = w < 768 ? 316 : 224; // If smaller than table approx text size (316px) else desktop size (224px)
      var mobile = w < 768 ? true : false;
+     var dif = 0;
+     if (!mobile) {
+       dif = (h * .10);
+     } else if (mobile & h < 637) {
+       dif = - 65;
+     }
      document.getElementById("index").style.height = h+"px";
-     document.getElementById("index").style.paddingTop = ((h-text)-20)+"px";
+     document.getElementById("index").style.paddingTop = ((h-text) - dif)+"px";
      document.getElementById("experience-images").style.height = document.getElementById("experience-info").style.height+"px";
 
     </script>
