@@ -218,6 +218,14 @@ $(document).ready(function() {
       $(element).addClass('animated '+effect);
     }, time * 300);
   });
-
-
+  
+  // Typed
+  var options = {
+    strings: ["Build!", "Create!", "FrontEnd!", "Web Development!"],
+    typeSpeed: 75,
+    backSpeed: 20,
+    backDelay: 3000,
+  }
+  var typed = new Typed("#typed", options);
+  
 });
