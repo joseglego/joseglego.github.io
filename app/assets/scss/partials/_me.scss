@@ -1,0 +1,81 @@
+#me {
+  padding-bottom: 0px;
+  position: relative;
+
+  #computer {
+    width: 90%;
+    margin: 40px auto 0px auto;
+
+    img {
+      width: 100%;
+    }
+  }
+  
+  #phone0, #phone1 {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  #phone0 {
+    left: calc(50% + 50px);
+  }
+
+  #phone1 {
+    left: calc(50% + 325px;)
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  #me #computer, #me #phone0, #me #phone1 {
+    width: 100%;
+    position: inherit;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+  }
+
+  #me #computer img {
+    width: 90%;
+  }
+  
+  #me #phone0, #me #phone1 {
+    height: 200px;
+    
+    img {
+      height: 100%;
+    }    
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #me #phone0, #me #phone1 {
+    height: 200px;
+    
+    img {
+      height: 100%;
+    }    
+  }
+
+  #me #phone0 {
+    left: calc(50% + 75px);
+  }
+  #me #phone1 {
+    left: calc(50% + 225px);
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #me #phone0, #me #phone1 {
+    height: 250px;
+    
+    img {
+      height: 100%;
+    }    
+  }
+
+  #me #phone0 {
+    left: calc(50% + 100px);
+  }
+  #me #phone1 {
+    left: calc(50% + 300px);
+  }  
+}

@@ -10,10 +10,12 @@
 @import "elements/navbar";
 @import "elements/split";
 
+
+@import "partials/index";
+@import "partials/me";
+@import "partials/tools";
 @import "partials/contact";
 @import "partials/footer";
-@import "partials/index";
-@import "partials/tools";
 
 /* General CSS */
 body {
@@ -88,17 +90,18 @@ h2, h3, h4, h5 {
 }
 
 @keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-    }
-    @-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-    }
-    @-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-    }
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
