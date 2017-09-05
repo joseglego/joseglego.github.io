@@ -87,8 +87,8 @@ $(document).ready(function() {
   };
 
   // Let's Make it rain!
-  var makeItRain = function () {
-    $('#tools .icon-tools').each(function (index) {
+  var makeItRain = function() {
+    $('#tools .icon-tools').each(function(index) {
       $(this).addClass('invisible');
       $(this).attr({
         'data-animated': 'fadeInDown',
@@ -220,12 +220,18 @@ $(document).ready(function() {
   });
   
   // Typed
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var strings = ['Build!', 'Create!', 'Games!', 'Make!', 'FrontEnd!'];
+  if (w < 768) {
+    strings.push('Web Dev!');
+  } else {
+    strings.push('Web Development!');
+  }
   var options = {
-    strings: ["Build!", "Create!", "FrontEnd!", "Web Development!"],
+    strings: strings,
     typeSpeed: 75,
     backSpeed: 20,
     backDelay: 3000,
   }
-  var typed = new Typed("#typed", options);
-  
+  var typed = new Typed('#typed', options);
 });
