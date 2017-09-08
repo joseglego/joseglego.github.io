@@ -13,6 +13,7 @@
 
 @import "partials/index";
 @import "partials/me";
+@import "partials/experience";
 @import "partials/tools";
 @import "partials/contact";
 @import "partials/footer";
@@ -22,8 +23,8 @@ body {
   position: relative;
   color: $font-primary-color;
   font-family: $font-secondary;
-  font-size: 15px;
-  font-weight: ligth;
+  font-size: 14px;
+  font-weight: 300;
   letter-spacing: .1px;
   line-height: 1.846;
 }
@@ -42,11 +43,7 @@ h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-.slick-slide img {
-  width: 100%;
-}
-
-.hidden {
+.hidden, .hide {
   opacity: 0;
 }
 
@@ -104,4 +101,3 @@ h2, h3, h4, h5 {
   50% { opacity:0; }
   100% { opacity:1; }
 }
-

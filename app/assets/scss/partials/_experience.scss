@@ -1,0 +1,14 @@
+#experience {
+  #experience-images-0 img, #experience-images img {
+    width: 100%;
+  }
+  
+  h3 {
+    .text-muted {
+      font-size: 0.7em;
+    }
+    .fa {
+      color: $lego-primary-color;
+    }
+  }
+}

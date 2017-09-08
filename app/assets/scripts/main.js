@@ -74,7 +74,7 @@ $(document).ready(function() {
 
   //// 0. Load Async Fonts:
   var loadFonts = function() {
-    WebFontConfig = {google: { families: [ 'Oxygen:300','Montserrat:700'] }};
+    WebFontConfig = {google: { families: [ 'Raleway:300','Montserrat:700'] }};
     (function() {
       var wf = document.createElement('script');
       wf.src = ('https:' === document.location.protocol ? 'https' : 'http') +
@@ -218,10 +218,21 @@ $(document).ready(function() {
       $(element).addClass('animated '+effect);
     }, time * 300);
   });
-  
+
+  $('.experience').on('click', function() {
+    var hidden = $(this).children('p').hasClass('hide');
+    $('.experience .fa').removeClass('fa-angle-up');
+    $('.experience .fa').addClass('fa-angle-down');
+    $('.experience > p').addClass('hide');
+    if (hidden) {
+      $(this).children('p').removeClass('hide');
+      $(this).find('.fa').removeClass('fa-angle-down');
+      $(this).find('.fa').addClass('fa-angle-up');
+    };
+  });
   // Typed
   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  var strings = ['Build!', 'Create!', 'Games!', 'Make!', 'FrontEnd!'];
+  var strings = ['to Build!', 'to Create!', 'Games!', 'Make!', 'FrontEnd!'];
   if (w < 768) {
     strings.push('Web Dev!');
   } else {
