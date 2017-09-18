@@ -5,10 +5,11 @@
 
 $(document).ready(function() {  
   // Section 0: Functions
-  //// 0. Modal Projects
-  var openModal = function(project) {
+  //// 0. Modal
+  var openModal = function(info) {
+    var route = 'views/' + info + '.html';
     $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
-    $('#modal-content').load('views/projects/'+project+'.html');
+    $('#modal-content').load(route);
     $('#modal').modal();
   };
 
@@ -100,9 +101,14 @@ $(document).ready(function() {
   // Section 1: Events Handler
   //// 1. When click on Project
   $('.open-modal').on('click', function() {
-    openModal($(this).attr('id'));
+    var route = 'projects/' + $(this).attr('id');
+    openModal(route);
   });
 
+  $('.open-activities').on('click', function() {
+    openModal('activities');
+  });
+  
   //// 1. Change Carousel Size
   $('#modal-content').on('click','#carousel-change', function() {
     var size = parseInt($('#carousel-container').attr('data-size'));
@@ -220,16 +226,19 @@ $(document).ready(function() {
   });
 
   $('.experience').on('click', function() {
-    var hidden = $(this).children('p').hasClass('hide');
+    var hidden =  $(this).children('p').hasClass('hide');
     $('.experience .fa').removeClass('fa-angle-up');
     $('.experience .fa').addClass('fa-angle-down');
     $('.experience > p').addClass('hide');
+    $('.experience > p').hide();
     if (hidden) {
       $(this).children('p').removeClass('hide');
+      $(this).children('p').slideDown();
       $(this).find('.fa').removeClass('fa-angle-down');
       $(this).find('.fa').addClass('fa-angle-up');
-    };
+    }
   });
+
   // Typed
   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   var strings = ['to Build!', 'to Create!', 'Games!', 'Make!', 'FrontEnd!'];
