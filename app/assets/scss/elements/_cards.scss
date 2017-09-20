@@ -3,12 +3,12 @@
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 
   &.primary {
-    border-top: 2px solid red;
+    border-top: 2px solid $lego-primary-color;
     padding-top: 15px;
   }
   
   #ido &, #contact & {
-    padding: 2em 1em;
+    padding: 2.5em;
     background: white;
   }
   
@@ -18,7 +18,7 @@
     text-align: right;
 
     &.primary {
-      border-top: 2px solid red;
+      border-top: 2px solid $lego-primary-color;;
       padding-top: 15px;
     }
 
@@ -31,6 +31,10 @@
     .heading-divider {
       margin: 5px 0px;
     }
+
+    p {
+      text-align: left;
+    }
   }
   
   &:hover {
@@ -42,14 +46,26 @@
       opacity: 1;
     }
   }
-  
+
   img {
-    height: 150px;
+    height: 210px;
   }
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-min) {
+    img {
+      height: 160px;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    img {
+      height: 270px;
+    }
+  }
+
   
   .card-img {
     position: relative;
-    padding: 5px;
     background: white;;
     text-align: center;
   }

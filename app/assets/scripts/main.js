@@ -5,10 +5,11 @@
 
 $(document).ready(function() {  
   // Section 0: Functions
-  //// 0. Modal Projects
-  var openModal = function(project) {
+  //// 0. Modal
+  var openModal = function(info) {
+    var route = 'views/' + info + '.html';
     $('#modal-content').html('<div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x"></i></div>');
-    $('#modal-content').load('views/projects/'+project+'.html');
+    $('#modal-content').load(route);
     $('#modal').modal();
   };
 
@@ -60,11 +61,10 @@ $(document).ready(function() {
     var windowSize = $(window).height();
     var header = $('#menu');
     
-    //show the header fixed
-    if (y >= windowSize) {
-      header.addClass('navbar-fixed-top');
+    if (y >= 50) {
+      header.addClass('affix');
     } else {
-      header.removeClass('navbar-fixed-top');
+      header.removeClass('affix');
     }
 
     // show the active element
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
   //// 0. Load Async Fonts:
   var loadFonts = function() {
-    WebFontConfig = {google: { families: [ 'Oxygen:300','Montserrat:700'] }};
+    WebFontConfig = {google: { families: [ 'Raleway:300','Montserrat:700'] }};
     (function() {
       var wf = document.createElement('script');
       wf.src = ('https:' === document.location.protocol ? 'https' : 'http') +
@@ -88,12 +88,12 @@ $(document).ready(function() {
   };
 
   // Let's Make it rain!
-  var makeItRain = function () {
-    $('#tools .icon-tools').each(function (index) {
+  var makeItRain = function() {
+    $('#tools .icon-tools').each(function(index) {
       $(this).addClass('invisible');
       $(this).attr({
         'data-animated': 'fadeInDown',
-        'data-animated-delay': Math.floor(Math.random() * 5) + 1
+        'data-animated-delay': Math.floor(Math.random() * 3) + 1
       });
     });
   }
@@ -101,9 +101,14 @@ $(document).ready(function() {
   // Section 1: Events Handler
   //// 1. When click on Project
   $('.open-modal').on('click', function() {
-    openModal($(this).attr('id'));
+    var route = 'projects/' + $(this).attr('id');
+    openModal(route);
   });
 
+  $('.open-activities').on('click', function() {
+    openModal('activities');
+  });
+  
   //// 1. Change Carousel Size
   $('#modal-content').on('click','#carousel-change', function() {
     var size = parseInt($('#carousel-container').attr('data-size'));
@@ -220,5 +225,33 @@ $(document).ready(function() {
     }, time * 300);
   });
 
+  $('.experience').on('click', function() {
+    var hidden =  $(this).children('p').hasClass('hide');
+    $('.experience .fa').removeClass('fa-angle-up');
+    $('.experience .fa').addClass('fa-angle-down');
+    $('.experience > p').addClass('hide');
+    $('.experience > p').hide();
+    if (hidden) {
+      $(this).children('p').removeClass('hide');
+      $(this).children('p').slideDown();
+      $(this).find('.fa').removeClass('fa-angle-down');
+      $(this).find('.fa').addClass('fa-angle-up');
+    }
+  });
 
+  // Typed
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var strings = ['to Build!', 'to Create!', 'Games!', 'to Make!', 'FrontEnd!'];
+  if (w < 768) {
+    strings.push('Web Dev!');
+  } else {
+    strings.push('Web Development!');
+  }
+  var options = {
+    strings: strings,
+    typeSpeed: 75,
+    backSpeed: 20,
+    backDelay: 3000,
+  }
+  var typed = new Typed('#typed', options);
 });

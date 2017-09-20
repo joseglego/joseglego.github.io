@@ -1,5 +1,19 @@
 #contact {
+  background: white url('/assets/images/backgrounds/contact.png') no-repeat fixed center;
+
   .container .col-sm-6 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 20px;   
+    }
   }
+
+  a {
+    color: $lego-primary-color;
+
+    &:hover {
+      color: lighten($lego-primary-color, 20);
+    }
+  }  
 }

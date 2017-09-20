@@ -1,17 +1,30 @@
 /*  Variables */
+/* josegLEGO colors  */
+$color-1: #fed900;
+$color-2: #3d82f7;
+$color-3: #e21900;
+$color-4: #009a51;
+
 $font-primary-color: #333333;
 $font-secondary-color: #c0c0c0;;
 $font-third-color: #696969;
 
-$lego-primary-color: #e21900;
+$lego-primary-color: $color-3;
 $lego-secondary-color: #111;
 $lego-third-color: #fff;
 
 $bg-primary-color: white; 
-$bg-secondary-color: #f1f1f1;
+$bg-secondary-color: #f5f5f5;
 $bg-third-color: #212121;
 
-$border-primary-color: #f1f1f1;
+$border-primary-color: #d1d1d1;
 
 $font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'Oxygen', sans-serif;
+$font-secondary: 'Raleway', sans-serif;
+
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
