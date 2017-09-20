@@ -31,6 +31,10 @@
     .heading-divider {
       margin: 5px 0px;
     }
+
+    p {
+      text-align: left;
+    }
   }
   
   &:hover {
@@ -42,14 +46,26 @@
       opacity: 1;
     }
   }
-  
+
   img {
-    height: 150px;
+    height: 210px;
   }
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-min) {
+    img {
+      height: 160px;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    img {
+      height: 270px;
+    }
+  }
+
   
   .card-img {
     position: relative;
-    padding: 5px;
     background: white;;
     text-align: center;
   }
