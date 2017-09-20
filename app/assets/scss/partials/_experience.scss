@@ -4,9 +4,15 @@
   }
   
   h3 {
+    &:hover {
+      cursor: pointer;
+      color: $lego-primary-color;
+    }
+    
     .text-muted {
       font-size: 0.7em;
     }
+    
     .fa {
       color: $lego-primary-color;
     }
