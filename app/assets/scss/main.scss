@@ -8,19 +8,23 @@
 @import "elements/outline";
 @import "elements/section";
 @import "elements/navbar";
+@import "elements/split";
 
+
+@import "partials/index";
+@import "partials/me";
+@import "partials/experience";
+@import "partials/tools";
 @import "partials/contact";
 @import "partials/footer";
-@import "partials/index";
-@import "partials/tools";
 
 /* General CSS */
 body {
   position: relative;
   color: $font-primary-color;
   font-family: $font-secondary;
-  font-size: 15px;
-  font-weight: ligth;
+  font-size: 14px;
+  font-weight: 300;
   letter-spacing: .1px;
   line-height: 1.846;
 }
@@ -39,14 +43,61 @@ h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-.slick-slide img {
-  width: 100%;
-}
-
-.hidden {
+.hidden, .hide {
   opacity: 0;
 }
 
 .icon-tools {
   display:inline-block;
+}
+
+.color-1 {
+  color: $color-1;
+}
+.color-2 {
+  color: $color-2;
+}
+.color-3 {
+  color: $color-3;
+}
+.color-4 {
+  color: $color-4;
+}
+.bg-color-1 {
+  background-color: $color-1 !important;
+}
+.bg-color-2 {
+  background-color: $color-2 !important;
+}
+.bg-color-3 {
+  background-color: $color-3 !important;
+}
+.bg-color-4 {
+  background-color: $color-4 !important;
+}
+
+.typed-cursor {
+  opacity: 1;
+  font-weight: 100;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  -ms-animation: blink 0.7s infinite;
+  -o-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }

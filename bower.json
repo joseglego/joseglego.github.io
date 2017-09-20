@@ -24,6 +24,7 @@
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
     "font-awesome": "^4.7.0",
     "slick-carousel": "1.6.0",
-    "jquery_appear": "^0.3.6"
+    "jquery_appear": "^0.3.6",
+    "typed.js": "^2.0.5",
   }
 }
