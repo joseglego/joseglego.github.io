@@ -93,7 +93,7 @@ $(document).ready(function() {
       $(this).addClass('invisible');
       $(this).attr({
         'data-animated': 'fadeInDown',
-        'data-animated-delay': Math.floor(Math.random() * 5) + 1
+        'data-animated-delay': Math.floor(Math.random() * 3) + 1
       });
     });
   }
