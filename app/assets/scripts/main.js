@@ -241,7 +241,7 @@ $(document).ready(function() {
 
   // Typed
   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  var strings = ['to Build!', 'to Create!', 'Games!', 'Make!', 'FrontEnd!'];
+  var strings = ['to Build!', 'to Create!', 'Games!', 'to Make!', 'FrontEnd!'];
   if (w < 768) {
     strings.push('Web Dev!');
   } else {
