@@ -1,0 +1,22 @@
+.experiences {
+  padding: 10px 50px;
+
+  ul {
+    list-style: none;
+    padding: 15px;
+  }
+
+  li {
+    padding-bottom: 10px;
+
+    &:last_child {
+      padding-bottom: 0;
+    }
+
+    a {
+      color: #b3b4b6;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
+}
