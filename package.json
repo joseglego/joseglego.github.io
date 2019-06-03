@@ -1,0 +1,20 @@
+{
+  "name": "joseglego",
+  "version": "2.0.0",
+  "description": "josegLEGO landing page",
+  "main": "index.js",
+  "repository": "https://github.com/joseglego/joseglego.github.io",
+  "author": "José Lezama me@joseglego.io",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
