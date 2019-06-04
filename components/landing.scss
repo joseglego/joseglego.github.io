@@ -1,3 +1,51 @@
 .landing {
-  padding: 50px;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 32px);
+  padding: 16px 40px;
+
+  &__title {
+    color: transparent;
+    background: url('http://joseglego.io/assets/images/joseglego.png') no-repeat center 70%;
+    background-size: cover;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    font-weight: 300;
+    margin: 8px 0;
+  }
+
+  &-name__primary {
+    font-weight: 700;
+    white-space: nowrap;
+    color: #111;
+  }
+
+  &__position {
+    margin: 8px 0;
+    font-size: 3em;
+    display: inline-block;
+    color: #111;
+  }
+
+  &-position__primary {
+    color: red;
+  }
+
+  &__description {
+    font-weight: 400;
+    color: #111;
+    display: block;
+  }
+}
+
+@media (min-width: 991px) {
+  .landing__description {
+    display: inline;
+  }
 }
