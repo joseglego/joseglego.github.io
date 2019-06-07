@@ -1,3 +1,6 @@
+$primary-text: #111;
+$primary-color: #e21900;
+
 .landing {
   display: flex;
   margin: 0;
@@ -20,31 +23,24 @@
     margin: 8px 0;
   }
 
-  &-name__primary {
-    font-weight: 700;
-    white-space: nowrap;
-    color: #111;
-  }
-
   &__position {
-    margin: 8px 0;
+    margin: 0;
     font-size: 3em;
     display: inline-block;
     text-transform: capitalize;
   }
 
   &-position__primary {
-    color: red;
-
+    color: $primary-color;
   }
 
-  &-position__secondary {
-    color: #111;
+  &__descriptions {
+    margin: 8px 0;
   }
 
   &__description {
     font-weight: 400;
-    color: #111;
+    color: $primary-text;
     display: block;
   }
 }
@@ -64,7 +60,7 @@
 
     &__position {
       font-size: 4em;
-      letter-spacing: 5px;
+      letter-spacing: 8px;
       text-transform: uppercase;
     }
 

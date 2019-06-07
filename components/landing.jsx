@@ -4,17 +4,12 @@ function Landing() {
   return (
     <div className='landing'>
       <h1 className='landing__title'>josegLEGO</h1>
-      <h2 className='landing__name'>
-        <span>José Gregorio </span>
-        <span className='landing-name__primary'>Lezama González</span>
-      </h2>
+      <h2 className='landing__name'>José Gregorio Lezama González</h2>
       <h2 className='landing__position'>
-        <span className='landing-position__primary'>frontend</span>
-        <span className='landing-position__break'> / </span>
-        <span className='landing-position__secondary'>fullstack</span>
+        <span className='landing-position__primary'>frontend</span> - fullstack
       </h2>
       <p className='landing__descriptions'>
-        <span className='landing__description'>I am a passionate developer,  </span>
+        <span className='landing__description'>I am a passionate developer, </span>
         <span className='landing__description'> a lego fan </span>
         <span className='landing__description'> and a coffee lover. </span>
       </p>
