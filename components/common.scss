@@ -1,0 +1,40 @@
+$uppertitle-color: #dcdcdc;
+$title-color: #111;
+$secondary-bg: #f9f9f9;
+
+.section {
+  padding: 24px;
+  min-height: 50vh;
+
+  &--sec {
+    background: $secondary-bg;
+  }
+}
+
+.section-uppertitle {
+  color: $uppertitle-color;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 8px 0;
+
+}
+
+.section-title {
+  color: #111;
+  font-size: 2em;
+  margin: 8px 0 16px 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 40px;
+  }
+
+  .section-uppertitle {
+    font-size: 6em;
+  }
+
+  .section-title {
+    font-size: 3em;
+  }
+}

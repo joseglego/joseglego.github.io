@@ -1,3 +1,4 @@
+import './common.scss'
 import './projects.scss'
 
 function Projects() {
@@ -13,8 +14,9 @@ function Projects() {
   ]
 
   return (
-    <div className='projects'>
-      <h2>Projects</h2>
+    <div className='section section--sec'>
+      <div className='section-uppertitle'>03.</div>
+      <h2 className='section-title'>Projects</h2>
       <p>As a Software Factory worker (most of my work-time) I've  been in really different projects. When I say different, it's really different. e.g. <i>Uber Eats for Cows</i>, <i>Insurance companies</i>, <i>Hidroponic "Tomatoes" at home</i>, <i>Natural methods for the regulation of fertility</i>. Each of them represented a special problem which the team had to solve. I only listed some of them.</p>
       <div className='projects'>
         { projects.map(project => (

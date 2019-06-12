@@ -1,3 +1,4 @@
+import './common.scss'
 import './experience.scss'
 
 function Experience() {
@@ -8,8 +9,9 @@ function Experience() {
   ]
 
   return (
-    <div className='experiences'>
-      <h2>Experience</h2>
+    <div className='section experiences'>
+      <div className='section-uppertitle'>02.</div>
+      <h2 className='section-title'>Experience</h2>
       <ul> {
         experiences.map(experience => (
           <li key={`experience-${experience.name}`}>
@@ -17,8 +19,7 @@ function Experience() {
           </li>
         ))
       }</ul>
-
-      Also, I always try to work in <b>side projects</b> or in <b>freelance projects</b>,  with other tools and concepts.
+      <p>Also, I always try to work in <b>side projects</b> or in <b>freelance projects</b>,  with other tools and concepts.</p>
     </div>
   )
 }
