@@ -4,8 +4,8 @@
     padding: 15px 0;
   }
 
-  li {
-    padding-bottom: 10px;
+  &__experience {
+    text-align: center;
 
     &:last_child {
       padding-bottom: 0;
@@ -15,6 +15,53 @@
       color: #b3b4b6;
       font-weight: bold;
       font-size: 1.1em;
+    }
+
+    a, span {
+      display: block;
+    }
+
+    .experience__logo {
+      width: 48px;
+      filter: grayscale(100%);
+      margin-bottom: 16px;
+    }
+
+    a:hover .experience__logo {
+      filter: none;
+    }
+
+    .experience__period {
+      font-size: 0.9em;
+    }
+
+    .experience__position {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .experience__description {
+      padding-top: 24px;
+    }
+
+    .experience__previous-position {
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+
+  }
+}
+
+@media (min-width: 769px) {
+  .experiences {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 768px;
+
+    ul { display: flex }
+
+    &__experience {
+      flex: 1 1;
     }
   }
 }
