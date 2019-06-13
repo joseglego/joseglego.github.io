@@ -1,5 +1,8 @@
+$general-text: #444;
+$general-bg: #fff;
 $primary-text: #111;
 $primary-color: #e21900;
+$bg-primary: lighten($primary-color, 50%);
 
 .landing {
   display: flex;
@@ -97,4 +100,37 @@ $primary-color: #e21900;
       display: inline;
     }
   }
+}
+
+.btns {
+  padding: 32px 0 0 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 16px;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+.btn-secondary {
+  color: $primary-color;
+  background: $bg-primary;
+  border: 1px solid $bg-primary;
+}
+
+.btn-primary {
+  color: $general-bg;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
 }

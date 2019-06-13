@@ -13,6 +13,10 @@ function Landing() {
         <span className='landing__description'> a lego fan </span>
         <span className='landing__description'> and a coffee lover. </span>
       </p>
+      <div className='btns'>
+        <span className='btn btn-primary'>Contact</span>
+        <span className='btn btn-secondary'>Read More</span>
+      </div>
     </div>
   )
 }
