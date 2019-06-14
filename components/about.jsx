@@ -1,11 +1,11 @@
 import './common.scss'
-import './knowledge.scss'
 
-function Knowledge() {
+function About () {
   return (
     <div className='section section--sec'>
       <div className='section-uppertitle'>01.</div>
-      <h2 className='section-title'>Knowledge</h2>
+      <h2 className='section-title'>About</h2>
+
       <p>During last months, in my daily tasks I've been using Javascript and React.</p>
       <p>I usually do Front end development with React, Redux, SCSS, Javascript and a little of Jest. But, usually my side projects include Ruby on Rails, Django and, even, Ionic.</p>
 
@@ -15,4 +15,4 @@ function Knowledge() {
   )
 }
 
-export default Knowledge
+export default About
