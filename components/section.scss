@@ -1,0 +1,47 @@
+$uppertitle-color: #dcdcdc;
+$title-color: #111;
+$secondary-bg: #f9f9f9;
+
+.section {
+  padding: 24px;
+  min-height: 50vh;
+
+  &--sec {
+    background: $secondary-bg;
+  }
+
+  &__wrapper {
+    max-width: 1340px;
+    margin: 0 auto;
+  }
+
+  &__uppertitle {
+    color: $uppertitle-color;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 8px 0;
+
+  }
+
+  &__title {
+    color: #111;
+    font-size: 2em;
+    margin: 8px 0 16px 0;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 40px;
+
+    &__uppertitle {
+      font-size: 6em;
+    }
+
+    &__title {
+      letter-spacing: 8px;
+      font-size: 3em;
+    }
+  }
+}

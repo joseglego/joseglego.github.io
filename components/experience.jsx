@@ -1,3 +1,5 @@
+import Section from './section'
+
 import './common.scss'
 import './experience.scss'
 
@@ -9,9 +11,12 @@ function Experience() {
   ]
 
   return (
-    <div className='section experiences'>
-      <div className='section-uppertitle text-center'>02.</div>
-      <h2 className='section-title text-center'>Experience</h2>
+    <Section
+      index='02'
+      title='Experience'
+      extraClasses='experiences'
+      extraTitleClasses='text-center'
+    >
       <ul> {
         experiences.map(experience => (
           <li className='card experiences__experience' key={`experience-${experience.name}`}>
@@ -27,7 +32,7 @@ function Experience() {
         ))
       }</ul>
       <p>Also, I always try to work in <b>side projects</b> or in <b>freelance projects</b>,  with other tools and concepts.</p>
-    </div>
+    </Section>
   )
 }
 
