@@ -22,8 +22,7 @@
     }
 
     .experience__logo {
-      width: 48px;
-      filter: grayscale(100%);
+      width: 56px;
       margin-bottom: 16px;
     }
 
@@ -42,6 +41,7 @@
 
     .experience__description {
       padding-top: 24px;
+      text-align: justify;
     }
 
     .experience__previous-position {
@@ -58,10 +58,16 @@
     margin: 0 auto;
     min-width: 768px;
 
-    ul { display: flex }
+    ul { display: flex; flex-wrap: wrap; }
 
     &__experience {
-      flex: 1 1;
+      flex: 0 0 40%;
     }
+  }
+}
+
+@media (min-width: 1025px) {
+  .experiences__experience {
+    flex: 1 1;
   }
 }

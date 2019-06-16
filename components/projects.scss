@@ -1,10 +1,15 @@
 .projects {
   .project__title {
     margin: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    width: 64%;
+    margin-bottom: 16px;
   }
 
   .project__description {
     margin: 8px 0 0 0;
+    text-align: juttify;
   }
 }
 
