@@ -11,6 +11,7 @@ $bg-primary: lighten($primary-color, 50%);
   flex-direction: column;
   height: 100vh;
   padding: 0 25px;
+  background: url('/static/images/landing-bg.jpg');
 
   &__title {
     color: transparent;
