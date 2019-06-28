@@ -26,10 +26,6 @@
       margin-bottom: 16px;
     }
 
-    a:hover .experience__logo {
-      filter: none;
-    }
-
     .experience__period {
       font-size: 0.9em;
     }
@@ -41,7 +37,8 @@
 
     .experience__description {
       padding-top: 24px;
-      text-align: justify;
+      text-align: left;
+      line-height: 160%;
     }
 
     .experience__previous-position {

@@ -19,7 +19,7 @@ function Experience() {
     >
       <ul> {
         experiences.map(experience => (
-          <li className='card experiences__experience' key={`experience-${experience.name}`}>
+          <li className='experiences__experience card card--no-border' key={`experience-${experience.name}`}>
             <a className='text-center' href={experience.url} target='_blank'>
               <img className='experience__logo' src={experience.image} alt={experience.name} />
               <span className='experience__name '>{experience.name}</span>
