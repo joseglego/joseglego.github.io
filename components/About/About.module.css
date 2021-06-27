@@ -1,0 +1,10 @@
+.paragraph {
+  line-height: 180%;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    line-height: 216%;
+  }
+}
