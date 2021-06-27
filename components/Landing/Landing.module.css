@@ -1,0 +1,115 @@
+.bricks {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: transparent;
+}
+
+.title {
+  color: transparent;
+  background: url("/images/joseglego.svg") no-repeat
+    center 70%;
+  background-size: cover;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-weight: 300;
+  margin: 8px 0;
+}
+
+.position {
+  margin: 0;
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.primaryPosition {
+  color: var(--red-color);
+  font-size: 1.2em;
+  display: block;
+}
+
+.secondaryPosition {
+  display: block;
+}
+
+.descriptions {
+  margin: 8px 0;
+}
+
+.description {
+  font-weight: 400;
+  color: var(--primary-font-color);
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .title {
+    width: 240px;
+    height: 60px;
+  }
+
+  .name {
+    font-size: 2em;
+  }
+
+  .position {
+    font-size: 4em;
+    letter-spacing: 8px;
+  }
+
+  .primaryPosition,
+  .secondaryPosition {
+    display: inline;
+  }
+  .descriptions {
+    font-size: 1.2em;
+  }
+
+  .description {
+    display: inline;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+.btnSecondary {
+  color: var(--secondary-btn--color);
+  background: transparent;
+  border: 0;
+}
+
+.btnPrimary {
+  color: var(--alt-bg-color);
+  background-color: var(--blue-color);
+  border: 0;
+}
