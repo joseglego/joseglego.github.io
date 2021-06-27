@@ -1,9 +1,13 @@
+import Bricks from '../Bricks';
+
 import styles from './Landing.module.css';
 
 function Landing () {
   return (
     <div className={styles.landing}>
-      <div className={styles.bricks} />
+      <div className={styles.bricks}>
+        <Bricks />
+      </div>
       <div className={styles.container}>
         <div className={styles.info}>
           <h1 className={styles.title}>josegLEGO</h1>

@@ -1,10 +1,12 @@
 .bricks {
   min-height: 100vh;
+  height: 100vh;
   min-width: 100vw;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 .container {
@@ -15,7 +17,16 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.info {
+  background: white;
+  border: 8px solid;
+  padding: 16px;
+  margin: 8px;
+  border-color: var(--blue-color) var(--green-color) var(--red-color)
+    var(--yellow-color);
 }
 
 .title {
@@ -84,6 +95,9 @@
 
   .description {
     display: inline;
+  }
+  .info {
+    padding: 32px;
   }
 }
 
