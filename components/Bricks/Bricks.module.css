@@ -1,0 +1,30 @@
+.row {
+  background: white;
+  overflow: hidden;
+  height: 80px;
+}
+
+.brick {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  z-index: 20;
+  border: 0;
+  background: white;
+}
+
+.blue {
+  background: var(--blue-color);
+}
+
+.green {
+  background: var(--green-color);
+}
+
+.red {
+  background: var(--red-color);
+}
+
+.yellow {
+  background: var(--yellow-color);
+}
