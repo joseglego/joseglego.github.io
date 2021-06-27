@@ -1,0 +1,49 @@
+.section {
+  padding: 24px;
+  min-height: 50vh;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.uppertitle {
+  text-align: center;
+  color: var(--secondary-font-color);
+  font-size: 3em;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-font-color);
+  font-size: 2em;
+  margin: 8px 0 16px 0;
+  text-transform: uppercase;
+}
+
+.secondary {
+  background: var(--alt-bg-color);
+}
+
+.secondary .uppertitle,
+.secondary .title {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 40px;
+  }
+
+  .uppertitle {
+    font-size: 6em;
+  }
+
+  .title {
+    letter-spacing: 8px;
+    font-size: 3em;
+  }
+}
