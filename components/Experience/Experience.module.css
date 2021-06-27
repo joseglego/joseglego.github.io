@@ -1,0 +1,50 @@
+.experiences {
+  list-style: none;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.experience {
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .experience {
+    flex: 0 0 33%;
+  }
+}
+
+.experienceLink {
+  color: #b3b4b6;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.experiencePeriod {
+  font-size: 0.9em;
+}
+
+.experiencePosition {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.experienceDescription {
+  padding-top: 24px;
+  text-align: left;
+  line-height: 160%;
+}
+
+.experienceLogo {
+  width: 56px;
+  margin-bottom: 8px;
+}
+
+.experienceName {
+  display: block;
+}
