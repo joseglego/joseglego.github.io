@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
       </Head>
       <h1>Joseg LEGO</h1>
     </div>
-  )
+  );
 }
