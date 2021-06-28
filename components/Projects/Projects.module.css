@@ -1,0 +1,25 @@
+.title {
+  margin: 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  width: 64%;
+  margin-bottom: 16px;
+}
+
+.description {
+  margin: 8px 0 0 0;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 32px;
+  }
+
+  .project {
+    flex: 1 1 27%;
+    margin: 16px 8px;
+  }
+}

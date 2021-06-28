@@ -3,6 +3,7 @@ import Head from 'next/head';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Landing from '../components/Landing';
+import Projects from '../components/Projects';
 
 export default function Home () {
   return (
@@ -15,6 +16,7 @@ export default function Home () {
       <Landing />
       <About />
       <Experience />
+      <Projects />
     </>
   );
 }
