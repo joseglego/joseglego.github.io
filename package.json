@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "next": "11.0.1",
@@ -15,6 +16,13 @@
   },
   "devDependencies": {
     "eslint": "7.29.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-semistandard": "^16.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "prettier": "2.3.2"
   }
 }
