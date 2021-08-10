@@ -21,12 +21,8 @@
 }
 
 .info {
-  background: white;
-  border: 8px solid;
   padding: 16px;
   margin: 8px;
-  border-color: var(--blue-color) var(--green-color) var(--red-color)
-    var(--yellow-color);
 }
 
 .title {

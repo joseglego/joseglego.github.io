@@ -12,11 +12,16 @@ function Bricks () {
     const rows = Math.ceil(windowHeight / brickSize);
     const bricksPerRow = Math.ceil(windowWidth / brickSize);
     const tmpDta = Array.from({ length: rows }).map(() =>
-      Array.from({ length: bricksPerRow }).map(() => {
-        const whiteSpaceRatio = 20;
-        const index = Math.floor(Math.random() * Math.floor(whiteSpaceRatio));
+      Array.from({ length: bricksPerRow }).map((_, index) => {
+        if (bricksPerRow < 9 && index < 2) {
+          return '';
+        } else if (bricksPerRow >= 9 && index < bricksPerRow / 2) {
+          return '';
+        }
+        const whiteSpaceRatio = bricksPerRow < 7 ? 9 : 15;
+        const colorIndex = Math.floor(Math.random() * Math.floor(whiteSpaceRatio));
         const availableColors = ['red', 'green', 'blue', 'yellow'];
-        return availableColors[index] || '';
+        return availableColors[colorIndex] || '';
       })
     );
 
