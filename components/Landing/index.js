@@ -18,10 +18,10 @@ function Landing () {
           </h2>
           <p className={styles.descriptions}>
             <span className={styles.description}>
-              I am a passionate developer,
+              I am a passionate developer,&nbsp;
             </span>
-            <span className={styles.description}> a lego fan </span>
-            <span className={styles.description}> and a coffee lover. </span>
+            <span className={styles.description}>a lego fan, &nbsp;</span>
+            <span className={styles.description}>and a coffee lover. </span>
           </p>
           <div className={styles.btns}>
             <button className={`${styles.btn} ${styles.btnPrimary}`}>Contact</button>

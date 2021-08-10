@@ -11,6 +11,7 @@
   --green-color: #34a853;
   --red-color: #ea4335;
   --yellow-color: #f9ab00;
+  --primary-color: var(--blue-color);
 }
 
 * {
