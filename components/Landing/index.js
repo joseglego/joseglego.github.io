@@ -1,12 +1,18 @@
+import React from 'react';
 import Bricks from '../Bricks';
 
 import styles from './Landing.module.css';
 
 function Landing () {
+  const [reset, setReset] = React.useState(0);
+
+  const shuffle = () => { setReset(reset + 1); };
+
   return (
     <div className={styles.landing}>
       <div className={styles.bricks}>
-        <Bricks />
+        {reset % 2 === 0 && <Bricks />}
+        {reset % 2 === 1 && <Bricks />}
       </div>
       <div className={styles.container}>
         <div className={styles.info}>
@@ -27,6 +33,11 @@ function Landing () {
             <button className={`${styles.btn} ${styles.btnPrimary}`}>Contact</button>
             <button className={`${styles.btn} ${styles.btnSecondary}`}>Read More</button>
           </div>
+        </div>
+      </div>
+      <div className={styles.actions}>
+        <div className={styles.btns} aria-hidden="true">
+          <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={shuffle}>Shuffle</button>
         </div>
       </div>
     </div>
