@@ -1,12 +1,18 @@
 import React from 'react';
 import Bricks from '../Bricks';
 
+import useInterval from '../../hooks/useInterval';
+
 import styles from './Landing.module.css';
 
 function Landing () {
   const [reset, setReset] = React.useState(0);
 
   const shuffle = () => { setReset(reset + 1); };
+
+  useInterval(() => {
+    shuffle();
+  }, 5000);
 
   return (
     <div className={styles.landing}>
