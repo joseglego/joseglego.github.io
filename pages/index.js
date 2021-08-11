@@ -10,7 +10,7 @@ export default function Home () {
   return (
     <>
       <Head>
-        <title>Joseg LEGO - Portfolio</title>
+        <title>Joseg LEGO - Software Developer | Frontend | WebUi | JavaScript FullStack</title>
         <meta name="description" content="Joseg LEGO - Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
