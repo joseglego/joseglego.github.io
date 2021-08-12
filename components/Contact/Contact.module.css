@@ -1,0 +1,81 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageForm,
+.socialMedia {
+  flex: 1 1 100%;
+  padding: 16px;
+  margin: 8px;
+  border: 1px solid #111;
+}
+
+.messageForm input,
+.messageForm textarea {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+.messageForm textarea {
+  resize: none;
+  height: 8em;
+}
+
+@media (min-width: 768px) {
+  .contactContainer {
+    flex-direction: row;
+  }
+
+  .messageForm,
+  .socialMedia {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .messageForm {
+    flex: 1 1 67%;
+  }
+
+  .socialMedia {
+    flex: 1 1 33%;
+  }
+}
+
+.screenReaderOnly {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.primaryText {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-align: center;
+}
+
+.socialList {
+  list-style: none;
+  padding: 0;
+}
+
+.socialList li {
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.socialList a {
+  color: var(--primary-color);
+}
+
+.extraInfo {
+  color: #777;
+}
