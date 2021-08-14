@@ -1,8 +1,54 @@
 import Section from '../Section';
 
+import useField from '../../hooks/useField';
 import styles from './Contact.module.css';
 
 function Contact () {
+  const nameField = useField({ type: 'text', name: 'name', id: 'name', placeholder: 'Name' });
+  const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email' });
+  const subjectField = useField({ type: 'text', name: 'subject', id: 'subject', placeholder: 'Subject' });
+  const messageField = useField({ name: 'message', id: 'message', placeholder: 'Message' });
+
+  const resetForm = () => {
+    const fakeEvent = { target: { value: '' } };
+    nameField.onChange(fakeEvent);
+    emailField.onChange(fakeEvent);
+    subjectField.onChange(fakeEvent);
+    messageField.onChange(fakeEvent);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!isValidForm()) {
+      MySwal.fire('Missing Info', missinInfoMessage(), 'info');
+      return;
+    }
+
+    const data = {
+      name: nameField.value,
+      email: emailField.value,
+      subject: subjectField.value,
+      message: messageField.value
+    };
+
+    fetch('https://formspree.io/mbjklkqm', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .catch(() => {
+        alert('error');
+      })
+      .then(r => r.json())
+      .then(() => {
+        alert('works');
+        resetForm();
+      });
+  };
+
   return (
     <Section index="04" title="Contact">
       <div className={styles.contactContainer}>
@@ -11,21 +57,21 @@ function Contact () {
           <form id="contact-form" noValidate="novalidate">
             <div>
               <label htmlFor="name" className={styles.screenReaderOnly}>Name</label>
-              <input name="name" id="name" type="text" className="" placeholder="Name" />
+              <input {...nameField} />
             </div>
             <div>
               <label htmlFor="email" className={styles.screenReaderOnly}>Email</label>
-              <input name="email" id="email" type="email" className="" placeholder="Email" />
+              <input {...emailField} />
             </div>
             <div>
               <label htmlFor="subject" className={styles.screenReaderOnly}>Subject</label>
-              <input name="subject" id="subject" type="text" className="" placeholder="Subject" />
+              <input {...subjectField} />
             </div>
             <div>
               <label htmlFor="message" className={styles.screenReaderOnly}>Message</label>
-              <textarea name="message" id="message" className="" rows="5" placeholder="Text"></textarea>
+              <textarea {...messageField} />
             </div>
-            <input type="submit" id="leButton" className="btn btn-danger btn-block" value="Send Email" />
+            <input type="submit" id="leButton" className="btn btn-danger btn-block" value="Send Email" onClick={sendEmail}/>
           </form>
         </div>
         <div className={styles.socialMedia}>

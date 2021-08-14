@@ -2,5 +2,9 @@
   "extends": ["next", "next/core-web-vitals", "semistandard"],
   "rules": {
     "@next/next/no-img-element": "off"
+  },
+  "globals": {
+    "fetch": "readonly",
+    "alert": "readonly",
   }
 }
