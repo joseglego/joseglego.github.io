@@ -4,6 +4,7 @@ import Bricks from '../Bricks';
 import useInterval from '../../hooks/useInterval';
 
 import styles from './Landing.module.css';
+import buttonStyles from '../Button/Button.module.css';
 
 function Landing () {
   const [reset, setReset] = React.useState(0);
@@ -36,14 +37,14 @@ function Landing () {
             <span className={styles.description}>and a coffee lover. </span>
           </p>
           <div className={styles.btns}>
-            <button className={`${styles.btn} ${styles.btnPrimary}`}>Contact</button>
-            <button className={`${styles.btn} ${styles.btnSecondary}`}>Read More</button>
+            <a className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}>Contact</a>
+            <a className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`}>Read More</a>
           </div>
         </div>
       </div>
       <div className={styles.actions}>
         <div className={styles.btns} aria-hidden="true">
-          <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={shuffle}>Shuffle</button>
+          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={shuffle}>Shuffle</button>
         </div>
       </div>
     </div>

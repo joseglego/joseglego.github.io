@@ -111,33 +111,6 @@
   }
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 16px;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  line-height: 24px;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-
-}
-
-.btnSecondary {
-  color: var(--secondary-btn--color);
-  background: transparent;
-  border: 0;
-}
-
-.btnPrimary {
-  color: var(--alt-bg-color);
-  background-color: var(--primary-btn-color);
-  border: 0;
-}
-
 .actions {
   position: absolute;
   bottom: 0;
