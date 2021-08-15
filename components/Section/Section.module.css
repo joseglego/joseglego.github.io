@@ -1,6 +1,10 @@
 .section {
   padding: 24px;
-  min-height: 50vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -21,7 +25,6 @@
   color: var(--primary-font-color);
   font-size: 2em;
   margin: 8px 0 16px 0;
-  text-transform: uppercase;
 }
 
 .secondary {
@@ -43,7 +46,6 @@
   }
 
   .title {
-    letter-spacing: 8px;
     font-size: 3em;
   }
 }

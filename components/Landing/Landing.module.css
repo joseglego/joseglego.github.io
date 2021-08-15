@@ -134,7 +134,7 @@
 
 .btnPrimary {
   color: var(--alt-bg-color);
-  background-color: var(--blue-color);
+  background-color: var(--primary-btn-color);
   border: 0;
 }
 

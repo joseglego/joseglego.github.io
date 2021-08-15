@@ -2,12 +2,16 @@
   margin: 0;
   border-bottom: 2px solid #ddd;
   padding-bottom: 8px;
-  width: 64%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .description {
   margin: 8px 0 0 0;
+}
+
+.project {
+  margin-bottom: 24px;
+  line-height: 150%;
 }
 
 @media (min-width: 768px) {
@@ -19,7 +23,7 @@
   }
 
   .project {
+    margin: 16px 16px 24px 16px;
     flex: 1 1 27%;
-    margin: 16px 8px;
   }
 }
