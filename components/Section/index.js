@@ -1,8 +1,8 @@
 import styles from './Section.module.css';
 
-function Section ({ extraClasses, alternative, index, title, children }) {
+function Section ({ extraClasses, alternative, id, index, title, children }) {
   return (
-    <div className={`${styles.section} ${alternative ? styles.secondary : ''}`}>
+    <div className={`${styles.section} ${alternative ? styles.secondary : ''}`} id={id}>
       <div className={styles.wrapper}>
         <div className={styles.uppertitle}>{index}.</div>
         <h2 className={styles.title}>{title}</h2>
