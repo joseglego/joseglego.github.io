@@ -4,7 +4,7 @@ import styles from './About.module.css';
 
 function About () {
   return (
-    <Section index="01" title="About" alternative={true}>
+    <Section index="01" title="About" alternative={true} id="about">
       <p className={styles.paragraph}>
         I am a passionate developer, a Lego fan, and a coffee lover, from Vargas, Venezuela. Living in Santiago, Chile.
       </p>

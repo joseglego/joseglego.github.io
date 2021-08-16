@@ -50,7 +50,7 @@ function Contact () {
   };
 
   return (
-    <Section index="04" title="Contact">
+    <Section index="04" title="Contact" id="contact">
       <div className={styles.contactContainer}>
         <div className={styles.messageForm}>
           <h2>Leave A Comment</h2>

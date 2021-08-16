@@ -5,7 +5,7 @@ import { projects } from './data';
 
 function About () {
   return (
-    <Section index="03" title="Projects" alternative={true}>
+    <Section index="03" title="Projects" alternative={true} id="projects">
       <p>
         As a Software Factory worker (most of my work-time) I&apos;ve been in really
         different projects. When I say different, it&apos;s really different. e.g.{' '}

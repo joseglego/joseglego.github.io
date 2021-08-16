@@ -5,7 +5,7 @@ import { experiences } from './data.js';
 
 function Experience () {
   return (
-    <Section index="02" title="Experience">
+    <Section index="02" title="Experience" id="experience">
       <ul className={styles.experiences}>
         {' '}
         {experiences.map((experience) => (
