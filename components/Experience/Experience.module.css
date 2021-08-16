@@ -48,3 +48,8 @@
 .experienceName {
   display: block;
 }
+
+.link {
+  color: var(--primary-color);
+  font-weight: bold;
+}
