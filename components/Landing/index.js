@@ -37,8 +37,8 @@ function Landing () {
             <span className={styles.description}>and a coffee lover. </span>
           </p>
           <div className={styles.btns}>
-            <a className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}>Contact</a>
-            <a className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`}>Read More</a>
+            <a href="#contact" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}>Contact</a>
+            <a href="#about" className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`}>Read More</a>
           </div>
         </div>
       </div>
