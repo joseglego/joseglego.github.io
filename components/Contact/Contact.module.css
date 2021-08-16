@@ -74,6 +74,7 @@
 
 .socialList a {
   color: var(--primary-color);
+  font-weight: bold;
 }
 
 .extraInfo {

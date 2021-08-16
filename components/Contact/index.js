@@ -1,6 +1,8 @@
 import Section from '../Section';
 
 import useField from '../../hooks/useField';
+
+import buttonStyles from '../Button/Button.module.css';
 import styles from './Contact.module.css';
 
 function Contact () {
@@ -71,7 +73,7 @@ function Contact () {
               <label htmlFor="message" className={styles.screenReaderOnly}>Message</label>
               <textarea {...messageField} />
             </div>
-            <input type="submit" id="leButton" className="btn btn-danger btn-block" value="Send Email" onClick={sendEmail}/>
+            <input type="submit" id="leButton" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`} value="Send Email" onClick={sendEmail}/>
           </form>
         </div>
         <div className={styles.socialMedia}>
