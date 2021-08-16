@@ -1,6 +1,7 @@
 import React from 'react';
 import Bricks from '../Bricks';
 
+import { useTheme } from '../../providers/ThemeProvider';
 import useInterval from '../../hooks/useInterval';
 
 import styles from './Landing.module.css';
@@ -8,7 +9,7 @@ import buttonStyles from '../Button/Button.module.css';
 
 function Landing () {
   const [reset, setReset] = React.useState(0);
-  const [darkMode, setDarkMode] = React.useState(false);
+  const { darkMode, setDarkMode } = useTheme();
 
   const shuffle = () => { setReset(reset + 1); };
 

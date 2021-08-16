@@ -25,6 +25,12 @@
   margin: 0 auto;
 }
 
+.darkMode {
+  background: url("/images/joseglego-alt.svg") no-repeat
+    center 70%;
+  background-size: cover;
+}
+
 .navbarList {
   list-style: none;
   margin: 0 auto;

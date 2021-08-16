@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Landing from '../components/Landing';
 import Navbar from '../components/Navbar';
 import Projects from '../components/Projects';
+import ThemeProvider from '../providers/ThemeProvider';
 import Contact from '../components/Contact';
 
 export default function Home () {
@@ -16,6 +17,7 @@ export default function Home () {
         <meta name="description" content="Joseg LEGO - Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <ThemeProvider>
         <Navbar />
         <Landing />
         <About />
@@ -23,6 +25,7 @@ export default function Home () {
         <Projects />
         <Contact />
         <Footer />
+      </ThemeProvider>
     </>
   );
 }
