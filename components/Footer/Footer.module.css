@@ -1,0 +1,46 @@
+.footer {
+  background-color: var(--section-bg-footer);
+  color: #fff;
+  padding: 32px 16px;
+}
+
+.footerContainer {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.joseglego {
+  color: transparent;
+  background: url("/images/joseglego-alt.svg") no-repeat
+    center 70%;
+  background-size: cover;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.footerInfo p {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .footerContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .footerInfo p {
+    text-align: left;
+    margin: 8px;
+  }
+
+  .joseglego {
+    margin: 0;
+  }
+}
