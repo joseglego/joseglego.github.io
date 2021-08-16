@@ -8,11 +8,29 @@ import buttonStyles from '../Button/Button.module.css';
 import styles from './Contact.module.css';
 
 function Contact () {
-  const nameField = useField({ type: 'text', name: 'name', id: 'name', placeholder: 'Name' });
-  const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email' });
+  const nameField = useField({ type: 'text', name: 'name', id: 'name', placeholder: 'Name', required: true });
+  const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email', required: true });
   const subjectField = useField({ type: 'text', name: 'subject', id: 'subject', placeholder: 'Subject' });
-  const messageField = useField({ name: 'message', id: 'message', placeholder: 'Message' });
+  const messageField = useField({ name: 'message', id: 'message', placeholder: 'Message', required: true });
   const MySwal = withReactContent(Swal);
+
+  const validEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const isValidForm = () => {
+    return nameField.value.trim() && validEmail(emailField.value) && messageField.value.trim();
+  };
+
+  const missinInfoMessage = () => {
+    const base = 'You have to provide at least your name, a valid email, and a message to be able to write you back.';
+    const missingName = !nameField.value ? 'You are missing your name.' : '';
+    const missingEmail = !validEmail(emailField.value) ? 'Its not a valid email.' : '';
+    const missingMessage = !messageField.value ? 'You are missing your message.' : '';
+
+    return [base, missingName, missingEmail, missingMessage].filter(Boolean).join('\n');
+  };
 
   const resetForm = () => {
     const fakeEvent = { target: { value: '' } };
@@ -60,7 +78,7 @@ function Contact () {
       <div className={styles.contactContainer}>
         <div className={styles.messageForm}>
           <h2>Leave A Comment</h2>
-          <form id="contact-form" noValidate="novalidate">
+          <form id="contact-form">
             <div>
               <label htmlFor="name" className={styles.screenReaderOnly}>Name</label>
               <input {...nameField} />
@@ -77,7 +95,7 @@ function Contact () {
               <label htmlFor="message" className={styles.screenReaderOnly}>Message</label>
               <textarea {...messageField} />
             </div>
-            <input type="submit" id="leButton" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`} value="Send Email" onClick={sendEmail}/>
+            <input type="submit" id="leButton" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary} ? ${!isValidForm() ? buttonStyles.btnDisabled : ''}`} value="Send Email" onClick={sendEmail}/>
           </form>
         </div>
         <div className={styles.socialMedia}>

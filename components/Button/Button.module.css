@@ -24,3 +24,9 @@
   background-color: var(--primary-btn-color);
   border: 0;
 }
+
+.btnPrimary.btnDisabled {
+  background-color: #7f96bb;
+  cursor: not-allowed;
+  border: 0;
+}
