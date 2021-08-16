@@ -3,10 +3,12 @@ import styles from './Section.module.css';
 function Section ({ extraClasses, alternative, id, index, title, children }) {
   return (
     <div className={`${styles.section} ${alternative ? styles.secondary : ''}`} id={id}>
-      <div className={styles.wrapper}>
-        <div className={styles.uppertitle}>{index}.</div>
-        <h2 className={styles.title}>{title}</h2>
-        {children}
+      <div className={styles.info}>
+        <div className={styles.wrapper}>
+          <div className={styles.uppertitle}>{index}.</div>
+          <h2 className={styles.title}>{title}</h2>
+          {children}
+        </div>
       </div>
     </div>
   );
