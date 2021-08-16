@@ -1,5 +1,7 @@
-import Section from '../Section';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
+import Section from '../Section';
 import useField from '../../hooks/useField';
 
 import buttonStyles from '../Button/Button.module.css';
@@ -10,6 +12,7 @@ function Contact () {
   const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email' });
   const subjectField = useField({ type: 'text', name: 'subject', id: 'subject', placeholder: 'Subject' });
   const messageField = useField({ name: 'message', id: 'message', placeholder: 'Message' });
+  const MySwal = withReactContent(Swal);
 
   const resetForm = () => {
     const fakeEvent = { target: { value: '' } };
@@ -34,6 +37,7 @@ function Contact () {
       message: messageField.value
     };
 
+    MySwal.fire('Wait...', 'Sending your email. It will close when finish.');
     fetch('https://formspree.io/mbjklkqm', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -42,11 +46,11 @@ function Contact () {
       }
     })
       .catch(() => {
-        alert('error');
+        MySwal.fire('Oops...', 'An error ocurred. Please, try again', 'error');
       })
       .then(r => r.json())
-      .then(() => {
-        alert('works');
+      .then((body) => {
+        MySwal.fire('Great', `Hello ${nameField.value}, your email was sent. I will contact you, soon. Thank you`, 'success');
         resetForm();
       });
   };
