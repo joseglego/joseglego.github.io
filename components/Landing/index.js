@@ -41,7 +41,7 @@ function Landing () {
   };
 
   return (
-    <div className={styles.landing} id="#home">
+    <div className={styles.landing} id="home">
       <div className={styles.bricks}>
         {reset % 2 === 0 && <Bricks />}
         {reset % 2 === 1 && <Bricks />}
