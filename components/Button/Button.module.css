@@ -20,13 +20,14 @@
 }
 
 .btnPrimary {
-  color: var(--alt-bg-color);
-  background-color: var(--primary-btn-color);
+  color: var(--primary-btn-color);
+  background-color: var(--primary-btn-bg-color);
   border: 0;
 }
 
 .btnPrimary.btnDisabled {
-  background-color: #7f96bb;
+  background-color: var(--disabled-btn-bg-color);
+  color: var(--disabled-btn-color);
   cursor: not-allowed;
   border: 0;
 }

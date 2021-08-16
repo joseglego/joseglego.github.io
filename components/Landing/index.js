@@ -8,12 +8,37 @@ import buttonStyles from '../Button/Button.module.css';
 
 function Landing () {
   const [reset, setReset] = React.useState(0);
+  const [darkMode, setDarkMode] = React.useState(false);
 
   const shuffle = () => { setReset(reset + 1); };
+
+  const setTheme = () => {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const hasDarkMode = document.body.classList.contains('dark-theme');
+    const hasLightkMode = document.body.classList.contains('light-theme');
+    const tmpDarkMode = (prefersDarkScheme && !hasLightkMode) || hasDarkMode;
+
+    setDarkMode(tmpDarkMode);
+  };
 
   useInterval(() => {
     shuffle();
   }, 5000);
+
+  React.useEffect(() => {
+    setTheme();
+  }, [setDarkMode]);
+
+  const toggleMode = () => {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkScheme) {
+      document.body.classList.toggle('light-theme');
+      setTimeout(setTheme);
+    } else {
+      document.body.classList.toggle('dark-theme');
+      setTimeout(setTheme);
+    }
+  };
 
   return (
     <div className={styles.landing} id="#home">
@@ -23,7 +48,7 @@ function Landing () {
       </div>
       <div className={styles.container}>
         <div className={styles.info}>
-          <h1 className={styles.title}>josegLEGO</h1>
+          <h1 className={`${styles.title} ${darkMode ? styles.darkMode : ''}`}>josegLEGO</h1>
           <h2 className={styles.name}>José Gregorio Lezama González</h2>
           <h2 className={styles.position}>
             <span className={styles.primaryPosition}>Frontend</span>
@@ -45,6 +70,7 @@ function Landing () {
       <div className={styles.actions}>
         <div className={styles.btns} aria-hidden="true">
           <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={shuffle}>Shuffle</button>
+          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={toggleMode}>Toggle Mode</button>
         </div>
       </div>
     </div>

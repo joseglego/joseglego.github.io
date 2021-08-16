@@ -1,5 +1,5 @@
 .row {
-  background: white;
+  background: var(--section-bg-color);
   overflow: hidden;
   height: 80px;
 }
@@ -10,7 +10,7 @@
   height: 80px;
   z-index: 20;
   border: 0;
-  background: white;
+  background: var(--section-bg-color);
 }
 
 .blue {

@@ -1,20 +1,71 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap");
 
-:root {
+body {
   --main-font-color: #444;
   --primary-font-color: #111;
   --secondary-font-color: #444;
+  --third-font-color: #999;
   --secondary-btn--color: #4f4f4f;
-  --main-bg-color: #fff;
-  --alt-bg-color: #f1f1f1;
   --blue-color: #4285f4;
   --green-color: #34a853;
   --red-color: #ea4335;
   --yellow-color: #f9ab00;
   --primary-color: var(--blue-color);
-  --primary-btn-color: #004ECC;
+  --primary-btn-bg-color: #004ECC;
+  --primary-btn-color: #fff;
+  --section-bg-color: rgba(255, 255, 255, .9);
+  --section-bg-alt-color: rgba(241,241,241, .85);
+  --disabled-btn-bg-color: #555;
+  --disabled-btn-color: #fff;
 }
 
+body.dark-theme {
+  --main-font-color: #ddd;
+  --primary-font-color: #fff;
+  --secondary-font-color: #eee;
+  --third-font-color: #ccc;
+  --secondary-btn--color: #ccc;
+  --primary-color: var(--blue-color);
+  --primary-btn-bg-color: #004ECC;
+  --primary-btn-color: #fff;
+  --section-bg-color: rgba(51, 51, 51, 0.9);
+  --section-bg-alt-color: rgba(102, 102, 102, 0.9);
+  --disabled-btn-bg-color: #2c384a;;
+  --disabled-btn-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --main-font-color: #ddd;
+    --primary-font-color: #fff;
+    --secondary-font-color: #eee;
+    --third-font-color: #ccc;
+    --secondary-btn--color: #ccc;
+    --primary-color: var(--blue-color);
+    --primary-btn-bg-color: #004ECC;
+    --primary-btn-color: #fff;
+    --section-bg-color: rgba(51, 51, 51, 0.9);
+    --section-bg-alt-color: rgba(102, 102, 102, 0.9);
+    --disabled-btn-bg-color: #2c384a;;
+    --disabled-btn-color: #fff;
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  body.light-theme {
+    --main-font-color: #444;
+    --primary-font-color: #111;
+    --secondary-font-color: #444;
+    --third-font-color: #999;
+    --secondary-btn--color: #4f4f4f;
+    --primary-color: var(--blue-color);
+    --primary-btn-bg-color: #004ECC;
+    --primary-btn-color: #fff;
+    --section-bg-color: rgba(255, 255, 255, .9);
+    --section-bg-alt-color: rgba(241,241,241, .85);
+    --disabled-btn-bg-color: #555;
+    --disabled-btn-color: #fff;
+  }
+}
 * {
   font-family: "Montserrat", sans-serif;
   color: var(--main-font-color);

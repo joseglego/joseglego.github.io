@@ -18,6 +18,11 @@
   padding: 8px;
 }
 
+.messageForm input:not([type='submit']),
+.messageForm textarea {
+  color: #333;
+}
+
 .messageForm textarea {
   resize: none;
   height: 8em;
@@ -78,5 +83,5 @@
 }
 
 .extraInfo {
-  color: #777;
+  color: var(--third-font-color);
 }
