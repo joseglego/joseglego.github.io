@@ -69,9 +69,9 @@ function Landing () {
         </div>
       </div>
       <div className={styles.actions}>
-        <div className={styles.btns} aria-hidden="true">
-          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={shuffle}>Shuffle</button>
-          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={toggleMode}>Toggle Mode</button>
+        <div className={styles.btns}>
+          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={shuffle} aria-label="Shuffle Background">Shuffle</button>
+          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={toggleMode} aria-label="Toggle Light/Dark Mode">Toggle Mode</button>
         </div>
       </div>
     </div>
