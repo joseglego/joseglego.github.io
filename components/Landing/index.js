@@ -7,7 +7,7 @@ import useInterval from '../../hooks/useInterval';
 import styles from './Landing.module.css';
 import buttonStyles from '../Button/Button.module.css';
 
-function Landing () {
+function Landing (_, ref) {
   const [reset, setReset] = React.useState(0);
   const { darkMode, setDarkMode } = useTheme();
 
@@ -42,7 +42,7 @@ function Landing () {
   };
 
   return (
-    <div className={styles.landing} id="home">
+    <div className={styles.landing} id="home" ref={ref}>
       <div className={styles.bricks}>
         {reset % 2 === 0 && <Bricks />}
         {reset % 2 === 1 && <Bricks />}
@@ -78,4 +78,4 @@ function Landing () {
   );
 }
 
-export default Landing;
+export default React.forwardRef(Landing);

@@ -1,11 +1,13 @@
+import React from 'react';
+
 import Section from '../Section';
 
 import styles from './Projects.module.css';
 import { projects } from './data';
 
-function About () {
+function About (_, ref) {
   return (
-    <Section index="03" title="Projects" alternative={true} id="projects">
+    <Section index="03" title="Projects" alternative={true} id="projects" ref={ref}>
       <p>
         As a Software Factory worker (most of my work-time) I&apos;ve been in really
         different projects. When I say different, it&apos;s really different. e.g.{' '}
@@ -35,4 +37,4 @@ function About () {
   );
 }
 
-export default About;
+export default React.forwardRef(About);

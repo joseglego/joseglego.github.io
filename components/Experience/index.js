@@ -1,11 +1,13 @@
+import React from 'react';
+
 import Section from '../Section';
 
 import styles from './Experience.module.css';
 import { experiences } from './data.js';
 
-function Experience () {
+function Experience (_, ref) {
   return (
-    <Section index="02" title="Experience" id="experience">
+    <Section index="02" title="Experience" id="experience" ref={ref}>
       <ul className={styles.experiences}>
         {' '}
         {experiences.map((experience) => (
@@ -52,4 +54,4 @@ function Experience () {
   );
 }
 
-export default Experience;
+export default React.forwardRef(Experience);

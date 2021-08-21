@@ -1,10 +1,12 @@
+import React from 'react';
+
 import Section from '../Section';
 
 import styles from './About.module.css';
 
-function About () {
+function About (_, ref) {
   return (
-    <Section index="01" title="About" alternative={true} id="about">
+    <Section index="01" title="About" alternative={true} id="about" ref={ref}>
       <p className={styles.paragraph}>
         I am a passionate developer, a Lego fan, and a coffee lover, from Vargas, Venezuela. Living in Santiago, Chile.
       </p>
@@ -20,4 +22,4 @@ function About () {
   );
 }
 
-export default About;
+export default React.forwardRef(About);

@@ -1,8 +1,10 @@
+import React from 'react';
+
 import styles from './Section.module.css';
 
-function Section ({ extraClasses, alternative, id, index, title, children }) {
+function Section ({ extraClasses, alternative, id, index, title, children }, ref) {
   return (
-    <div className={`${styles.section} ${alternative ? styles.secondary : ''}`} id={id}>
+    <div className={`${styles.section} ${alternative ? styles.secondary : ''}`} id={id} ref={ref}>
       <div className={styles.info}>
         <div className={styles.wrapper}>
           <div className={styles.uppertitle}>{index}.</div>
@@ -14,4 +16,4 @@ function Section ({ extraClasses, alternative, id, index, title, children }) {
   );
 }
 
-export default Section;
+export default React.forwardRef(Section);

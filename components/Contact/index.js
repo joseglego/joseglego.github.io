@@ -1,3 +1,4 @@
+import React from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
@@ -7,7 +8,7 @@ import useField from '../../hooks/useField';
 import buttonStyles from '../Button/Button.module.css';
 import styles from './Contact.module.css';
 
-function Contact () {
+function Contact (_, ref) {
   const nameField = useField({ type: 'text', name: 'name', id: 'name', placeholder: 'Name', required: true });
   const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email', required: true });
   const subjectField = useField({ type: 'text', name: 'subject', id: 'subject', placeholder: 'Subject' });
@@ -74,7 +75,7 @@ function Contact () {
   };
 
   return (
-    <Section index="04" title="Contact" id="contact">
+    <Section index="04" title="Contact" id="contact" ref={ref}>
       <div className={styles.contactContainer}>
         <div className={styles.messageForm}>
           <h2>Leave A Comment</h2>
@@ -139,4 +140,4 @@ function Contact () {
   );
 }
 
-export default Contact;
+export default React.forwardRef(Contact);
