@@ -1,9 +1,12 @@
 .navbar {
-  background-color: var(--section-bg-filled-color);
   padding: 8px;
   width: 100%;
   position: fixed;
   z-index: 600;
+}
+
+.activeNavbar {
+  background-color: var(--section-bg-filled-color);
   box-shadow: var(--box-shadow);
 }
 
