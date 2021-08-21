@@ -9,37 +9,13 @@ import buttonStyles from '../Button/Button.module.css';
 
 function Landing (_, ref) {
   const [reset, setReset] = React.useState(0);
-  const { darkMode, setDarkMode } = useTheme();
+  const { darkMode } = useTheme();
 
   const shuffle = () => { setReset(reset + 1); };
-
-  const setTheme = () => {
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const hasDarkMode = document.body.classList.contains('dark-theme');
-    const hasLightkMode = document.body.classList.contains('light-theme');
-    const tmpDarkMode = (prefersDarkScheme && !hasLightkMode) || hasDarkMode;
-
-    setDarkMode(tmpDarkMode);
-  };
 
   useInterval(() => {
     shuffle();
   }, 5000);
-
-  React.useEffect(() => {
-    setTheme();
-  }, [setDarkMode]);
-
-  const toggleMode = () => {
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDarkScheme) {
-      document.body.classList.toggle('light-theme');
-      setTimeout(setTheme);
-    } else {
-      document.body.classList.toggle('dark-theme');
-      setTimeout(setTheme);
-    }
-  };
 
   return (
     <div className={styles.landing} id="home" ref={ref}>
@@ -71,7 +47,6 @@ function Landing (_, ref) {
       <div className={styles.actions}>
         <div className={styles.btns}>
           <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={shuffle} aria-label="Shuffle Background">Shuffle</button>
-          <button className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} onClick={toggleMode} aria-label="Toggle Light/Dark Mode">Toggle Mode</button>
         </div>
       </div>
     </div>

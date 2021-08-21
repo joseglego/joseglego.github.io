@@ -52,8 +52,21 @@
   height: 100%;
 }
 
+.modeButton {
+  border: 0;
+  background: transparent;
+  line-height: 40px;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .navbarList li a:hover {
   color: var(--light-primary-color);
+}
+
+.modeButton:hover svg {
+  fill: var(--light-primary-color);
 }
 
 .activeSection,
@@ -87,5 +100,9 @@
 
   .navbarList li:last-child a {
     padding-right: 0;
+  }
+
+  .modeButton {
+    font-size: 24px;
   }
 }
