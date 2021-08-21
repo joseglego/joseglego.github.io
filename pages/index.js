@@ -1,4 +1,6 @@
+import React from 'react';
 import Head from 'next/head';
+import { Scrollspy } from '@makotot/ghostui';
 
 import About from '../components/About';
 import Experience from '../components/Experience';
@@ -10,6 +12,14 @@ import ThemeProvider from '../providers/ThemeProvider';
 import Contact from '../components/Contact';
 
 export default function Home () {
+  const sectionRefs = [
+    React.useRef(null),
+    React.useRef(null),
+    React.useRef(null),
+    React.useRef(null),
+    React.useRef(null)
+  ];
+
   return (
     <>
       <Head>
@@ -38,13 +48,19 @@ export default function Home () {
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </Head>
       <ThemeProvider>
-        <Navbar />
-        <Landing />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
+        <Scrollspy sectionRefs={sectionRefs}>
+          {({ currentElementIndexInViewport }) => (
+            <>
+              <Navbar activeSectionIndex={currentElementIndexInViewport} />
+              <Landing ref={sectionRefs[0]} />
+              <About ref={sectionRefs[1]} />
+              <Experience ref={sectionRefs[2]} />
+              <Projects ref={sectionRefs[3]} />
+              <Contact ref={sectionRefs[4]} />
+              <Footer />
+            </>
+          )}
+        </Scrollspy>
       </ThemeProvider>
     </>
   );
