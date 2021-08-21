@@ -52,6 +52,15 @@
   height: 100%;
 }
 
+.navbarList li a:hover {
+  color: var(--light-primary-color);
+}
+
+.activeSection,
+.navbarList li a.activeSection:hover {
+  color: var(--primary-color)
+}
+
 @media (min-width: 768px) {
   .navbar {
     padding: 16px 0;
@@ -79,8 +88,4 @@
   .navbarList li:last-child a {
     padding-right: 0;
   }
-}
-
-.navbarList li a:hover {
-  color: var(--primary-color);
 }
