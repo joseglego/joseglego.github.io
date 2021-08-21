@@ -63,7 +63,7 @@ function Landing (_, ref) {
             <span className={styles.description}>and a coffee lover. </span>
           </p>
           <div className={styles.btns}>
-            <a href="#contact" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}>Contact</a>
+            <a href="#contact" className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}>Contact Me</a>
             <a href="#about" className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`}>Read More</a>
           </div>
         </div>

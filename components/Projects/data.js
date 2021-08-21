@@ -3,7 +3,7 @@ export const projects = [
     category: 'beetrack',
     title: 'Beetrack',
     description:
-      "I'm working on adding new features and modules in the app. Also, I have been remaking old modules and making helper libs to be used in the whole application.",
+    'Worked in adding new features and modules in the app. Also, remaking old modules and making helper libs to be used in the whole application.',
     url: '',
     background: '/static/images/projects/beetrack-intro.jpg'
   },
@@ -37,7 +37,7 @@ export const projects = [
     category: 'cleteci',
     title: 'Alanna',
     description:
-      "I worked for the first version of Alanna, which is a tourism startup which can help you manage your travel agency, your clients and their trips. Now it's known as Travel Contact.",
+      "Worked on the first version of Alanna, which is a tourism startup which can help you manage your travel agency, your clients and their trips. Now it's known as Travel Contact.",
     url: 'http://travelcontact.com/',
     background: '/static/images/projects/atrio-intro.jpg'
   },
@@ -45,7 +45,7 @@ export const projects = [
     category: 'cleteci',
     title: 'Atrio',
     description:
-      'Worked mostly in the interface of a quoting app, which connects with a Legacy app, to know the price, benefits and cons of insurance packs',
+      'Worked mostly on the interface of a quoting app, which connects with a Legacy app, to know the price, benefits and cons of insurance packs.',
     url: '',
     background: '/static/images/projects/atrio-intro.jpg'
   }
