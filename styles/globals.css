@@ -7,10 +7,12 @@ body {
   --third-font-color: #999;
   --secondary-btn--color: #4f4f4f;
   --blue-color: #4285f4;
+  --light-blue-color: #a0c2f9;
   --green-color: #34a853;
   --red-color: #ea4335;
   --yellow-color: #f9ab00;
   --primary-color: var(--blue-color);
+  --light-primary-color: var(--light-blue-color);
   --primary-btn-bg-color: #004ECC;
   --primary-btn-color: #fff;
   --section-bg-color: rgba(255, 255, 255, .9);
