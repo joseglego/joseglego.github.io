@@ -53,3 +53,7 @@
   color: var(--primary-color);
   font-weight: bold;
 }
+
+.link svg {
+  fill: var(--primary-color);
+}
