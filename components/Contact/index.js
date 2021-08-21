@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import { FaEnvelopeOpenText, FaGithub, FaLinkedinIn, FaMapMarkerAlt } from 'react-icons/fa';
 
 import Section from '../Section';
 import useField from '../../hooks/useField';
@@ -108,25 +109,25 @@ function Contact (_, ref) {
           </p>
           <ul className={styles.socialList}>
             <li>
-              Linkedin:&nbsp;
+              <FaLinkedinIn aria-label="LinkedIn" />
               <a target="_blank" href="https://www.linkedin.com/in/joseglego/" rel="noopener noreferrer">
                 in/joseglego
               </a>
             </li>
             <li>
-              GitHub:&nbsp;
+              <FaGithub aria-label="GitHub" />
               <a target="_blank" href="https://github.com/joseglego" rel="noopener noreferrer">
                 joseglego
               </a>
             </li>
             <li>
-              Email:&nbsp;
+              <FaEnvelopeOpenText aria-label="Email" />
               <a id="go-to-email" href="#" rel="noopener noreferrer" >
                 me@joseglego.io
               </a>
             </li>
             <li>
-              Location:&nbsp;
+              <FaMapMarkerAlt aria-label="Location" />
               <a target="_blank" href="https://www.google.com/maps/place/Santiago,+Santiago+Metropolitan+Region,+Chile/@-33.7201586,-75.43648,5z" rel="noopener noreferrer" >
                 Santiago de Chile, Chile
               </a>
