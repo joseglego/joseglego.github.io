@@ -122,7 +122,7 @@ function Contact (_, ref) {
             </li>
             <li>
               <FaEnvelopeOpenText aria-label="Email" />
-              <a id="go-to-email" href="#" rel="noopener noreferrer" >
+              <a href="mailto:example@email.com">
                 me@joseglego.io
               </a>
             </li>
