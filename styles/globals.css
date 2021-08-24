@@ -117,3 +117,29 @@ div {
   margin: 0;
   padding: 0;
 }
+
+body.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.ReactModal__Content {
+  position: absolute;
+  inset: 16px;
+  box-shadow: var(--box-shadow);
+  background: var(--section-bg-filled-color);
+  color: var(--primary-font-color);
+  overflow: auto;
+  outline: none;
+  padding: 20px;
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  inset: 0px;
+  background-color: var(--section-bg-color);
+  z-index: 601;
+}
+
+.ReactModal__Container {
+  height: 100%;
+}
