@@ -21,11 +21,10 @@
 .navbarBrand {
   color: transparent;
   background: url("/images/joseglego.svg") no-repeat
-              center 70%;
+    center 70%;
   background-size: cover;
   width: 150px;
   height: 40px;
-  margin: 0 auto;
 }
 
 .darkMode {
@@ -35,21 +34,12 @@
 }
 
 .navbarList {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  font-size: .9em;
+  display: none;
 }
 
-.navbarList li {
-  display: inline-block;
-}
-
-.navbarList li a {
-  display: inline-block;
-  padding: 0 4px;
-  width: 100%;
-  height: 100%;
+.activeSection,
+.navbarList li a.activeSection:hover {
+  color: var(--primary-color)
 }
 
 .modeButton {
@@ -59,19 +49,51 @@
   vertical-align: middle;
   cursor: pointer;
   font-size: 16px;
+  width: 42px;
 }
 
-.navbarList li a:hover {
-  color: var(--light-primary-color);
+.hamburgerButton {
+  background: transparent;
+  border: 0;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 16px;
 }
 
-.modeButton:hover svg {
-  fill: var(--light-primary-color);
+.closeMenuButton {
+  background: transparent;
+  border: 0;
+  font-size: 16px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  position: absolute;
+  right: 20px;
 }
 
-.activeSection,
-.navbarList li a.activeSection:hover {
-  color: var(--primary-color)
+.mobileNavbarList {
+  list-style: none;
+  font-weight: bold;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%
+}
+
+.mobileNavbarList li {
+  margin: 8px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileNavbarList li {
+  display: inline-block;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -83,10 +105,18 @@
     margin: 0;
   }
 
+  .navbarActions {
+    display: flex;
+  }
+
   .navbarList {
     display: block;
     line-height: 40px;
     margin: 0;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    font-size: .9em;
   }
 
   .navbarList li {
@@ -95,6 +125,9 @@
   }
 
   .navbarList li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
     padding: 0 16px;
   }
 
@@ -102,7 +135,20 @@
     padding-right: 0;
   }
 
+  .navbarList li a:hover {
+    color: var(--light-primary-color);
+  }
+
+  .modeButton:hover svg {
+    fill: var(--light-primary-color);
+  }
+
   .modeButton {
     font-size: 24px;
+    margin-left: 8px;
+  }
+
+  .hamburgerButton {
+    display: none;
   }
 }

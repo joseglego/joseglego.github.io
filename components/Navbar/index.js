@@ -1,12 +1,14 @@
 import React from 'react';
-import { FaSun, FaRegMoon } from 'react-icons/fa';
+import { FaSun, FaRegMoon, FaBars, FaTimes } from 'react-icons/fa';
 import { useTheme } from '../../providers/ThemeProvider';
+import ReactModal from 'react-modal';
 
 import styles from './Navbar.module.css';
 
 function Navbar ({ activeSectionIndex }) {
   const { darkMode, setDarkMode } = useTheme();
   const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [isOpen, setIsOpen] = React.useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -53,19 +55,48 @@ function Navbar ({ activeSectionIndex }) {
   }, [setDarkMode]);
 
   return (
+    <>
       <div className={`${styles.navbar} ${scrollPosition > 75 ? styles.activeNavbar : ''}`}>
         <div className={styles.navbarContainer}>
           <div className={`${styles.navbarBrand} ${darkMode ? styles.darkMode : ''}`}>JosegLEGO</div>
-          <ul className={styles.navbarList}>
-            {sections.map(({ id, title }, index) => (
-              <li key={id}><a href={id} className={index === activeSectionIndex ? styles.activeSection : ''}>{title}</a></li>
-            ))}
+          <div className={styles.navbarActions}>
+            <ul className={styles.navbarList}>
+              {sections.map(({ id, title }, index) => (
+                <li key={id}><a href={id} className={index === activeSectionIndex ? styles.activeSection : ''}>{title}</a></li>
+              ))}
+            </ul>
+            <button className={styles.hamburgerButton} onClick={() => setIsOpen(true)} aria-label="Open Navbar Menu">
+              <FaBars />
+            </button>
             <button className={styles.modeButton} onClick={toggleMode} aria-label={`Activate ${darkMode ? 'Light Mode' : 'Dark Mode'}`}>
               {darkMode ? <FaSun /> : <FaRegMoon />}
             </button>
-          </ul>
+          </div>
         </div>
       </div>
+      <ReactModal
+        isOpen={isOpen}
+        className="ReactModal__Content"
+        overlayClassName="ReactModal__Overlay">
+        <div className="ReactModal__Container">
+          <button className={styles.closeMenuButton} onClick={() => setIsOpen(false)} aria-label="Close Navbar Menu">
+            <FaTimes />
+          </button>
+          <ul className={styles.mobileNavbarList}>
+            {sections.map(({ id, title }, index) => (
+              <li key={id}>
+                <a
+                  href={id}
+                  className={index === activeSectionIndex ? styles.activeSection : ''}
+                  onClick={() => setIsOpen(!isOpen)}>
+                  {title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </ReactModal>
+    </>
   );
 }
 
