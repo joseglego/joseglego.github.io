@@ -61,6 +61,12 @@
   font-size: 16px;
 }
 
+.navbarMenu {
+  inset: 0;
+  width: 70%;
+  left: 30%;
+}
+
 .closeMenuButton {
   background: transparent;
   border: 0;
@@ -69,13 +75,14 @@
   height: 42px;
   line-height: 42px;
   position: absolute;
+  top: 20px;
   right: 20px;
 }
 
 .mobileNavbarList {
   list-style: none;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -76,7 +76,7 @@ function Navbar ({ activeSectionIndex }) {
       </div>
       <ReactModal
         isOpen={isOpen}
-        className="ReactModal__Content"
+        className={`ReactModal__Content ${styles.navbarMenu}`}
         overlayClassName="ReactModal__Overlay">
         <div className="ReactModal__Container">
           <button className={styles.closeMenuButton} onClick={() => setIsOpen(false)} aria-label="Close Navbar Menu">
