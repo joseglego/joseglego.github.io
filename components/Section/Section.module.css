@@ -8,6 +8,7 @@
 
 .info {
   padding: 24px;
+  padding-top: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,7 @@
   align-items: center;
   background: var(--section-bg-color);
 }
+
 .secondary .info {
   background: var(--section-bg-alt-color);
 }
@@ -30,6 +32,7 @@
   font-size: 3em;
   font-weight: bold;
   margin: 8px 0;
+  padding-top: 74px;
 }
 
 .title {
