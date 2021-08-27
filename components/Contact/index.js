@@ -79,7 +79,7 @@ function Contact (_, ref) {
     <Section index="04" title="Contact" id="contact" ref={ref}>
       <div className={styles.contactContainer}>
         <div className={styles.messageForm}>
-          <h2>Leave A Comment</h2>
+          <h3 className={styles.cardTitle}>Leave A Comment</h3>
           <form id="contact-form">
             <div>
               <label htmlFor="name" className={styles.screenReaderOnly}>Name</label>
@@ -101,7 +101,7 @@ function Contact (_, ref) {
           </form>
         </div>
         <div className={styles.socialMedia}>
-          <h2>Get In Touch</h2>
+          <h3 className={styles.cardTitle}>Get In Touch</h3>
           <p>If you wanna know more about me, you can leave a comment, or write me an email. Also, you can find me in the internet, usually as
           </p>
           <p className={styles.primaryText}>

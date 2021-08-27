@@ -18,6 +18,29 @@
   padding: 8px;
 }
 
+.cardTitle {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.cardTitle:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: url('/images/bg/bricks.svg');
+  background-size: cover;
+  margin-top: 8px;
+}
+
+.messageForm .cardTitle:after {
+  width: 16ch;
+}
+
+.socialMedia .cardTitle:after {
+  width: 12ch;
+}
+
 .messageForm input:not([type='submit']),
 .messageForm textarea {
   color: #333;
@@ -26,27 +49,6 @@
 .messageForm textarea {
   resize: none;
   height: 8em;
-}
-
-@media (min-width: 768px) {
-  .contactContainer {
-    flex-direction: row;
-  }
-
-  .messageForm,
-  .socialMedia {
-    flex: 1 1 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .messageForm {
-    flex: 1 1 67%;
-  }
-
-  .socialMedia {
-    flex: 1 1 33%;
-  }
 }
 
 .screenReaderOnly {
@@ -92,4 +94,25 @@
 
 .extraInfo {
   color: var(--third-font-color);
+}
+
+@media (min-width: 768px) {
+  .contactContainer {
+    flex-direction: row;
+  }
+
+  .messageForm,
+  .socialMedia {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .messageForm {
+    flex: 1 1 67%;
+  }
+
+  .socialMedia {
+    flex: 1 1 33%;
+  }
 }
