@@ -39,7 +39,17 @@
   text-align: center;
   color: var(--primary-font-color);
   font-size: 2em;
-  margin: 8px 0 16px 0;
+  margin: 8px 0 24px 0;
+}
+
+.title:after {
+  content: '';
+  display: block;
+  width: 70%;
+  height: 6px;
+  background: url('/images/bg/bricks.svg');
+  background-size: cover;
+  margin: 8px auto 0;
 }
 
 .secondary .uppertitle,
@@ -47,7 +57,20 @@
   text-align: left;
 }
 
+.secondary .title:after {
+  width: 60%;
+  margin: 8px 0 0 0;
+}
+
 @media (min-width: 768px) {
+  .title:after {
+    width: 35%;
+  }
+
+  .secondary .title:after {
+    width: 35%;
+  }
+
   .info {
     padding: 40px;
   }
