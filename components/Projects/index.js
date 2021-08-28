@@ -8,7 +8,7 @@ import { projects } from './data';
 function About (_, ref) {
   return (
     <Section index="03" title="Projects" alternative={true} id="projects" ref={ref}>
-      <p>
+      <p className={styles.paragraph}>
         As a Software Factory worker (most of my work-time) I&apos;ve been in really
         different projects. When I say different, it&apos;s really different, e. g.{' '}
         <i>Uber Eats for Cows</i>, <i>Insurance companies</i>,{' '}
@@ -25,7 +25,7 @@ function About (_, ref) {
           </div>
         ))}
       </div>
-      <p>
+      <p className={styles.paragraph}>
         Also, I really enjoy spending time programming. So, if you have an Open
         Source project and need a hand, I&quot;ll probably be pleased to help you. I
         have found some small open source projects and help them with small
