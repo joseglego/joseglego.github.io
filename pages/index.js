@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Scrollspy } from '@makotot/ghostui';
 
 import About from '../components/About';
+import Analytics from '../components/Analytics';
 import Experience from '../components/Experience';
 import Footer from '../components/Footer';
 import Landing from '../components/Landing';
@@ -58,6 +59,7 @@ export default function Home () {
               <Projects ref={sectionRefs[3]} />
               <Contact ref={sectionRefs[4]} />
               <Footer />
+              <Analytics webpageTitle="Index" />
             </>
           )}
         </Scrollspy>
