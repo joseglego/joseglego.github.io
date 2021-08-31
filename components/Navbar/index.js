@@ -80,6 +80,7 @@ function Navbar ({ activeSectionIndex }) {
       </div>
       <ReactModal
         isOpen={isOpen}
+        closeTimeoutMS={500}
         className={`ReactModal__Content ${styles.navbarMenu}`}
         overlayClassName="ReactModal__Overlay">
         <div className={`ReactModal__Container ${styles.menuContainer}`}>

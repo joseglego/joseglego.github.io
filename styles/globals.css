@@ -92,10 +92,6 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   padding: 0;
@@ -142,4 +138,26 @@ body.ReactModal__Body--open {
 
 .ReactModal__Container {
   height: 100%;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateX(+300px);
+  transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(+300px);
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

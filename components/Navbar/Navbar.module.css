@@ -63,8 +63,8 @@
 
 .navbarMenu {
   inset: 0;
-  width: 70%;
-  left: 30%;
+  width: 80%;
+  left: 20%;
   background: url('/images/bg/color_mini_0.svg') var(--section-bg-filled-color);
   padding: 0;
 }
