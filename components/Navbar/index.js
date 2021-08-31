@@ -54,6 +54,10 @@ function Navbar ({ activeSectionIndex }) {
     setTheme();
   }, [setDarkMode]);
 
+  React.useEffect(() => {
+    ReactModal.setAppElement('body');
+  }, []);
+
   return (
     <>
       <div className={`${styles.navbar} ${scrollPosition > 75 ? styles.activeNavbar : ''}`}>
