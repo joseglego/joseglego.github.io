@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import data from '../../config';
 
 function Analytics ({ webpageTitle }) {
   React.useEffect(() => {
-    const analyticsId = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+    const analyticsId = data.analyticsId;
     if (analyticsId) {
       ReactGA.initialize(analyticsId);
       ReactGA.pageview(webpageTitle);
