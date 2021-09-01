@@ -6,6 +6,8 @@ import { FaEnvelopeOpenText, FaGithub, FaLinkedinIn, FaMapMarkerAlt } from 'reac
 import Section from '../Section';
 import useField from '../../hooks/useField';
 
+import data from '../../config';
+
 import buttonStyles from '../Button/Button.module.css';
 import styles from './Contact.module.css';
 
@@ -110,20 +112,20 @@ function Contact (_, ref) {
           <ul className={styles.socialList}>
             <li>
               <FaLinkedinIn aria-label="LinkedIn" />
-              <a target="_blank" href="https://www.linkedin.com/in/joseglego/" rel="noopener noreferrer">
-                in/joseglego
+              <a target="_blank" href={data.socialLinkedinUrl} rel="noopener noreferrer">
+                {data.socialLinkedin}
               </a>
             </li>
             <li>
               <FaGithub aria-label="GitHub" />
-              <a target="_blank" href="https://github.com/joseglego" rel="noopener noreferrer">
-                joseglego
+              <a target="_blank" href={data.socialGithubUrl} rel="noopener noreferrer">
+                {data.socialGithubUser}
               </a>
             </li>
             <li>
               <FaEnvelopeOpenText aria-label="Email" />
-              <a href="mailto:example@email.com">
-                me@joseglego.io
+              <a href={`mailto:${data.socialEmail}`}>
+                {data.socialEmail}
               </a>
             </li>
             <li>
