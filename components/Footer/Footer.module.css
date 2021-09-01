@@ -27,12 +27,26 @@
 
 .footerInfo p {
   color: white;
+  font-size: 0.95em;
+}
+
+.footerSocialLink {
+  font-size: 24px;
+  margin-left: 16px;
+}
+
+.footerSocialLink:first-of-type {
+  marigin-left: 0;
+}
+
+.footerSocialLink svg {
+  fill: #fff;
 }
 
 @media (min-width: 768px) {
   .footerContainer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .footerInfo p {
@@ -42,5 +56,10 @@
 
   .joseglego {
     margin: 0;
+  }
+
+  .footerSocial {
+    flex: 1 1;
+    text-align: right;
   }
 }
