@@ -1,0 +1,140 @@
+.messageOverlay {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 500ms ease-in-out;
+}
+
+.messageOverlayAfterOpen {
+  opacity: 1;
+}
+
+.messageOverlayBeforeClose {
+  opacity: 0;
+}
+
+.messageContent {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0;
+  background: url(/images/bg/bg_1.svg) var(--section-bg-filled-color);
+}
+
+.messageContainer {
+  background: var(--section-bg-color);
+  padding: 48px 24px 24px;
+}
+
+.closeButton {
+  display: block;
+  text-align: center;
+  position: absolute;
+  right: 24px;
+  background: transparent;
+  border: 0;
+  font-size: 16px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon svg {
+  height: 48px;
+  width: 48px;
+}
+
+.info {
+  color: var(--blue-color);
+}
+
+.icon.info svg {
+  fill: var(--blue-color);
+}
+
+.warning {
+  color: var(--yellow-color);
+}
+
+.icon.warning svg {
+  fill: var(--yellow-color);
+}
+
+.processing {
+  color: var(--blue-color);
+  border: 0;
+}
+
+.icon.processing {
+  animation: rotating 2s linear infinite;
+
+}
+
+.icon.processing svg {
+  fill: var(--blue-color);
+}
+
+.success {
+  color: var(--green-color);
+}
+
+.icon.success svg {
+  fill: var(--green-color);
+}
+
+.error {
+  color: var(--red-color);
+}
+
+.icon.error svg {
+  fill: var(--red-color);
+}
+
+@media (min-width: 768px) {
+  .messageContent {
+    max-width: 600px;
+  }
+}
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
