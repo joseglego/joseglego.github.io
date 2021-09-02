@@ -1,8 +1,7 @@
 import React from 'react';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
 import { FaEnvelopeOpenText, FaGithub, FaLinkedinIn, FaMapMarkerAlt } from 'react-icons/fa';
 
+import Message from '../Message';
 import Section from '../Section';
 import useField from '../../hooks/useField';
 
@@ -12,11 +11,11 @@ import buttonStyles from '../Button/Button.module.css';
 import styles from './Contact.module.css';
 
 function Contact (_, ref) {
+  const [showModal, setShowModal] = React.useState({});
   const nameField = useField({ type: 'text', name: 'name', id: 'name', placeholder: 'Name', required: true });
   const emailField = useField({ type: 'email', name: 'email', id: 'email', placeholder: 'Email', required: true });
   const subjectField = useField({ type: 'text', name: 'subject', id: 'subject', placeholder: 'Subject' });
   const messageField = useField({ name: 'message', id: 'message', placeholder: 'Message', required: true });
-  const MySwal = withReactContent(Swal);
 
   const validEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,7 +47,12 @@ function Contact (_, ref) {
     e.preventDefault();
 
     if (!isValidForm()) {
-      MySwal.fire('Missing Info', missinInfoMessage(), 'info');
+      setShowModal({
+        show: true,
+        icon: 'warning',
+        title: 'Missing Info',
+        message: missinInfoMessage()
+      });
       return;
     }
 
@@ -59,7 +63,13 @@ function Contact (_, ref) {
       message: messageField.value
     };
 
-    MySwal.fire('Wait...', 'Sending your email. It will close when finish.');
+    setShowModal({
+      show: true,
+      icon: 'processing',
+      title: 'Wait...',
+      message: 'Sending your email. This message will close after sending it.'
+    });
+
     fetch('https://formspree.io/mbjklkqm', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -68,11 +78,21 @@ function Contact (_, ref) {
       }
     })
       .catch(() => {
-        MySwal.fire('Oops...', 'An error ocurred. Please, try again', 'error');
+        setShowModal({
+          show: true,
+          icon: 'error',
+          title: 'Oopss...',
+          message: 'An error ocurred. Please, try again'
+        });
       })
       .then(r => r.json())
       .then((body) => {
-        MySwal.fire('Great', `Hello ${nameField.value}, your email was sent. I will contact you, soon. Thank you`, 'success');
+        setShowModal({
+          show: true,
+          icon: 'success',
+          title: 'Great',
+          message: `Hello ${nameField.value}, your email was sent. I will contact you, soon. Thank you`
+        });
         resetForm();
       });
   };
@@ -139,6 +159,13 @@ function Contact (_, ref) {
           </ul>
         </div>
       </div>
+      <Message
+        icon={showModal.icon}
+        title={showModal.title}
+        message={showModal.message}
+        showMessage={Boolean(showModal.show)}
+        onClose={() => { setShowModal({ ...showModal, show: false }); }}
+      />
     </Section>
   );
 }
