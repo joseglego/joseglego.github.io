@@ -2,14 +2,16 @@
 
 // Section 0: Define
 var gulp = require('gulp');
+var dartSass = require('sass');
+var gulpSass = require('gulp-sass');
+var sass = gulpSass(dartSass);
 var plugins = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'browser-sync', 'del', 'run-sequence', 'sprity']
+  pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'gulp4-*', 'browser-sync', 'del', 'spritesmith']
 });
 var gulpIf = require('gulp-if');
 var jsFilter = plugins.filter("app/**/*.js", { restore: true });
 var cssFilter = plugins.filter("app/**/*.css", { restore: true });
 var indexHtmlFilter = plugins.filter(['**/*', '!**/index.html'], { restore: true });
-
 
 // Section 1: Watch Tasks
 //// Section 1.0: Browser Sync - Server
@@ -30,20 +32,29 @@ gulp.task('browserSync:test', function() {
   });
 });
 
+gulp.task('browserSync:dist', function() {
+  plugins.browserSync.init({
+    server: {baseDir: './dist'}
+  });
+});
+
 //// Section 1.1: Sass Task
-// generate sprite.png and _sprite.scss 
+// generate sprite.png and tools.css
 gulp.task('sprites', function () {
-  return plugins.sprity.src({
-    src: './app/assets/images/tools/*.png',
-    style: './tools.css',
-    prefix: 'icon-tools'
-  })
-  .pipe(gulpIf('*.png', gulp.dest('./app/assets/images/'), gulp.dest('./app/assets/styles/')))
+  return gulp.src('./app/assets/images/tools/*.png')
+    .pipe(plugins.spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'tools.css',
+      cssVarMap: function (sprite) {
+        sprite.name = 'tools-' + sprite.name;
+      }
+    }))
+    .pipe(gulp.dest('./app/assets/styles/'));
 });
 
 gulp.task('sass', function(){
   return gulp.src('app/assets/scss/main.scss')
-    .pipe(plugins.sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('app/assets/styles'));
 });
 
@@ -56,15 +67,15 @@ gulp.task('lint', function () {
 });
  
 //// Section 1.3: Watch HTML, JS & Sass
-gulp.task('serve', ['browserSync', 'sprites', 'sass'], function (){
-  gulp.watch('app/assets/scss/**/*.scss', ['sass']); 
+gulp.task('serve', gulp.series(['sprites', 'sass', 'browserSync']), function (){
+  gulp.watch('app/assets/scss/**/*.scss', gulp.series['sass']); 
   gulp.watch('app/*.html', plugins.browserSync.reload); 
   gulp.watch('app/views/**/*.html', plugins.browserSync.reload); 
-  gulp.watch('app/assets/scripts/**/*.js', ['lint', plugins.browserSync.reload]);
+  gulp.watch('app/assets/scripts/**/*.js', gulp.series(['lint', plugins.browserSync.reload]));
   gulp.watch('app/assets/styles/**/*.css', plugins.browserSync.reload); 
 });
 
-gulp.task('serve:test', ['browserSync:test', 'sprites', 'sass'], function (){});
+gulp.task('serve:test', gulp.series(['sprites', 'sass', 'browserSync:test']), function (){});
 
 
 // Section 2: Build Tasks
@@ -86,41 +97,53 @@ gulp.task('copy:images', function(){
   // Caching images that ran through imagemin
     .pipe(plugins.imagemin([
       plugins.imagemin.gifsicle({interlaced: true}),
-      plugins.imagemin.jpegtran({progressive: true}),
+      plugins.imagemin.mozjpeg({quality: 75, progressive: true}),
       plugins.imagemin.optipng({optimizationLevel: 7}),
       plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
     ]))
     .pipe(gulp.dest('dist/assets/images'));
 });
 
+gulp.task('copy:images-styles', function(){
+  return gulp.src('app/assets/styles/**/*.+(png|jpg|jpeg|gif|svg)')
+  // Caching images that ran through imagemin
+    .pipe(plugins.imagemin([
+      plugins.imagemin.gifsicle({interlaced: true}),
+      plugins.imagemin.mozjpeg({quality: 75, progressive: true}),
+      plugins.imagemin.optipng({optimizationLevel: 7}),
+      plugins.imagemin.svgo({plugins: [{removeViewBox: true}]})
+    ]))
+    .pipe(gulp.dest('dist/assets/styles'));
+});
+
 //// Section 2.2: Move fonts
 gulp.task('copy:fonts', function () {
-  return gulp.src('bower_components/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(plugins.flatten())
+  return gulp.src(['app/**/*.{eot,svg,ttf,woff,woff2}', '!app/bower_components/typed.js/**/*.{eot,svg,ttf,woff,woff2}'])
+    .pipe(plugins.rename({dirname: './'}))
     .pipe(gulp.dest('dist/assets/fonts'));
 });
 
 //// Section 2.3: Move files
 gulp.task('copy:files', function () {
   return gulp.src('app/assets/files/**/*.pdf')
-    .pipe(plugins.flatten())
+    .pipe(plugins.rename({dirname: './'}))
     .pipe(gulp.dest('dist/assets/files'));
 });
 
 //// Section 2.4: Delete previous version
 gulp.task('clean:dist', function() {
-  return plugins.del.sync('dist');
+  return plugins.del(['dist']);
 });
 
 //// Section 2.5: Move slick files
 gulp.task('copy:slick-font', function () {
-  return gulp.src('bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(plugins.flatten())
+  return gulp.src('app/bower_components/slick-carousel/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(plugins.rename({dirname: './'}))
     .pipe(gulp.dest('dist/assets/styles/fonts'));
 });
 gulp.task('copy:slick-gif', function () {
-  return gulp.src('bower_components/slick-carousel/**/*.gif')
-    .pipe(plugins.flatten())
+  return gulp.src('app/bower_components/slick-carousel/**/*.gif')
+    .pipe(plugins.rename({dirname: './'}))
     .pipe(gulp.dest('dist/assets/styles'));
 });
 
@@ -133,9 +156,9 @@ gulp.task('copy:views', function(){
 
 //// Section 2.7: Build Task
 gulp.task('build:dist', function (callback) {
-  plugins.runSequence(
-    ['clean:dist', 'sprites', 'sass'], 
-    ['useref', 'copy:images', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif', 'copy:views'],
+  plugins.gulp4RunSequence(
+    ['clean:dist', 'sprites', 'sass'],
+    ['useref', 'copy:images', 'copy:images-styles', 'copy:fonts', 'copy:files', 'copy:slick-font', 'copy:slick-gif', 'copy:views'],
     callback
   );
 });
@@ -143,7 +166,7 @@ gulp.task('build:dist', function (callback) {
 // Section 3: GitHub Pages
 //// Section 3.0: Delete Index
 gulp.task('clean:index', function() {
-  return plugins.del.sync('index.html');
+  return plugins.del(['index.html']);
 });
 
 //// Section 3.1: Move Index
@@ -154,7 +177,7 @@ gulp.task('move:index', function () {
 
 //// Section 3.2: Clean Assets
 gulp.task('clean:assets', function() {
-  return plugins.del.sync('assets');
+  return plugins.del(['assets/**/*', '!assets/files']);
 });
 
 //// Section 3.3: Move Assets
@@ -171,7 +194,7 @@ gulp.task('move:views', function () {
 
 //// Section 3.5: Clean GitHub Pages
 gulp.task('clean:ghp', function (callback) {
-  plugins.runSequence(
+  plugins.gulp4RunSequence(
     ['clean:index','clean:assets'],
     callback
   );  
@@ -179,7 +202,7 @@ gulp.task('clean:ghp', function (callback) {
 
 //// Section 3.6: Move generated files from dist/ to / (Others Apps - to show in GitHub Pages)
 gulp.task('move:ghp', function (callback) {
-  plugins.runSequence(
+  plugins.gulp4RunSequence(
     ['move:index', 'move:dist', 'move:views'],
     'clean:dist',
     callback
@@ -188,7 +211,7 @@ gulp.task('move:ghp', function (callback) {
 
 //// Section 3.7: BuildTask
 gulp.task('build:ghp', function (callback) {
-  plugins.runSequence(
+  plugins.gulp4RunSequence(
     'clean:ghp',
     'build:dist',
     'move:ghp',
