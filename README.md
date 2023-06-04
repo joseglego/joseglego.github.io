@@ -1,6 +1,17 @@
 # josegLEGO - Landing Page
+## Summary as an Archived Project
+### Check the Latest version
+This is an archived version of my personal portfolio/webpage you can check it in [2016.joseglego.io](https://2016.joseglego.io/) and [its code](https://github.com/joseglego/joseglego.github.io/tree/2016).
 
-This a personal _"Handmade"_ landing page build with HTML, CSS & JavaScript. It's based on Bootstrap 3, Sass & jQuery with some thirds libs. I prefer AngularJs, it's my normal tool. But you don't need a laser gun to kill a mosquito, do you? 
+You can check the [Latest Version](joseglego.io) or [its code](https://github.com/joseglego/joseglego.github.io/)
+
+I keep it just because nostalgic. And to follow the process
+
+### Long story short
+This is a very old version of the webpage. But, after re-trying to rebuild in my new computer I couldn't. I noticed it's because I made ~a lot of~ mistakes in the past. So, to improve this, and being able to support and rebuild it. I'm updating all required to build it but nothing else to keep it as it used to be. There is no optmization or something like that, to reflect the grow from that time until nowadays. We update few details for operations, like server/host, analytics, etc.
+
+## Original Summary
+This a personal _"Handmade"_ landing page build with HTML, CSS & JavaScript. It's based on Bootstrap 3, Sass & jQuery with some thirds libs. I prefer AngularJs, it's my normal tool. But you don't need a laser gun to kill a mosquito, do you?
 
 ## External Requirements
 It has a lot of requirements, but are imported with NPM & Bower. So, you just need to install them through these apps. Here you can find the Instructions Manual of their official pages.
@@ -16,7 +27,7 @@ $ git clone git@github.com:joseglego/joseglego.github.io.git
 ```
 
 ### You can download it 
-1. Go to [josegLEGO-repo]
+1. Go to [josegLEGO-repo](https://github.com/joseglego/joseglego.github.io/tree/2016)
 2. Click on `Clone or Download`
 3. Finally, click `Download ZIP`
 
@@ -24,6 +35,8 @@ $ git clone git@github.com:joseglego/joseglego.github.io.git
 ### Install
 ``` sh
 $ npm install
+$ npm install -g bower
+$ npm install -g gulp
 $ bower install
 ```
 
@@ -32,6 +45,7 @@ This app works with a npm server (Browser Sync) and watcher over important files
 
 
 ``` sh
+$ gulp sass                    # Run this ONLY the first time, if you change something in the code it'll be triggered
 $ gulp serve                   # You must be on the root folder of the repository
 ```
 
