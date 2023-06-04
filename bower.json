@@ -25,6 +25,6 @@
     "font-awesome": "^4.7.0",
     "slick-carousel": "1.6.0",
     "jquery_appear": "^0.3.6",
-    "typed.js": "^2.0.5",
+    "typed.js": "2.0.4"
   }
 }
