@@ -24,7 +24,7 @@ h3 {
 }
 
 .text-lego-secondary-default {
-  @include lego-secondary
+  @include lego-secondary;
   color: $lego-third-color;
 }
 
