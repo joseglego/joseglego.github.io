@@ -1,6 +1,6 @@
 const data = {
   analyticsId: process.env.NEXT_PUBLIC_ANALYTICS_ID,
-  oldJoseglego: 'https://old.joseglego.io',
+  oldJoseglego: 'https://timetravel.joseglego.io',
   socialAll: 'josegLEGO',
   socialEmail: 'me@joseglego.io',
   socialGithubUser: 'joseglego',
