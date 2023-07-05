@@ -10,7 +10,7 @@ function Footer () {
       <div className={styles.footerContainer}>
         <div className={styles.footerInfo}>
           <div className={styles.joseglego}>JosegLEGO</div>
-          <p>Made from scratch by josegLEGO. Using <a href="https://nextjs.org/">Next.js</a>, and hosted in <a href="https://www.netlify.com/">Netlify</a>.</p>
+          <p>Made from scratch by josegLEGO. Using <a href="https://nextjs.org/">Next.js</a>, and hosted in <a href="https://vercel.com/">Vercel</a>.</p>
           <p>You can find the code in <a href="https://github.com/joseglego/joseglego.github.io/">its Github Repo</a>, feel free to use it or provide feedback. Also, you can see the <a target="_blank" href={data.oldJoseglego} rel="noopener noreferrer">Previous versions</a></p>
         </div>
         <div className={styles.footerSocial}>
