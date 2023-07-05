@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import data from '../../config';
 
 function Analytics ({ webpageTitle }) {
@@ -7,7 +7,7 @@ function Analytics ({ webpageTitle }) {
     const analyticsId = data.analyticsId;
     if (analyticsId) {
       ReactGA.initialize(analyticsId);
-      ReactGA.pageview(webpageTitle);
+      ReactGA.send({ hitType: 'pageview', title: webpageTitle });
     }
   }, [webpageTitle]);
   return (<></>);

@@ -59,7 +59,7 @@ export default function Home () {
               <Projects ref={sectionRefs[3]} />
               <Contact ref={sectionRefs[4]} />
               <Footer />
-              <Analytics webpageTitle="Index" />
+              <Analytics webpageTitle="index" />
             </>
           )}
         </Scrollspy>
