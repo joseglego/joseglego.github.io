@@ -13,11 +13,13 @@ $(document).ready(function() {
   };
 
   //// 0. OldVersion Message: Show Message
-  swal({
-    type: 'info',
-    title: 'Archived Page: 2016',
-    html: 'You are in the 2016 version of this webpage! You can continue here but remember you can always go to:<br/><a href="https://joseglego.io">Latest Version</a> <br/> <a href="https://timetravel.joseglego.io">TimeTravel Page</a>'
-  })
+  setTimeout(() => {
+    swal({
+      type: 'info',
+      title: 'Archived Page: 2016',
+      html: 'You are in the 2016 version of this webpage! You can continue here but remember you can always go to:<br/><a href="https://joseglego.io">Latest Version</a> <br/> <a href="https://timetravel.joseglego.io">TimeTravel Page</a>'
+    })    
+  }, 1000)
 
   //// 0. Waiting Message: Show Message
   var waitingStart = function() {
